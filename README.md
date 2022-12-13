@@ -1,71 +1,175 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Coworking-Project 
 
-In the project directory, you can run:
+READ ME - SITE FOR COWORKING SPACE
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Description 
 
-### `npm test`
+A site where you can find space for Working. One can see all the available space for work specific to location, book for a day or for months, also able to do the payment through this site.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**User Stories**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Login**                     As an **ADMIN**  i can login to site and i am able to see all the Users and  bookings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Add new Space**   As an **Admin** i can add new spaces to the site.
 
-### `npm run eject`
+**Edit Space**            As an **Admin** i can Edit or Delete an existing space.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**sign up**                  As a **USER**  i can sign up in the site to see all the available spaces that suits me.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Login**                      As a **USER** i can  login to site to book a space and do the payments.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Edit Booking**         As a **USER**  i can make changes in  the bookings.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Edit User**               As a **USER** i can edit my profile, see all the bookings that i made.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**#Backlog**
 
-### Code Splitting
+- Login page
+- profile 
+- see all the spaces in map
+- Reserve a space
+- adding payment 
+- add a chat with Admin
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**# Client / Frontend**
 
-### Making a Progressive Web App
+**#React Router Routes**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| path              | Component    | Permissions | Behavior                                                     |
+| ----------------- | ------------ | ----------- | ------------------------------------------------------------ |
+| '/'               | LandingPage  | public      | Landing Page with search component                           |
+| '/signup'         | SignupPage   | public      | Signup form, Link to Login,Navigate to home page after sign up |
+| '/login'          | LoginPage    | public      | Login form,Link for Sign up, Navigate to homepage after signup |
+| '/home'           | HomePage     | User/Admin  | Show Search bar                                              |
+| '/spaces'         | ViewSpaces   | User        | List all the available spaces                                |
+| '/spaces/:id'     | DetailedView | User        | show details of the selected space                           |
+| '/book/:id'       | BookingPage  | User        | Booking options with Calendar                                |
+| '/payment/:id'    | PaymentPage  | User        | Payment options                                              |
+| '/confirmBooking' | ThankyouPage | User        | button to go to profile/account                              |
+| '/profile/:Uid'   | UserProfile  | User        | Profile with booking details                                 |
+| '/Edit/:id'       | EditBooking  | user        | User can edit bookings                                       |
+| '/Edit/:Uid'      | EditProfile  | user        | user can edit account details                                |
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+**# Componenets**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Coworking-Project
+- LandingPage
+- Navbar
+- SignupPage
+- LoginPage
+- HomePage
+- ViewSpaces
+- DetailedView
+- BookingPage
+- PaymentPage
+- ThankyouPage
+- UserProfilePage
+- EditProfile
+- EditBooking
+
+
+
+## Services
+
+- Auth Service
+  - auth.login(user)
+  - auth.signup(user)
+  - auth.logout()
+  - auth.me()
+  - auth.getUser() // synchronous
+- Booking Service
+  - Spces.list()
+  - Space.detailedView(id)
+  - space.add(id)
+  - space.delete(id)
+  - space.edit(id)
+- User Service
+  - user.detail(id)
+
+
+
+ # Server / Backend
+
+## Models
+
+User model
+
+```
+{
+  userFirstName: {type: String, required: true},
+  userLastName: {type: String, required: true},
+  loginName: {type: String, required: true, unique: true},
+  email: {type: String, required: true, unique: true},
+  password: {type: String, required: true},
+  bookings:{type:int},
+  phone :{type :int}
+ 
+}
+```
+
+
+
+Space model
+
+```
+{
+  owner: {type: String, required: true},
+  email: {type: String, required: true, unique: true},
+  spaceId: {type: int , required: true},
+  address:{type :string, required:true},
+  city:{type :string, required:true},
+  country:{type :string, required:true},
+  availableSeats:{type :int, required:true},
+  area:{type :int, required:true},
+  costPerDay:{type :int, required:true},
+}
+```
+
+
+
+Booking model
+
+```
+{
+  user: {type: String, required: true, unique: true},
+  email: {type: String, required: true, unique: true},
+  spaceId: {type: int , required: true},
+  createdDate : date: { type: Date, default: Date.now }
+  fromDate : date: { type: Date},
+  toDate :  date: { type: Date},
+}
+```
+
+
+
+
+
+## Backend routes
+
+| HTTP Method | URL            | Request Body                | Success status | Error Status | Description                                                  |
+| ----------- | -------------- | --------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
+| GET         | `/auth/me`     |                             | 200            | 404          | Check if user is logged in and return profile page           |
+| POST        | `/auth/signup` | {name, email, password}     | 201            | 404          | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
+| POST        | `/auth/login`  | {username, password}        | 200            | 401          | Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session |
+| POST        | `/auth/logout` | (empty)                     | 204            | 400          | Logs out the user                                            |
+| POST        | /booking/:id   | {name,spaceid,date }        |                |              | Used to create one booking , using current logged in user id as a creator. |
+| POST        | /payment/:id   | {name,spaceid,dates,}       |                |              | Used to do payment                                           |
+| PUT         | /booking/:id   |                             |                |              | Used to edit the booking                                     |
+| DELETE      | /booking/:id   |                             |                |              | Used to delete one exit point document by id                 |
+| GET         | /user/id       | {username, email, password} |                |              | Used to edit  profile.                                       |
+| PUT         | /users         |                             |                |              | use to see all users                                         |
+
+
