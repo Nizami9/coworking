@@ -1,3 +1,10 @@
+body {
+    margin: 0%;
+    font-family: 'Outfit';
+    text-align: center;
+    line-height: 130%;
+
+}
 .containerFooter {
     background: #262626;
     height: 453px;
@@ -14,9 +21,7 @@
 }
 
 .leftContainer>p {
-    font-family: 'Outfit';
     font-size: 14px;
-    line-height: 130%;
     color: #B7BCC2;
 }
 
@@ -32,7 +37,7 @@ a>img:hover {
 }
 
 .copyrightText {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 /* LeftSide of Footer */
@@ -45,17 +50,15 @@ a>img:hover {
 }
 
 .rightContainer>h3 {
-    font-family: 'Outfit';
     font-weight: 500;
     font-size: 20px;
-    line-height: 130%;
     color: #DCE3ED;
     margin-top: 100px;
+    margin-right: 50px;
 }
 
 
 /* RightSide of Footer */
-
 .formFooter {
     display: flex;
     justify-content: left;
@@ -69,45 +72,83 @@ input, #selectInterest {
     background-color: transparent;
     border: none;
     border-bottom: white solid 1px;
-    font-family: 'Outfit';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 130%;
     color: #B7BCC2;
+    padding: 0%;
     padding-bottom: 5px;
 }
+
 
 #vehicle2 {
     width: 3%;
     margin-left: 0px;
-    margin-right: 15px;
+    margin-right: 5px;
     background-color: transparent;
 }
 #vehicle21 {
-font-family: 'Outfit';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 130%;
-color: #B7BCC2;
-width: 70%;
+    font-weight: 400;
+    font-size: 14px;
+    color: #B7BCC2;
+    width: 70%;
 }
 
 #submitFooter {
-background: #FFFFFF;
-Width: 194.09px;
-Height: 38.55px;
-font-family: 'Outfit';
-font-weight: 600;
-font-size: 16px;
-line-height: 120%;
-text-align: center;
-color: #262626;
-padding: 0px;
-padding-top: 5px;
+    background: #FFFFFF;
+    Width: 194.09px;
+    Height: 38.55px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    color: #262626;
+    padding: 0px;
+    padding-top: 5px;
+    margin-right: 50%;
 }
 
-#yourText {
+/* #yourText {
     width: 87.5%;
-}
+} */
+
+
+/* Media Query */
+
+@media screen and (max-width: 1160px) {
+    .rightContainer>h3 {
+      margin-top: 20px;
+    }
+
+    .leftContainer>img {
+        margin-top: 30px;
+      }
+    
+    .leftContainer {
+        padding-left: 30px;
+    }
+
+    .copyrightText {
+        margin-top: 90px;
+    }
+
+    input, #selectInterest {
+        padding-bottom: 0px;
+        width: 80%;
+    }
+
+    .rightContainer{
+        width: 100%;
+        margin-left: 60px;
+    }
+    }
+
+    @media screen and (max-width: 651px) {
+    #vehicle21 {
+        font-size: 12px;
+    }
+    }
+
+    @media screen and (max-width: 480px) {
+    .leftContainer {
+        display: none;
+    }
+    }

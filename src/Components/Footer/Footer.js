@@ -25,7 +25,7 @@ const Footer = () => {
             <h3>Contact Us</h3>
             <form className='formFooter'>
               <input type='text' placeholder='John'/>
-              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder='+49 0000 000 00 00'/>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder='+49 0000 00 00'/>
               <input type="email" id="email" name="email" placeholder='Example@gmail.com' />
               <select id="selectInterest" name="interestlist">
                 <option value="placeholderOption" disabled selected hidden>I am interested in</option>
@@ -35,8 +35,10 @@ const Footer = () => {
                 <option value="complaint">Complaint</option>
               </select>
               <input type='text' id='yourText' placeholder='Your message'/>
+              <div className='checkboxFooter'>
               <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
               <label id='vehicle21' for="vehicle21">I have read and accepted the privacy policy</label>
+              </div>
               <input type="submit" value="Submit" id='submitFooter'/>
             </form>
         </div>
