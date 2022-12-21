@@ -19,12 +19,25 @@ const Footer = () => {
                 <a href='#'><img src={twitter}/></a>
                 <a href='#'><img src={linkedin}/></a>
             </div>
-            <p>Copyright © 2022 Companies  All rights reserved</p>
+            <p className='copyrightText'>Copyright © 2022 Companies  All rights reserved</p>
         </div>
         <div className='rightContainer'>
             <h3>Contact Us</h3>
-            <form>
-
+            <form className='formFooter'>
+              <input type='text' placeholder='John'/>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder='+49 0000 000 00 00'/>
+              <input type="email" id="email" name="email" placeholder='Example@gmail.com' />
+              <select id="selectInterest" name="interestlist">
+                <option value="placeholderOption" disabled selected hidden>I am interested in</option>
+                <option value="booking">Booking</option>
+                <option value="rentSpace">Rent Working Space</option>
+                <option value="сontactWithUs">Contact With Us</option>
+                <option value="complaint">Complaint</option>
+              </select>
+              <input type='text' id='yourText' placeholder='Your message'/>
+              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+              <label id='vehicle21' for="vehicle21">I have read and accepted the privacy policy</label>
+              <input type="submit" value="Submit" id='submitFooter'/>
             </form>
         </div>
     </div>

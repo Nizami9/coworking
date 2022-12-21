@@ -5,15 +5,12 @@
     justify-content: space-between;
 }
 
+/* LeftSide of Footer */
+
 .leftContainer {
     width: 50%;
     text-align: left;
     padding-left: 80px;
-}
-
-.rightContainer {
-    width: 50%;
-    text-align: left;
 }
 
 .leftContainer>p {
@@ -32,4 +29,85 @@ a>img:hover {
 }
 .footerLogo {
     margin: 100px 0px 50px;
+}
+
+.copyrightText {
+    margin-top: 100px;
+}
+
+/* LeftSide of Footer */
+
+/* RightSide of Footer */
+
+.rightContainer {
+    width: 50%;
+    text-align: left;
+}
+
+.rightContainer>h3 {
+    font-family: 'Outfit';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #DCE3ED;
+    margin-top: 100px;
+}
+
+
+/* RightSide of Footer */
+
+.formFooter {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+input, #selectInterest {
+    margin-bottom: 30px;
+    width: 40%;
+    margin-right: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: white solid 1px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #B7BCC2;
+    padding-bottom: 5px;
+}
+
+#vehicle2 {
+    width: 3%;
+    margin-left: 0px;
+    margin-right: 15px;
+    background-color: transparent;
+}
+#vehicle21 {
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 130%;
+color: #B7BCC2;
+width: 70%;
+}
+
+#submitFooter {
+background: #FFFFFF;
+Width: 194.09px;
+Height: 38.55px;
+font-family: 'Outfit';
+font-weight: 600;
+font-size: 16px;
+line-height: 120%;
+text-align: center;
+color: #262626;
+padding: 0px;
+padding-top: 5px;
+}
+
+#yourText {
+    width: 87.5%;
 }
