@@ -1,14 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Login from '../Sign-Up/Login'
 
 const Signin = () => {
   return (
-    <div   style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh'
-  }}>
-         <h1>Sign In</h1>
+    <div>
+      <Login />
     </div>
   )
 }
