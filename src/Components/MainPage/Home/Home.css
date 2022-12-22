@@ -3,10 +3,6 @@
     src: local('MonumentExtended-Regular.otf'), url(./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf) format('truetype');
   }
 
-  path {
-    width: 10px;
-    height: 10px;
-  }
 
 .container {
     display: flex;
@@ -28,8 +24,6 @@
 }
 
 .leftContainerMain>h1 {
-    width: 522px;
-    height: 100px;
     font-family: 'Monument';
     font-weight: 400;
     font-size: 40px;
@@ -62,10 +56,10 @@
     position: relative;
 }
 
-.locationInput>i {
+/* .locationInput>i {
     position: relative;
     top: 5px;
-}
+} */
 
 .locationInput>input {
 box-sizing: border-box;
