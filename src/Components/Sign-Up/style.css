@@ -16,14 +16,14 @@
     background-color: #f8f9fd;
   }
   
-  input[type="text"],
-  input[type="password"] {
+  .input-container>input[type="text"],
+  .input-container>input[type="password"] {
     height: 25px;
     width:91%;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
   
-  input[type="submit"] {
+  .button-container>input[type="submit"] {
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;

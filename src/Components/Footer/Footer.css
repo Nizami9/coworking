@@ -63,13 +63,13 @@ a>img:hover {
     flex-wrap: wrap;
 }
 
-.formFooter>input, #selectInterest {
+.formFooter>input, #selectInterest, .footerNameForm {
     margin-bottom: 30px;
     width: 40%;
     margin-right: 50px;
     background-color: transparent;
     border: none;
-    border-bottom: white solid 1px;
+    border-bottom: 1px solid white;
     font-weight: 400;
     font-size: 16px;
     color: #B7BCC2;
@@ -103,11 +103,6 @@ a>img:hover {
     padding-top: 5px;
     margin-right: 50%;
 }
-
-/* #yourText {
-    width: 87.5%;
-} */
-
 
 /* Media Query */
 

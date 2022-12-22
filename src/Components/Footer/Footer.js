@@ -24,7 +24,7 @@ const Footer = () => {
         <div className='rightContainerFooter'>
             <h3>Contact Us</h3>
             <form className='formFooter'>
-              <input type='text' placeholder='John'/>
+              <input className='footerNameForm' type='text' placeholder='John'/>
               <input type="tel" id="phone" name="phone" pattern="+[0-9]{2}-[0-9]{11}" placeholder='49-00000000000'/>
               <input type="email" id="email" name="email" placeholder='Example@gmail.com' />
               <select id="selectInterest" name="interestlist">
