@@ -1,4 +1,5 @@
 import React from "react";
+import logoImage from "../Footer/images/CoWo.png";
 import {
   Nav,
   NavLogo,
@@ -13,7 +14,9 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLogo to="/">coWo</NavLogo>
+        <NavLogo to="/">
+          <img src={logoImage}></img>
+        </NavLogo>
         <Bars />
 
         <NavMenu>
