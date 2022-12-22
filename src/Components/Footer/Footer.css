@@ -1,9 +1,7 @@
 body {
     margin: 0%;
     font-family: 'Outfit';
-    text-align: center;
     line-height: 130%;
-
 }
 .containerFooter {
     background: #262626;
@@ -14,13 +12,13 @@ body {
 
 /* LeftSide of Footer */
 
-.leftContainer {
+.leftContainerFooter {
     width: 50%;
     text-align: left;
     padding-left: 80px;
 }
 
-.leftContainer>p {
+.leftContainerFooter>p {
     font-size: 14px;
     color: #B7BCC2;
 }
@@ -44,12 +42,12 @@ a>img:hover {
 
 /* RightSide of Footer */
 
-.rightContainer {
+.rightContainerFooter {
     width: 50%;
     text-align: left;
 }
 
-.rightContainer>h3 {
+.rightContainerFooter>h3 {
     font-weight: 500;
     font-size: 20px;
     color: #DCE3ED;
@@ -65,7 +63,7 @@ a>img:hover {
     flex-wrap: wrap;
 }
 
-input, #selectInterest {
+.formFooter>input, #selectInterest {
     margin-bottom: 30px;
     width: 40%;
     margin-right: 50px;
@@ -114,15 +112,15 @@ input, #selectInterest {
 /* Media Query */
 
 @media screen and (max-width: 1160px) {
-    .rightContainer>h3 {
+    .rightContainerFooter>h3 {
       margin-top: 20px;
     }
 
-    .leftContainer>img {
+    .leftContainerFooter>img {
         margin-top: 30px;
       }
     
-    .leftContainer {
+    .leftContainerFooter {
         padding-left: 30px;
     }
 
@@ -130,12 +128,12 @@ input, #selectInterest {
         margin-top: 90px;
     }
 
-    input, #selectInterest {
+    .formFooter>input, #selectInterest {
         padding-bottom: 0px;
         width: 80%;
     }
 
-    .rightContainer{
+    .rightContainerFooter{
         width: 100%;
         margin-left: 60px;
     }
@@ -148,7 +146,7 @@ input, #selectInterest {
     }
 
     @media screen and (max-width: 480px) {
-    .leftContainer {
+    .leftContainerFooter {
         display: none;
     }
     }
