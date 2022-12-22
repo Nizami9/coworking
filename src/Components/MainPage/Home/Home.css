@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Monument';
+    src: local('MonumentExtended-Regular.otf'), url(./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf) format('truetype');
+  }
+
+  path {
+    width: 10px;
+    height: 10px;
+  }
+
+.container {
+    display: flex;
+    font-style: normal;
+    height: 657px;
+    text-align: left;
+}
+
+.leftContainerMain {
+    width: 50%;
+    background: #F9FAFC;
+}
+
+.rightContainerMain {
+    width: 50%;
+    background-image: url(./ImagesHome/firstBlockImage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.leftContainerMain>h1 {
+    width: 522px;
+    height: 100px;
+    font-family: 'Monument';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+    color: #262626;
+    padding: 80px 0 0 80px;
+}
+
+.leftContainerMain>p {
+    width: 522px;
+    height: 40px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #555D67;
+    padding-left: 80px;
+}
+
+.leftContInputs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 80px;
+    justify-content: space-between;
+}
+
+.locationInput {
+    width: 100%;
+    position: relative;
+}
+
+.locationInput>i {
+    position: relative;
+    top: 5px;
+}
+
+.locationInput>input {
+box-sizing: border-box;
+background: #FFFFFF;
+border: 1px solid #DCE3ED;
+width: 80%;
+height: 50px;
+margin-bottom: 20px;
+margin-right: 10px;
+margin-top: 20px;
+}
+
+#selectOfficeType, #dateOption {
+box-sizing: border-box;
+background: #FFFFFF;
+border: 1px solid #DCE3ED;
+height: 50px;
+width: 100%;
+}
+
+#selectOfficeType, #dateOption {
+width: 40%;
+}
+
+.selectDateOffice {
+    width: 100%;
+}
+
+.leftContInputs>button {
+    width: 80%;
+    height: 56px;
+    background-color:#FF7848;
+    border: none;
+    margin-top: 20px;
+}
+
+.leftContInputs>button>p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}

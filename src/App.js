@@ -1,13 +1,11 @@
 import Footer from "./Components/Footer/Footer";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Navbar from "./Components/Navbar";
 import Locations from "./Components/MainPage/Locations";
 import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp";
-import Home from "./Components/MainPage/Home";
+import Home from "./Components/MainPage/Home/Home";
 
 
 function App() {
@@ -25,8 +23,6 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
-
-    <h1>Lets do it, my dream team!</h1>
     <Footer />
     </div>
   );

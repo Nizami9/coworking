@@ -9,7 +9,7 @@ import linkedin from "./images/LinkedinIcon.png"
 const Footer = () => {
   return (
     <div className='containerFooter'>
-        <div className='leftContainer'>
+        <div className='leftContainerFooter'>
             <img className='footerLogo' src={logo} />
             <p>It starts with good people</p>
             <p>Become a part of our community</p>
@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <p className='copyrightText'>Copyright © 2022 Companies  All rights reserved</p>
         </div>
-        <div className='rightContainer'>
+        <div className='rightContainerFooter'>
             <h3>Contact Us</h3>
             <form className='formFooter'>
               <input type='text' placeholder='John'/>
