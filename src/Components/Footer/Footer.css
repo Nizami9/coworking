@@ -1,0 +1,154 @@
+body {
+    margin: 0%;
+    font-family: 'Outfit';
+    text-align: center;
+    line-height: 130%;
+
+}
+.containerFooter {
+    background: #262626;
+    height: 453px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* LeftSide of Footer */
+
+.leftContainer {
+    width: 50%;
+    text-align: left;
+    padding-left: 80px;
+}
+
+.leftContainer>p {
+    font-size: 14px;
+    color: #B7BCC2;
+}
+
+a>img {
+    padding-right: 30px;
+}
+
+a>img:hover {
+    cursor: pointer;
+}
+.footerLogo {
+    margin: 100px 0px 50px;
+}
+
+.copyrightText {
+    margin-top: 60px;
+}
+
+/* LeftSide of Footer */
+
+/* RightSide of Footer */
+
+.rightContainer {
+    width: 50%;
+    text-align: left;
+}
+
+.rightContainer>h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #DCE3ED;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+
+/* RightSide of Footer */
+.formFooter {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+input, #selectInterest {
+    margin-bottom: 30px;
+    width: 40%;
+    margin-right: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: white solid 1px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B7BCC2;
+    padding: 0%;
+    padding-bottom: 5px;
+}
+
+
+#vehicle2 {
+    width: 3%;
+    margin-left: 0px;
+    margin-right: 5px;
+    background-color: transparent;
+}
+#vehicle21 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #B7BCC2;
+    width: 70%;
+}
+
+#submitFooter {
+    background: #FFFFFF;
+    Width: 194.09px;
+    Height: 38.55px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    color: #262626;
+    padding: 0px;
+    padding-top: 5px;
+    margin-right: 50%;
+}
+
+/* #yourText {
+    width: 87.5%;
+} */
+
+
+/* Media Query */
+
+@media screen and (max-width: 1160px) {
+    .rightContainer>h3 {
+      margin-top: 20px;
+    }
+
+    .leftContainer>img {
+        margin-top: 30px;
+      }
+    
+    .leftContainer {
+        padding-left: 30px;
+    }
+
+    .copyrightText {
+        margin-top: 90px;
+    }
+
+    input, #selectInterest {
+        padding-bottom: 0px;
+        width: 80%;
+    }
+
+    .rightContainer{
+        width: 100%;
+        margin-left: 60px;
+    }
+    }
+
+    @media screen and (max-width: 651px) {
+    #vehicle21 {
+        font-size: 12px;
+    }
+    }
+
+    @media screen and (max-width: 480px) {
+    .leftContainer {
+        display: none;
+    }
+    }
