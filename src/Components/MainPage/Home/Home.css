@@ -6,24 +6,26 @@
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     font-style: normal;
-    height: 657px;
     text-align: left;
 }
 
 .leftContainerMain {
     width: 50%;
+    height: 657px;
     background: #F9FAFC;
 }
 
 .rightContainerMain {
     width: 50%;
+    height: 657px;
     background-image: url(./ImagesHome/firstBlockImage.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.leftContainerMain>h1 {
+.leftContainerMain>h1{
     font-family: 'Monument';
     font-weight: 400;
     font-size: 40px;
@@ -32,7 +34,7 @@
     padding: 80px 0 0 80px;
 }
 
-.leftContainerMain>p {
+.leftContainerMain>p{
     width: 522px;
     height: 40px;
     font-family: 'Outfit';
@@ -105,3 +107,135 @@ width: 40%;
     text-align: center;
     color: #FFFFFF;
 }
+
+/* BootomSide */
+
+.bottomContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 657px;
+    width: 100%;
+    background-color: white;
+}
+
+.bottomContainerLeft {
+    width: 30%;
+}
+
+.bottomContainerRight {
+    width: 70%;
+}
+
+.bottomContainerLeft>h1{
+    font-family: 'Monument';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;    
+    color: #262626;
+    padding: 150px 0 0 80px;
+}
+
+.bottomContainerLeft>p {
+    font-family: 'Outfit';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #555D67;
+    padding-left: 80px;
+}
+
+.citesOptionPictures {
+    margin: 80px 80px 0px 90px;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pic1 {
+    background-image: url(./ImagesHome/City5.png);
+    width: 305px;
+    height: 320px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.citesOptionPictures{
+font-family: 'Monument';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 135%;
+color: #FFFFFF;
+}
+
+.pic24 {
+    display: flex;
+    width: 305px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.pic1>p {
+    padding-top: 50%;
+    padding-left: 30%;
+}
+
+.pic2>p {
+    padding-top: 20%;
+    padding-left: 35%;
+}
+
+.pic4>p {
+    padding-top: 20%;
+    padding-left: 30%;
+}
+
+.pic3>p {
+    padding-top: 70%;
+    padding-left: 15%;
+}
+
+.pic5>p, .pic6>p {
+    padding-top: 20%;
+    padding-left: 40%;
+}
+
+.pic2 {
+    background-image: url(./ImagesHome/City4.png);
+    width: 305px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+.pic4 {
+    background-image: url(./ImagesHome/City6.png);
+    width: 305px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+.pic3 {
+    background-image: url(./ImagesHome/City3.png);
+    width: 197px;
+    height: 320px;
+    background-repeat: no-repeat;
+}
+
+
+.pic5 {
+    background-image: url(./ImagesHome/City2.png);
+    width: 414px;
+    height: 197px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+
+.pic6 {
+    background-image: url(./ImagesHome/City1.png);
+    width: 413px;
+    height: 197px;
+    background-repeat: no-repeat;
+}
+/* BootomSide */
