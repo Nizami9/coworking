@@ -6,6 +6,7 @@ import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp";
 import Home from "./Components/MainPage/Home/Home";
+import MyProfile from "./Components/MyProfile/MyProfile";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+
       </Routes>
     </BrowserRouter>
     <Footer />
