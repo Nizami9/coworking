@@ -6,7 +6,7 @@ import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp";
 import Home from "./Components/MainPage/Home/Home";
-import MyProfile from "./Components/MyProfile/MyProfile";
+import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide";
 
 
 function App() {
@@ -22,7 +22,8 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/myprofile" element={<MyProfile />} />
+        /* Just show the left side of Profile */
+        <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
 
       </Routes>
     </BrowserRouter>

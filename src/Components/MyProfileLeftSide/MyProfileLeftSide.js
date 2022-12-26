@@ -1,9 +1,9 @@
 import React from 'react';
 import ProfileImage from './ProfileImages/Ellipse.png';
-import "./Myprofile.css";
+import "./MyprofileLeftSide.css";
 import { NavLink } from "react-router-dom";
 import Vector from "./ProfileImages/Vector.png"
-const MyProfile = () => {
+const MyProfileLeftSide = () => {
   return (
     <div>
         <div className='containerMyProfle'>
@@ -52,4 +52,4 @@ const MyProfile = () => {
   )
 }
 
-export default MyProfile
+export default MyProfileLeftSide
