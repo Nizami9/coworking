@@ -2,21 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    margin: 0 auto;
     margin-top: 100px;
 }
 .containerMyProfleLeft {
     width: 30%;
-    height: 500px;
+    height: 600px;
 }
 
-.containerMyProfleRight {
-    width: 70%;
-    height: 500px;
-}
 
 .myProfileImg>img, .myProfileImg>h2 {
-    margin-left: 35%;
+    margin-left: 45%;
     margin-top: 10px;
 }
 

@@ -10,7 +10,6 @@ const MyProfile = () => {
             <div className='containerMyProfleLeft'>
                 <div className='myProfileImg'>
                     <img src={ProfileImage}></img>
-                    <img></img>
                     <h2>John Smith</h2>
                 </div>
 
@@ -47,9 +46,6 @@ const MyProfile = () => {
                     </div>
                     <hr/>
                 </div>
-            </div>
-            <div className='containerMyProfleRight'>
-
             </div>
         </div>
     </div>
