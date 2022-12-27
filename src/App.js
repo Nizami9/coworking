@@ -7,6 +7,7 @@ import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp";
 import Home from "./Components/MainPage/Home/Home";
 import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide";
+import MyProfile from "./Components/MyProfile/MyProfile";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         /* Just show the left side of Profile */
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
+        <Route path="/myprofile" element={<MyProfile />} />
 
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,86 @@
+.MyProfilePage {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* .MyProfileRightSide > hr {
+    width: 100%;
+    margin-bottom: 20px;
+} */
+
+.MyProfileRightSide {
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 100%;
+}
+
+.MyProfileRightSide>h1 {
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;
+    color: #262626;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.MyProfileCardInfo {
+    width: 50%;
+}
+
+.MyProfileCardInfo > h2{
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 110%;
+color: #262626;
+}
+
+.MyProfileCard {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.MyProfileCardImage {
+    margin-right: 20px;
+    width: 35%;
+}
+
+.MyProfileCardImage >img {
+    width: 100%;
+}
+
+.MyProfileCardStars {
+width: 100%;
+margin-top: 15px;
+}
+
+.MyProfileCardStars > img {
+    margin-right: 5px;
+}
+
+.MyProfileCardAdress {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.MyProfileCardAdress > img {
+    margin-right: 10px;
+}
+
+.MyProfileCardDetails {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.MyProfileCardDetails > p,
+.MyProfileCardDetails > img {
+    padding-top: 30px;
+    margin-right: 80px;
+}
