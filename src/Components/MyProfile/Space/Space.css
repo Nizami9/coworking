@@ -1,0 +1,85 @@
+.containerSpace {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spaceImages {
+    width: 52%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+.leftImageSpace {
+    margin-right: 20px;
+}
+
+.rightImageSpace {
+    width: 40%;
+}
+
+.rightImageSpace > img {
+    width: 305px;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+.spaceReservations {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    margin-left: 60px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.spaceReservations>h1 {
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;
+    color: #262626;
+}
+
+.spaceReservations>p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #555D67;
+    width:305px;
+}
+
+p.spacePrice {
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;
+    color: #FF7848;
+    margin: 20px 0px 20px;
+}
+
+.spaceReservations>button {
+    width:305px;
+    background: #FF7848;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reserveSpaceP {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
