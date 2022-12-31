@@ -10,12 +10,9 @@ import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide"
 import MyProfile from "./Components/MyProfile/MyProfile";
 import Space from "./Components/MyProfile/Space/Space";
 
-
 function App() {
   return (
-    
     <div>
-
 <BrowserRouter>
       <Navbar />
       <Routes>
@@ -24,17 +21,13 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
-        /* Just show the left side of Profile */
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/space" element={<Space />} />
-
-
       </Routes>
     </BrowserRouter>
     <Footer />
     </div>
   );
 }
-
 export default App;

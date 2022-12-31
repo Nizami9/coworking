@@ -1,6 +1,6 @@
 .containerSpace {
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -31,7 +31,7 @@
 .spaceReservations {
     display: flex;
     flex-wrap: wrap;
-    width: 35%;
+    width: 41%;
     margin-left: 60px;
     height: 200px;
     margin-top: 30px;
@@ -145,5 +145,61 @@ span.info {
     font-weight: 400;
     font-size: 14px;
     color: #9AA0B3;
+}
 
+.openingHours {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.openingHours>h3 {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #262626;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 50px;
+}
+
+.dataInfo1, .dataInfo2 {
+    width: 248px;
+    height: 48px;
+    background: #DCE3ED;
+    opacity: 0.75;
+    border-radius: 4px;
+    margin-left: 33px;
+    display: flex;
+    padding: 12px;
+}
+
+.dataInfo1>img, .dataInfo2>img {
+    width: 21px;
+    height: 23.33px;
+    margin-left: 20px;
+}
+
+.dataInfo1>p, .dataInfo2>p {
+    padding-left: 20px;
+}
+
+.descriptionText {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.descriptionText>p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #555D67;
+    margin-left: 50px;
+    width: 100%;
+    text-align: justify;
 }

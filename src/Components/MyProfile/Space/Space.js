@@ -4,6 +4,8 @@ import Footer from "../../Footer/Footer";
 import Image1 from "./ImagesSpace/Image1.png";
 import Image2 from "./ImagesSpace/Image2.png";
 import Image3 from "./ImagesSpace/Image3.png";
+import calendar from "./ImagesSpace/calendar.png";
+import schedule from "./ImagesSpace/schedule.png";
 import "./Space.css";
 
 const Space = () => {
@@ -32,8 +34,30 @@ const Space = () => {
             <p>Visit this space in person following our new safety measures.</p>
             <button className='bookTourButton'><p>Book a Tour</p></button>
         </div>
+        <div className='spaceImages'>
+            <div className='openingHours'>
+                <h3>Opening hours:</h3>
+                <div className='dataInfo1'>
+                    <img src={calendar}></img>
+                    <p>Monday - Friday</p>
+                </div>
+                <div className='dataInfo2'>
+                    <img src={schedule}></img>
+                    <p>07:00 am - 23:00 pm</p>
+                </div>
+            </div>
 
-    </div>
+        <div className='openingHours'>
+                <h3>Description:</h3>
+                <div className='descriptionText'>
+                    <p>
+                    WIRED magazine included our central London building in their ten "UK's best co-working spaces (that aren't WeWork)". And now we're at it again, brand new for 2021 - bringing the coolest, cosiest workplace to the Royal Docks, on a pedestrianised street alongside a coffee shop, a nursery, an ice cream factory and a gym.
+                    5 minutes walk from "Royal Victoria" and "Canning Town" stations - similarly to our flagship space in Farringdon, we're providing the essentials at great affordable startup & freelancer friendly rates. We're in a new ultra-sustainable building, powered by 100% renewable energy with a focus on minimising our impact on the world.
+                    </p>
+                </div>
+            </div>
+</div>
+        </div>
   )
 }
 

@@ -8,6 +8,7 @@ body {
     height: 453px;
     display: flex;
     justify-content: space-between;
+    margin-top: 70px;
 }
 
 /* LeftSide of Footer */
