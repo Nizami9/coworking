@@ -31,7 +31,7 @@
 .spaceReservations {
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 35%;
     margin-left: 60px;
     height: 200px;
     margin-top: 30px;
@@ -46,14 +46,22 @@
     color: #262626;
 }
 
+
 .spaceReservations>p {
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 130%;
-    color: #555D67;
+    color: #9AA0B3;
     width:305px;
+    margin-top: 10px;
+/* or 18px */
+
+
+/* Gray / 1 */
+
+color: #9AA0B3;
 }
 
 p.spacePrice {
@@ -66,15 +74,37 @@ p.spacePrice {
     margin: 20px 0px 20px;
 }
 
-.spaceReservations>button {
+
+
+.bookTourButton {
+    background-color: #F5F5F5;
+    border: 2px solid #FF7848;
     width:305px;
-    background: #FF7848;
     height: 45px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.reserveSpaceP {
+.bookTourButton>p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #FF7848;
+}
+
+.reserveSpaceButton {
+    background-color: #FF7848;
+    width:305px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.reserveSpaceButton>p {
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
@@ -82,4 +112,38 @@ p.spacePrice {
     line-height: 120%;
     text-align: center;
     color: #FFFFFF;
+}
+
+span.info {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #555D67;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.hrOr {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+
+.hrOr>hr {
+    width: 26.7%;
+    height: 0px;
+    margin-top: 12px;
+    background-color: #DCE3ED
+}
+
+.hrOr>p {
+    margin: 0 10px 0 10px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #9AA0B3;
+
 }

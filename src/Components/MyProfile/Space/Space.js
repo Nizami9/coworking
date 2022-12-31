@@ -20,13 +20,17 @@ const Space = () => {
         </div>
         <div className='spaceReservations'>
                 <h1>Keyboards & Dreams Royal </h1>
-                <p>Available 57 desks</p>
+                <span className='info'>Available 57 desks</span>
             <p className='spacePrice'>25$ / day</p>
-            <p>Reserve online</p>
-            <button><p className='reserveSpaceP'>Reserve space</p></button>
-            <p></p>
+            <p className='reserveOnlineP'>Reserve online</p>
+            <button className='reserveSpaceButton'><p>Reserve space</p></button>
+            <div className='hrOr'>
+            <hr />
+            <p>or</p>
+            <hr />
+            </div>
             <p>Visit this space in person following our new safety measures.</p>
-            <button></button>
+            <button className='bookTourButton'><p>Book a Tour</p></button>
         </div>
 
     </div>
