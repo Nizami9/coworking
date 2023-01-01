@@ -44,6 +44,8 @@
     line-height: 130%;
     color: #555D67;
     padding-left: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .leftContInputs {
@@ -55,23 +57,27 @@
 
 .locationInput {
     width: 100%;
-    position: relative;
+    height: 50px;
+    margin-bottom: 20px;
+margin-right: 10px;
+margin-top: 20px;
 }
 
-/* .locationInput>i {
-    position: relative;
-    top: 5px;
-} */
+.locationInput>i {
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 20px;
+    border: 1px solid #DCE3ED;
+}
 
 .locationInput>input {
 box-sizing: border-box;
 background: #FFFFFF;
 border: 1px solid #DCE3ED;
-width: 80%;
+width: 73.5%;
 height: 50px;
-margin-bottom: 20px;
-margin-right: 10px;
-margin-top: 20px;
 }
 
 #selectOfficeType, #dateOption {
@@ -83,7 +89,11 @@ width: 100%;
 }
 
 #selectOfficeType, #dateOption {
-width: 40%;
+width: 38.1%;
+}
+
+#selectOfficeType {
+    margin-left: 25px;
 }
 
 .selectDateOffice {

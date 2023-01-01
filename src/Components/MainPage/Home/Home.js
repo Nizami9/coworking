@@ -9,8 +9,8 @@ const Home = () => {
         <p>From a single desk to a whole building <br/>The choice is yours</p>
         <div className="leftContInputs">
           <div className="locationInput">
-            {/* <i class="fa fa-user icon"></i> */}
-            <input type='text'></input>
+            <i class="fa fa-user icon"></i>
+            <input type='text' placeholder="Hamburg"></input>
           </div>
           <div className="selectDateOffice">
           <input type='date' id="dateOption"></input>
