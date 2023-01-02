@@ -10,6 +10,7 @@ import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide"
 import MyProfile from "./Components/MyProfile/MyProfile";
 import Space from "./Components/MyProfile/Space/Space";
 import Profile from "./Components/ProfilePage/Profile";
+import DateSelect from "./Components/CalendarPage/DateSelect";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/space" element={<Space />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/select-date" element={<DateSelect />} />
       </Routes>
     </BrowserRouter>
     <Footer />
