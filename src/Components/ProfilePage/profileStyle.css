@@ -15,7 +15,7 @@
     display: inline-flex;
     margin-top: 2%;
     font-size: small;
-    font-family: outfit;
+    font-family: 'Outfit';
 }
 .name-flex input,.email-flex input{
     width:20em;
@@ -74,12 +74,12 @@
 }
 
 h2{
-font-family:Monument Extended;
+font-family:'Monument';
 line-height: 135%;
 }
 button{
     width:12.5em;
-    background-color: orange;
+    background-color:#FF7848;
     margin-top: 4%;
     border: none;
     height:2.5em;
@@ -90,7 +90,7 @@ button{
 .address h5,.my-profile-col h5{
     margin-top: 1%;
     margin-bottom: -1%;
-   font-family: outfit;
+   font-family: 'Outfit';
    font-weight: 900;
 }
 
