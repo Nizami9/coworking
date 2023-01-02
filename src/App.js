@@ -9,6 +9,7 @@ import Home from "./Components/MainPage/Home/Home";
 import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide";
 import MyProfile from "./Components/MyProfile/MyProfile";
 import Space from "./Components/MyProfile/Space/Space";
+import Profile from "./Components/ProfilePage/Profile";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/space" element={<Space />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
     <Footer />
