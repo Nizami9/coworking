@@ -11,6 +11,7 @@ import MyProfile from "./Components/MyProfile/MyProfile";
 import Space from "./Components/MyProfile/Space/Space";
 import Profile from "./Components/ProfilePage/Profile";
 import DateSelect from "./Components/CalendarPage/DateSelect";
+import ChangePassword from "./Components/ChangePassword/ChangePassword";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/space" element={<Space />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/select-date" element={<DateSelect />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </BrowserRouter>
     <Footer />

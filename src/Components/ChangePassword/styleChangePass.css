@@ -1,0 +1,63 @@
+.p10-grid{
+    margin:5% 12%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-family: 'Outfit';
+    font-size: smaller;
+    }
+    .p10-pic-col,.p10-profile-col,.p10-form{
+      display: flex;
+      flex-direction: column;
+      width:100%;
+    }
+    .p10-pic-col img{
+      margin-top:1.6em;
+      width:6em;
+      border: 1px solid black;
+      border-radius: 5rem;
+    }
+    input{
+      width:80%;
+    }
+    .p10-form button{
+      width:30%;
+      background-color: orange;
+      margin-top: 8%;
+      margin-left: 50%;
+      border: none;
+      height:2.5em;
+  }
+  h2{
+      font-family: 'Monument';
+      font-weight: 130%;
+      line-height: 135%;
+      margin-bottom: 5%;
+  }
+  h4{
+    font-weight: 300;
+  }
+  .p10-form label{
+      font-size: smaller;
+  }
+  .p10-form div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top:3%;
+  }
+  
+  
+  
+  @media only screen and  (min-width: 37em) and (max-width: 57em) {
+      .p10-grid{ 
+           font-size : x-small;
+      }
+  }
+  
+  @media only screen and (max-width: 37em) {
+      .p10-grid{ 
+          font-size : xx-small;
+     }
+  }
+  
+ 
