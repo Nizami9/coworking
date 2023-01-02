@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.locations-container {
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+
+  border-right: 1px solid #dce3ed;
+
+  margin-top: 100px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 50px;
+}
+
+.budget {
+  width: 265px;
+}
+
+.budget-t {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #262626;
+}
+
+.annually {
+  padding-left: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.checkbox-input {
+  display: flex;
+}
+
+.checkbox-container {
+  margin: 0;
+  padding-bottom: 60px;
+  padding-left: 100px;
+}
+.check {
+  width: 24px;
+  height: 24px;
+}
+
+.office-sp {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.duration {
+  padding-bottom: 25.77px;
+}
+
+.line {
+  background-color: #dce3ed;
+  display: flex;
+  justify-content: flex-end;
+  height: 700px;
+  width: 3px;
+  padding-right: 19px;
+}
+
+.list {
+  width: 800px;
+  display: flex;
+}
+
+.img {
+  width: 305px;
+}
+.card {
+  width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 24px;
+  border-bottom: 1px solid #dce3ed;
+  border-top: 1px solid #dce3ed;
+}
+ .img {
+  display: flex;
+  justify-content: flex-start;
+  width: 305px;
+  height: 167px;
+}
+.list-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 600px;
+}
+.view-list {
+  color: #555d67;
+  text-transform: capitalize;
+  font-family: "Outfit";
+
+  font-weight: 500;
+  font-size: 20px;
+
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+
+.list-wrapper .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card .title {
+  display: block;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+.title {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 110%;
+}
+
+.address-city-country {
+  width: 500px;
+  display: flex;
+
+  align-items: flex-start;
+  padding-top: 45px;
+  gap: 20px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.area-maxPeople-costperDay {
+  width: 500px;
+  display: flex;
+  gap: 20px;
+  padding-top: 47px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.budget-button {
+  display: flex;
+  padding-top: 20px;
+  width: 265px;
+  gap: 10px;
+}
+.apply-button {
+  display: flex;
+  padding-top: 60px;
+  width: 265px;
+  gap: 10px;
+}
+.budget-wrapper {
+  width: 120px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.apply-wrapper {
+  width: 120px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+}
+/* 
+.locations{
+  width: 1000px;
+  background-color: aqua;
+}
+.checkbox-container{
+  width: 700px;
+} */

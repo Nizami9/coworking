@@ -1,0 +1,35 @@
+*{
+  padding: 0;
+  margin: 0;
+  
+}
+
+.reserveSpace-container{
+  
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 2fr 4fr ;
+  gap: 2px;
+}
+.reserve-space{
+width: 840px;
+height: 500px;
+display: flex;
+justify-content: center;
+}
+
+.information{
+  width: 600px;
+
+}
+.inputForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5px solid green;
+  padding-top: 67px;
+  
+}
+.form-2{
+  padding-bottom: 30px;
+}

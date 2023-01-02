@@ -1,0 +1,26 @@
+*{
+  padding: 0;
+  margin: 0;
+  
+}
+
+.paymentSelection-Container{
+  
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  gap: 2px;
+}
+ .reserve-space-payM{
+width: auto;
+height: 700px;
+display: flex;
+justify-content: center;
+
+}
+
+.paymentSelection-payM {
+  width: auto;
+  height: 700px;
+  
+} 

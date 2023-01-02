@@ -16,6 +16,7 @@
     "react-calendar": "^4.0.0",
     "react-css-transition-replace": "^4.0.5",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.3",
     "react-icons": "^4.7.1",
     "react-images-uploading": "^3.1.7",
     "react-phone-input-2": "^2.15.1",
