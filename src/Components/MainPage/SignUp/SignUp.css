@@ -1,0 +1,80 @@
+.signUpSection {
+    display: flex;
+    width: 100%;
+}
+
+.signUpRightSide {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+
+.signUpRightSide > h1 {
+    width: 100%;
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;
+    color: #262626;
+    margin-bottom: 40px;
+}
+
+.signUpRightSideH3 {
+    width: 100%;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+.GIinput {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    width: 30%;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #555D67;
+}
+
+.inputGI {
+    margin: 5px;
+    box-sizing: border-box;
+    width: 40%;
+    height: 44px;
+    border: 1px solid #DCE3ED;
+    border-radius: 4px;
+}
+
+.signUpRightSide > form {
+    width: 100%;
+}
+
+.signUpButton {
+    width:305px;
+    height:45px;
+    background: #FF7848;
+    border: none;
+}
+
+.signUpButton>p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
