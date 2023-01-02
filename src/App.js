@@ -7,26 +7,22 @@ import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp";
 import Home from "./Components/MainPage/Home/Home";
 
-
 function App() {
   return (
-    
     <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-<BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/locations"  />
-        
-        <Route path="/availablespace" element={<Locations />} />
-        
-        <Route path="/community" element={<Community />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
-    </BrowserRouter>
-    <Footer />
+          <Route path="/locations" element={<Locations />} />
+
+          <Route path="/community" element={<Community />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
