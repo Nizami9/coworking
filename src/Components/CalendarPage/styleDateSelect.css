@@ -1,0 +1,153 @@
+.cal-page-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 5%;
+  }
+  
+  /*  react calendar styles   */
+  .calendar {
+    margin: 4% 0;
+  }
+  .calendar .react-calendar {
+    border: none;
+    margin-top: 5%;
+  }
+  .calendar .react-calendar__tile--active {
+    background: #ff7848;
+    color: white;
+  }
+  .calendar .react-calendar__tile--active:enabled:hover,
+  .calendar .react-calendar__tile--active:enabled:focus {
+    background: #ff7848;
+  }
+  
+  /*  react timer styles   */
+  .timer .inputWrapper__dropdown span:hover {
+    color: #ff7848;
+    background-color: white;
+  }
+  
+  .timer .inputWrapper__dropdown span.is-active,
+  .inputWrapper__dropdown span:hover {
+    color: #ff7848;
+    background-color: white;
+  }
+  .timer-div,
+  .inline-flex-comp {
+    display: inline-flex;
+    margin-top: 4%;
+    width: 80%;
+    justify-content: space-between;
+  }
+  .inline-flex-comp {
+    margin-top: 1%;
+    align-items: center;
+  }
+  
+  .from-time-div,
+  .to-time-div {
+    margin: 3% 2%;
+    display: flex;
+    flex-direction: column;
+  }
+  .clickedDropdown-btn {
+      margin-top: 45%;
+      background-color: #ff7848;
+      color: white;
+  }
+  .continue-btn  {
+     margin-top: 15%;
+     background-color: #ff7848;
+     color: white;
+  }
+  h4 {
+    font-family: "Outfit";
+    font-size: 20px;
+    margin-top:3%;
+  }
+  .inline-flex-comp h5 {
+    margin-right: 0;
+    margin-top: 2%;
+  }
+  .back-link {
+    display: flex;
+    text-decoration: none;
+    margin: 2% 7%;
+  }
+  .back-link img {
+    width: 2.5em;
+    padding-right: .5%;
+  }
+  .back-link span,
+  .show-time {
+    font-size: smaller;
+  }
+  .back-link span {
+    display: inline-flex;
+    align-items: center;
+    color: #ff7848;
+  }
+  .select-date-col {
+    margin: 1% 5%;
+  }
+  
+  .space-col h1 {
+    font-family: "Monument";
+    text-align: center;
+  }
+  
+
+  
+/* -------- Single Space Page Stylings ----------- */
+
+.p4-space-wrapper{
+    font-family: 'Outfit';
+}
+
+.p4-img-and-details{
+    display: inline-flex;
+    
+}
+.p4-img{
+    margin:3% 0;
+    margin-right: 3%;
+    width:40%;
+}
+.p4-title-and-details{
+    margin:1% 0;
+    width:100%
+}
+
+.p4-address-city-country,.show-date{
+    font-size: small;
+    margin-top: 27%;
+   
+}
+hr{
+    width:90%;
+    margin:0 0;
+    border-top: 2px solid #DCE3ED;
+}
+.p4-location-icon{
+    width:5%;
+    margin-right:2%;
+}
+.clock-icon{
+    width:6%;
+    margin-right:4%;
+}
+.date-time{
+    margin-top:3%;
+}
+.calendar-icon{
+    width:4%;
+    margin-right:2%;
+    color: #DCE3ED;
+
+}
+.show-date-time{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:3%;
+}
