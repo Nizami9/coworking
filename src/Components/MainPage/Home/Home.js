@@ -22,7 +22,7 @@ const Home = () => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-          <button><p>Search</p></button>
+         <button><p > <NavLink to ="availablespace" >Search</NavLink></p></button>
         </div>
       </div>
       <div className="rightContainerMain"></div>

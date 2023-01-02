@@ -1,14 +1,19 @@
+import ReserveSpace from "./Home/UserReserveSpace";
+import "./UserReserveSpace.css";
+import Information from "./Home/Information";
+import React from "react";
+
+
 const Community = () => {
   return (
-      <div
-          style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '100vh'
-          }}
-      >
-          <h1>community</h1>
+      <div className="reserveSpace-container">
+          
+          <div>
+            <Information />
+          </div>
+          <div>
+            < ReserveSpace />
+          </div>
       </div>
   );
 };

@@ -1,16 +1,19 @@
-import React from 'react'
+import React from "react";
+import PaymentSelection from "./Home/PaymentSelection";
+import UserReserveSpace from "./Home/UserReserveSpace";
+import "./paymentSelection.css";
 
 const SignUp = () => {
   return (
-    <div   style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh'
-  }}>
-         <h1>Sign Up</h1>
+    <div className="paymentSelection-Container">
+      <div>
+        <PaymentSelection />
+      </div>
+      <div>
+        <UserReserveSpace />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

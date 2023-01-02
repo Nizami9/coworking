@@ -1,16 +1,21 @@
-import React from 'react'
+import List from "./Home/List";
+import Checkbox from "./Checkbox";
+import "./locations.css";
 
 const Locations = () => {
   return (
-    <div  style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh'
-    }} >
-      <h1>locations</h1>
-    </div>
-  )
-}
+    <div className="locations-container">
+      
+      <div className="checkbox"> 
+      <Checkbox /> 
+      </div>
 
-export default Locations
+      <div className="list">
+        <List />
+      </div>
+      <div></div>
+    </div>
+  );
+};
+
+export default Locations;
