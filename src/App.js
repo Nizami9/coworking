@@ -13,8 +13,8 @@ import Profile from "./Components/ProfilePage/Profile";
 import DateSelect from "./Components/CalendarPage/DateSelect";
 import ChangePassword from "./Components/ChangePassword/ChangePassword";
 import UsersLocations from "./Components/ReserveComponents/UsersLocations";
-  import Community from "./Components/ReserveComponents/Community";
-  import Userpayment from "./Components/ReserveComponents/Userpayment";
+import Community from "./Components/ReserveComponents/Community";
+import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/ThankyouPage/Thankyou";
 
 function App() {
