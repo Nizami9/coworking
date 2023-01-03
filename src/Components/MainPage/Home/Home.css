@@ -1,3 +1,7 @@
+body {
+    min-width: 521px;
+}
+
 @font-face {
     font-family: 'Monument';
     src: local('MonumentExtended-Regular.otf'), url(./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf) format('truetype');
@@ -108,6 +112,10 @@ width: 38.1%;
     margin-top: 20px;
 }
 
+.bottomContainerLeft {
+    margin: 0 auto;
+}
+
 .leftContInputs>button>p {
     font-family: 'Outfit';
     font-style: normal;
@@ -155,7 +163,7 @@ width: 38.1%;
 }
 
 .citesOptionPictures {
-    margin: 80px 80px 0px 120px;
+    margin: 80px 80px 0px 80px;
     width: 90%;
     height: 70%;
     display: flex;
@@ -249,3 +257,37 @@ color: #FFFFFF;
     background-repeat: no-repeat;
 }
 /* BootomSide */
+
+@media screen and (max-width: 1160px) {
+
+    .bottomContainerLeft>h1 {
+        padding-top: 0px;
+    }
+    .leftContainerMain {
+        width: 100%;
+    }
+
+    .rightContainerMain {
+        display: none;
+    }
+
+    .pic2, .pic24, .pic3, .pic4, .pic5, .pic6 {
+        display: none
+    }
+
+    .bottomContainerRight {
+        width: 100%;
+    }
+
+    .bottomContainerLeft {
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    .pic1 {
+        margin: 0 auto;
+    }
+    .citesOptionPictures {
+        margin: 0px;
+    }
+}

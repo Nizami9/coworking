@@ -27,12 +27,15 @@
     justify-content: center;
     align-items: center;
 }
-.thankyou-page button{
+.thankyou-page .link{
         width:12.5em;
         background-color: #FF7848;
         color:white;
         border: none;
         height:2.5em;
-        margin-top:8%;
-        cursor: pointer;
+        margin-top:4%;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
