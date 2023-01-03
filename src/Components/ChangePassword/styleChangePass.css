@@ -28,11 +28,12 @@
       height:2.5em;
   }
   h2{
-      font-family: 'Monument';
-      font-weight: 130%;
-      line-height: 135%;
-      margin-bottom: 5%;
-  }
+    font-family: 'Monument';
+    font-weight: 130%;
+    line-height: 135%;
+    margin-bottom: 5%;
+}
+
   h4{
     font-weight: 300;
   }
@@ -45,6 +46,9 @@
       justify-content: center;
       margin-top:3%;
   }
+  .p10-form p{
+    font-size: 11px;
+ }
   
   
   
@@ -52,12 +56,19 @@
       .p10-grid{ 
            font-size : x-small;
       }
+      .p10-form p{
+        font-size: 8px;
+     }
   }
   
   @media only screen and (max-width: 37em) {
       .p10-grid{ 
           font-size : xx-small;
      }
+     .p10-form p{
+        font-size: 6px;
+     }
+     
   }
   
  
