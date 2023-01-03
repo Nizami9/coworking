@@ -1,71 +1,110 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-
 import React from "react";
 
-const Information = () => {
-  const { register, handleSubmit } = useForm();
-  const [data, setData] = useState("");
+// import React, { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { Link } from "react-router-dom";
 
-  return (
-    <div className="information">
-      <div className="">
-        <h3>Enter information for your order</h3>
+export default class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // handleChange(event) {
+  //   this.setState({value: event.target.value});
+  // }
+
+  // handleSubmit(event) {
+  //   alert('A : ' + this.state.value);
+  //   event.preventDefault();
+  // }
+
+
+
+  render() {
+    return (
+      <div className="information">
+        <div>
+          <Link className="back-link" to="/back">
+            <img
+              alt="back-arrow-icon"
+              src={require("../../icons/orange-arrow.png")}
+            />
+            <span>Go back</span>
+          </Link>
+        </div>
+        <div className="info-title">
+          {" "}
+          <h3>Enter information for your order</h3>
+        </div>
+        <div className="form-1-wrapper">
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              <h6>Name</h6>
+              <input
+                className="form"
+                style={{
+                  height: "44px",
+                  width: "522px",
+                }}
+                type="name"
+                placeholder="Name"
+              />
+              <h6>Email</h6>
+              <input
+                className="form"
+                style={{
+                  height: "44px",
+                  width: "522px",
+                }}
+                type="text"
+                placeholder="email"
+              />
+              <h6>Company</h6>
+              <input
+                className="form"
+                style={{
+                  height: "44px",
+                  width: "522px",
+                }}
+                type="text"
+                placeholder="Company"
+              />
+              <h6>Phone Number</h6>
+              <PhoneInput
+                country={"de"}
+                value={this.state.phone}
+                onChange={(phone) => this.setState({ phone })}
+              />
+              <div className="input-message">
+                <input
+                  className="form"
+                  style={{
+                    height: "120px",
+                    width: "522px",
+                  }}
+                  type="text"
+                  placeholder="Message or additional reguirement"
+                />
+              </div>
+            </label>
+            <input
+              className="form"
+              style={{
+                height: "44px",
+                width: "305px",
+                background: " #FF7848",
+              }}
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
       </div>
-      {/* <div className="line">line</div> */}
-      <div className="inputForm">
-        <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
-          <h6>Name</h6>
-          <input className="form-2"
-            style={{
-              height: "44px",
-              width: "522px",
-              
-            }}
-            {...register("Name")}
-            placeholder="Name"
-          />
-          <br></br>
-          <h6>Email</h6>
-          <input className="form-2"
-            style={{
-              height: "44px",
-              width: "522px",
-              
-            }}
-            {...register("email")}
-            placeholder="email"
-          />
-          <br></br>
-          <h6>Company Name</h6>
-          <input className="form-2"
-            style={{
-              height: "44px",
-              width: "522px",
-           
-            }}
-            {...register("companyName")}
-            placeholder="company name"
-          />
-          <br></br>
-          <div>
-
-          
-          <textarea
-            {...register("mmm")}
-            placeholder="Message or additional requirements"
-          />
-          <p>{data}</p>
-          <input style={{height:"44px",
-          width:"200px",
-          background:"#FF7848",
-         
-          
-          }} type="submit" />
-    </div>
-        </form>
-      </div></div>
-  );
-};
-
-export default Information;
+    );
+  }
+}
