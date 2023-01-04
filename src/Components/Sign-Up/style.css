@@ -32,7 +32,7 @@
     border: 1px solid #FF7848;
     color: #fff;
     padding: 10px 20px;
-    width: 35em;
+    width: 24em;
   }
   
   input[type="submit"]:hover {
@@ -41,7 +41,8 @@
   
   .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 3%;
   }
   
   .login-form {
@@ -76,6 +77,7 @@
   
   .not-member-container{
     padding: 0.5rem 0;
+    margin-left:-15%;
     text-align: center;
   }
   
@@ -84,14 +86,31 @@
     color :#FF7848;
   }
 
-  @media only screen and  (min-width: 40em) and (max-width: 70em) {
+  @media only screen and  (min-width: 39rem) and (max-width: 70em) {
     /* For mobile ph */
   .login-form{
-    width: 35rem;
+    width: 37rem;
+}
+.button-container>input[type="submit"] {
+  width: 26.5em;
+  padding: 6px 20px;
+}
+.not-member-container{
+  text-align: left;
+  margin-left: 3%;
 }
  }
- @media only screen and (max-width: 39em) {
+ @media only screen and (max-width: 39rem) {
     .login-form{
-        width: 18rem;
+        width: 27rem;
     }
+    .button-container>input[type="submit"] {
+      width: 18em;
+      padding: 6px 20px;
+    }
+    .not-member-container{
+      text-align: left;
+      margin-left: 3%;
+    }
+    
   }
