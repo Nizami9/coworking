@@ -57,12 +57,12 @@ body{
   color: #262626;
 }
 
-/* .annually {
-  padding-left: 8px;
+.annually {
+  width: 100%;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
-} */
+}
 
 .checkbox-input {
   display: flex;
@@ -95,7 +95,6 @@ body{
 .card {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
   padding-top: 24px; 
   border-bottom: 1px solid #dce3ed;
@@ -104,8 +103,8 @@ body{
  img.img {
   display: flex;
   justify-content: flex-start;
-  width: 300px;
-  height: 167px;
+  width: 50%;
+  height:auto;
 }
 .list-wrapper {
   display: flex;
@@ -133,6 +132,7 @@ body{
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 15px;
+  width: 100%;
 }
 .title {
   font-family: "Outfit";
@@ -149,9 +149,11 @@ body{
   gap: 20px;
   font-weight: 400;
   font-size: 16px;
+  width: 100%;
 }
 
 .area-maxPeople-costperDay {
+  width:100%;
   display: flex;
   gap: 20px;
   padding-top: 47px;
@@ -195,6 +197,16 @@ body{
   flex-wrap: wrap;
 }
 
+.area-maxPeople-costperDay {
+  padding-top: 10px;
+}
+
+img.img {
+  margin: 10px;
+  width: 50%;
+  height: 50%;
+}
+
 .checkbox {
   height: 100vh;
   display: block;
@@ -208,4 +220,8 @@ body{
 .card, .check-wrapper {
   border: none;
 }
+
+/* .address-city-country {
+  width: 90%;
+} */
 }

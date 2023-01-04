@@ -30,7 +30,6 @@ const Checkbox = ({ label }) => {
           <div className="checkbox-input">
             <input className="check" type="checkbox" checkbox={Checkbox} />
             <div className="annually">
-              {" "}
               <p>Annually</p>
             </div>
           </div>

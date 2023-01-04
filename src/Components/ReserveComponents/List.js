@@ -8,10 +8,8 @@ const List = () => {
         Space.map((space) => {
           return (
             <div className="card" key={space.id}>
-              <div>
                 {" "}
                 <img src={space.imgUrl} alt="img" className="img" />
-              </div>
               <div className="list-wrapper">
                 <div className="title">
                   {space.title}
