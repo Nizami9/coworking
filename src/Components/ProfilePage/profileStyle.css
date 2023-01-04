@@ -20,11 +20,6 @@
 .name-flex input,.email-flex input{
     width:20em;
 }
-.react-tel-input .form-control {
-    width:19.5em;
-    border: 1px solid rgb(133, 133, 133);
-}
-
 .address-flex{
     margin-top: -1%;
 }
@@ -104,8 +99,15 @@ button{
     border :1px solid ;
     border-radius: 50%;
 }
+
+/* react phone input styling */
+.react-tel-input .form-control {
+    width:19.5em;
+    border: 1px solid rgb(133, 133, 133);
+    margin-top: 1px !important;
+}
 .react-tel-input .flag-dropdown{
-    top: -10%;
+    top: -12%;
     bottom:1%;
 }
 
@@ -124,6 +126,7 @@ button{
     .react-tel-input .form-control {
         width: 25em;
         border: 1px solid rgb(133, 133, 133);
+        margin-top: 1px !important;
     }
     .profile-list li{
         margin-top:0;
@@ -186,9 +189,11 @@ button{
     .react-tel-input .form-control {
         width:100%;
         border: 1px solid rgb(133, 133, 133);
+        margin-top: 1px !important;
     }
     .react-tel-input .flag-dropdown{
         top: -16%;
         bottom: 1%;
     }
+   
   }
