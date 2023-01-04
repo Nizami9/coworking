@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPhoneInput from "react-phone-input-2";
+import 'react-phone-input-2/lib/style.css';
 import './profileStyle.css'
 
 import ImageUploader from './ImageUploader';
@@ -53,15 +54,13 @@ function Profile() {
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Phone </label>
-                        {/* <ReactPhoneInput
-                            inputExtraProps={{
-                                required: true,
-                                autoFocus: true
-                            }}
-                            defaultCountry={"de"}
+                        <ReactPhoneInput
+                            className='phone-input'
+                            country={'de'}
                             value={phoneNumber}
-                        /> */}
-                        <input type='tel' placeholder='Phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+                            onChange={phone => setPhoneNumber(phone)}
+                        />
+                        {/* <input type='tel' placeholder='Phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" /> */}
                     </div>
                 </div>
                 <div className='address'><h5>Address</h5></div>

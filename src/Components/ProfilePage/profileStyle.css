@@ -20,6 +20,11 @@
 .name-flex input,.email-flex input{
     width:20em;
 }
+.react-tel-input .form-control {
+    width:19.5em;
+    border: 1px solid rgb(133, 133, 133);
+}
+
 .address-flex{
     margin-top: -1%;
 }
@@ -29,7 +34,7 @@
 .number-input {
     margin-left: 1%;
 }
-.name-flex input,.email-flex input,.address-flex input,.city-flex input{
+.name-flex input,.email-flex input,.address-flex input,.city-flex input,.phone-input{
     height: 2.5em;
 }
 .profile-photo{
@@ -99,6 +104,10 @@ button{
     border :1px solid ;
     border-radius: 50%;
 }
+.react-tel-input .flag-dropdown{
+    top: -10%;
+    bottom:1%;
+}
 
 
 
@@ -111,6 +120,10 @@ button{
     }
     .name-flex input,.email-flex input,.address-flex input,.city-flex input{
         width: 26.5em;
+    }
+    .react-tel-input .form-control {
+        width: 25em;
+        border: 1px solid rgb(133, 133, 133);
     }
     .profile-list li{
         margin-top:0;
@@ -129,6 +142,10 @@ button{
     .number-input {
         margin-left: 0;
     }
+    .react-tel-input .flag-dropdown{
+        top: -12%;
+        bottom: 1%;
+    }
  }
 
  @media only screen and (max-width: 37em) {
@@ -146,7 +163,7 @@ button{
         font-size: small;
         margin-left:10%;
     }
-    button,.name-flex input,.email-flex input,.address-flex input,.city-flex input{
+    button,.name-flex input,.email-flex input,.address-flex input,.city-flex input,.phone-input{
         width: 100%;
     }
     .profile-list li span{
@@ -165,5 +182,13 @@ button{
     }
     .profile-pic-div h5{
         font-size:medium;
+    }
+    .react-tel-input .form-control {
+        width:100%;
+        border: 1px solid rgb(133, 133, 133);
+    }
+    .react-tel-input .flag-dropdown{
+        top: -16%;
+        bottom: 1%;
     }
   }
