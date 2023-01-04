@@ -5,7 +5,7 @@
 
 .reserveSpace-container {
   width: 1440px;
-  height: 927px;
+  height: 727px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: "Outfit";
@@ -15,40 +15,37 @@
   width: 840px;
   height: 500px;
   display: flex;
-  /* justify-content: center; */
 }
 
 .information {
-  width: 600px;
-  /* display: flex; */
-  /* justify-content: center; */
+  width: 700px; 
 }
 .info-title {
   height: 90px;
-  width: 600px;
+  width: 470px;
   display: flex;
-  justify-content: flex-start;
-  padding-top: 10px;
-  padding-left: 40px; 
-  align-items:center ;
-  font-family: "Outfit";
+  justify-content: center;
+  padding-top: 40px;
+ font-family: "Outfit";
 }
+.info-title{
+width: 500;
+display: flex;
+justify-items: flex-end;
+}
+
 .form-2 {
-  /* padding-top: 20px;
-  padding-bottom: 50px;
-  */
   height: 120px;
 }
-.form {
+  .form { 
   border-radius: 4px;
   border: 1px solid #dce3ed;
-}
+} 
 
 .form-1-wrapper {
   height: 500px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+   justify-content: center; 
 }
 
 .input-message {
@@ -94,7 +91,6 @@ p4-space-wrapper {
 }
 hr {
   width: 600px;
-  /* margin:0 0; */
   border-top: 0.7px solid #dce3ed;
 }
 .p4-location-icon {
@@ -103,7 +99,6 @@ hr {
 }
 hr {
   width: 600px;
-  /* margin:0 0; */
   border-top: 0.2px solid #dce3ed;
 }
 .p4-location-icon {
@@ -126,7 +121,7 @@ hr {
 .back-link {
   display: flex;
   text-decoration: none;
-  /* margin: 2% 7%; */
+
 }
 .back-link img {
   width: 2em;

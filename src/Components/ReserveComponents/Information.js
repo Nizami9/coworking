@@ -39,7 +39,7 @@ export default class NameForm extends React.Component {
         </div>
         <div className="info-title">
           {" "}
-          <h3>Enter information for your order</h3>
+          <h3 className="info">Enter information for your order</h3>
         </div>
         <div className="form-1-wrapper">
           <form onSubmit={this.handleSubmit}>
@@ -84,7 +84,7 @@ export default class NameForm extends React.Component {
                 <input
                   className="form"
                   style={{
-                    height: "120px",
+                   height: "120px",
                     width: "522px",
                   }}
                   type="text"
