@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React from 'react';
+import "./Locations.css";
+import SpaceData from "../../../spaceData.json";
 const Locations = () => {
   return (
     <div  style={{
@@ -8,7 +9,9 @@ const Locations = () => {
         alignItems: 'center',
         height: '100vh'
     }} >
-      <h1>locations</h1>
+      {SpaceData.map(space =>
+          space.title + space.counrty + space.city
+        )}
     </div>
   )
 }
