@@ -33,19 +33,56 @@ export const NavLink = styled(Link)`
   }
 `;
 
+
+
+
+
+export const DropdownList = styled.div`
+display: none;
+color: #fff;
+@media screen and (max-width: 768px) {
+  display: flex; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: green;
+  min-width:150px;
+  height:20%;
+  padding:10px 10px;
+  font-size: 1rem;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+  &:hover {
+    color: black;
+  }
+}
+`;
+
+
 export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
   @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -20%;
     right: 0;
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+    &:hover {
+      color: black;
+      display:flex;
+      >Dropdown {
+        display:flex;
+      }
+    }
   }
 `;
+
 
 export const NavMenu = styled.div`
   display: flex;
@@ -84,3 +121,4 @@ export const NavBtnLink = styled(Link)`
     color: #808080;
   }
 `;
+

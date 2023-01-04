@@ -24,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-time-picker-input": "^2.0.10",
     "styled-components": "^5.3.6",
+    "styled-dropdown-component": "^4.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
