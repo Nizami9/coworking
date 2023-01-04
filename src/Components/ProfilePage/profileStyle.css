@@ -34,15 +34,17 @@
 }
 .profile-photo{
     width:6em;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5rem;
     position: relative;
 }
+
+
 .cam-icon{
     position: absolute;
     width:1.8em;
-    margin-top: -3%;
-    margin-left: 6%;
+    margin-top: -35%;
+    margin-left: 85%;
     border: 1px solid white;
     border-radius: 5rem; 
 }
@@ -93,7 +95,10 @@ button{
    font-family: 'Outfit';
    font-weight: 900;
 }
-
+.profile-img{
+    border :1px solid ;
+    border-radius: 50%;
+}
 
 
 

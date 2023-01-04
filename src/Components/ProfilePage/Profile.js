@@ -14,27 +14,15 @@ function Profile() {
     const [phoneNumber, setPhoneNumber] = useState();
     const [imgUrl, setImgUrl] = useState(require('../../icons/profile-icon.png'));
 
-    const handleImgSelect = (event) => {
-        let fileName = event.target.files[0];
-        const objectURL = URL.createObjectURL(fileName);
-        setImgUrl(objectURL);
-    }
+
 
 
     const profileComponent = (
         <div className='main-grid'>
             <div className='pic-col'>
                 <div className='profile-pic-div'>
-                    {/* <img className='profile-photo' alt='profile-pic' src={require('../../pofile-images/cat.jpeg')} /> */}
-                    <div aria-hidden="true">
-                            <input type="file" onChange={handleImgSelect} accept="image/*" style={{ display: 'none' }} />
-                           
                             {<ImageUploader />}
-                            <img className='cam-icon' alt='camera-icon' src={require('../../icons/camera.png')} />
-                            {/* <img className='profile-photo' id="uploadedImage" src={imgUrl} alt=" image" style={{ width: 100 }} /> */}
-                    </div>
-
-                    <h5>hello me</h5>
+                           <h5>hello me</h5>
                 </div>
                 <div className='profile-list'>
                     <ul>
