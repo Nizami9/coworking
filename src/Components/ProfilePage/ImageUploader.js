@@ -8,20 +8,19 @@ function ImageUploader() {
  
     const onChange = (imageList, addUpdateIndex) => {
          // data for submit
-    console.log("image list",imageList[imageList.length-1],"add update index ", addUpdateIndex);
-    setImages(imageList[imageList.length-1]);
+    console.log("image list",imageList);
+    setImages(imageList);
   };
      
   return (
     <div>
-        <ImageUploading
+         <ImageUploading
         multiple
         value={images}
         onChange={onChange}
-        maxNumber='70'
+        maxNumber='69'
         dataURLKey="data_url"
         acceptType={["jpg","png","webp"]}
-        className="uploaded-img"
       >
         {({
           imageList,
@@ -33,26 +32,30 @@ function ImageUploader() {
         }) => (
           // write your building UI
           <div className="upload__image-wrapper">
-            <img 
-            className='profile-photo'
-              src={require('../../icons/profile-icon.png')}
-              style={isDragging ? { color: "red" } : null}
+             <div
+              className='profile-photo'
+              style={isDragging ? { color: 'red' } : undefined}
               onClick={onImageUpload}
               {...dragProps}
-                />
-         
-            {/* <button onClick={onImageRemoveAll}>Remove all images</button>*/}
-            {/* {imageList.map((image, index) => (
-              <div key={index} className="profile-photo">
-                <img src={image.data_url} alt="" width="100" />
-              </div>
-            ))}  */}
-
-            
-          </div>
+            >
+       {    images.length >= 1 ? <img 
+            className='profile-img'
+            alt='profile photo'
+            src={imageList[imageList.length-1].data_url}
+            style={{width : '100px'}}
+              />  :
+              <img 
+            className='profile-img'
+            alt='prifle-pic-icon'
+            src={require('../../icons/profile-icon.png')}
+            style={{width : '100px'}}
+              />
+              }
+            <img className='cam-icon' alt='camera-icon' src={require('../../icons/camera.png')} />
+         </div>
+         </div>
         )}
       </ImageUploading>
-      
     </div>
   )
 }
