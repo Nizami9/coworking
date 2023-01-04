@@ -1,0 +1,28 @@
+[{
+    "firstName":"John",
+    "lastName":"Smith",
+    "email":"JohnSmith@gmail.com",
+    "phoneNUmber":"+44 123456789",
+    "address":"queen's Street",
+    "number":"25",
+    "city":"Berlin",
+    "counrty":"Germany",
+    "ZIP":"12346",
+    "img":"",
+    "userName":"JohnSmith",
+    "password":"JohnSmith111"
+
+},{
+    "firstName":"Venessa",
+    "lastName":"Smith",
+    "email":"VenessaSmith@gmail.com",
+    "phoneNUmber":"+44 123456789",
+    "address":"14th avenue",
+    "number":"2",
+    "city":"Frankfurt",
+    "counrty":"Germany",
+    "ZIP":"12346",
+    "img":"",
+    "password":"venessa111"
+}
+]

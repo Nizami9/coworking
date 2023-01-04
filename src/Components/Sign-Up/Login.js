@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link  } from 'react-router-dom';
 import './style.css';
+import users from '../../UserData.json';
+import { Navigate } from "react-router-dom";
 
 function Login() {
       // React States
@@ -35,11 +37,12 @@ function Login() {
 
 
     // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+    const userinfo = users.find((user) => user.userName === uname.value);
+    
 
     // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
+    if (userinfo) {
+      if (userinfo.password !== pass.value) {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
@@ -92,7 +95,7 @@ function Login() {
     <div className="app">
     <div className="login-form">
       <div className="title">Sign In</div>
-      {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+      {isSubmitted ? <Navigate to="/profile" replace={true}/> : renderForm}
     </div>
   </div>
   )
