@@ -2,11 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .containerMyProfleLeft {
     width: 30%;
-    height: 600px;
+    height: 100%;
 }
 
 
@@ -50,4 +50,10 @@
 
 hr {
     width: 100%;
+}
+
+@media screen and (max-width: 1160px) {
+    .containerMyProfle {
+        display: none;
+    }
 }
