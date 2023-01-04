@@ -19,14 +19,10 @@ const Navbar = () => {
   return (
     <>
       <Nav>
+        <Bars />
         <NavLogo to="/">
           <img src={logoImage}></img>
         </NavLogo>
-        <Bars >
-           <DropdownList hidden={false}><Link to="/" activeStyle={{ color: "black" }}>Home </Link ></DropdownList>
-           <DropdownList><Link to="/locations" activeStyle={{ color: "black" }}>Locations</Link ></DropdownList>
-           <DropdownList><Link to="/community" activeStyle={{ color: "black" }}>Community</Link ></DropdownList>
-        </Bars>
 
         <NavMenu>
           <NavLink to="/" activeStyle={{ color: "black" }}>

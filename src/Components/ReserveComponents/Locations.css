@@ -6,29 +6,51 @@
 
 .locations-container {
   width: 1440px;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
 }
-
+body{
+  background-color:  #F5F5F5;
+}
 .checkbox {
   display: flex;
   justify-content: center;
-  width: 400px;
+  width: 500px;
 
-  border-right: 1px solid #dce3ed;
+  /* border-right: 1px solid #dce3ed; */
 
-  margin-top: 100px;
+  margin-top: 10px;
+}
+.check-wrapper{
+  height: 1700px;
+  border-right:1px solid #dce3ed ;
+  padding-right: 30px;
 }
 
 .input-wrapper {
   display: flex;
   gap: 15px;
-  padding-bottom: 50px;
+   padding-bottom: 50px;
 }
 
 .budget {
   width: 265px;
+}
+.budget-wrapper{
+  border-radius: 4px;
+  background-color:white;
+  border:1px solid #dce3ed ;
+}
+
+.apply-button {
+  display: flex;
+  padding-top: 60px;
+  width: 120px;
+  gap: 10px;
+  border-radius: 17px;
+
 }
 
 .budget-t {
@@ -49,6 +71,7 @@
 
 .checkbox-input {
   display: flex;
+  width: 100px;
 }
 
 .checkbox-container {
@@ -56,9 +79,13 @@
   padding-bottom: 60px;
   padding-left: 100px;
 }
+.locations{
+  height: 1700px;
+}
 .check {
   width: 24px;
   height: 24px;
+
 }
 
 .office-sp {
@@ -69,14 +96,6 @@
   padding-bottom: 25.77px;
 }
 
-.line {
-  background-color: #dce3ed;
-  display: flex;
-  justify-content: flex-end;
-  height: 700px;
-  width: 3px;
-  padding-right: 19px;
-}
 
 .list {
   width: 800px;
@@ -90,7 +109,7 @@
   width: 800px;
   display: flex;
   justify-content: flex-start;
-  padding-top: 24px;
+   padding-top: 24px; 
   border-bottom: 1px solid #dce3ed;
   border-top: 1px solid #dce3ed;
 }
@@ -163,29 +182,30 @@
   width: 265px;
   gap: 10px;
 }
-.apply-button {
-  display: flex;
-  padding-top: 60px;
-  width: 265px;
-  gap: 10px;
-}
+
 .budget-wrapper {
   width: 120px;
   height: 40px;
   font-weight: 600;
   font-size: 16px;
+  
 }
 .apply-wrapper {
   width: 120px;
   height: 40px;
   font-weight: 600;
   font-size: 16px;
+  color: white;
+  background-color: #FF7848;
+  border-radius: 4px;
 }
-/* 
-.locations{
-  width: 1000px;
-  background-color: aqua;
+.apply{
+  width: 120px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color:#FF7848; 
+  background-color: white;
+  border-radius: 4px;
+  border:1px solid #FF7848; ;
 }
-.checkbox-container{
-  width: 700px;
-} */

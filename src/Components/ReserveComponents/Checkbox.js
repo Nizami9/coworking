@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const Checkbox = ({ label }) => {
-  const [Checkbox, setCheckbox] = useState(false);
+  const [Checkbox, setCheckbox] = useState("");
   return (
     <div className="checkbox-container">
       <div className="office-sp">
         <h3>Office Space</h3>
       </div>
-
+<div className="check-wrapper">
       <div className="duration">
         <h2>Duration</h2>
       </div>
       <div className="input-wrapper">
         <label>
           <div className="checkbox-input">
-            <input className="check" type="checkbox" checkbox={Checkbox} />
+            <input className="check" type="checkbox"  checkbox={Checkbox} />
             <div className="annually">
               <p>Daily</p>
             </div>
@@ -44,19 +44,20 @@ const Checkbox = ({ label }) => {
       </div>
       <div className="budget-button">
         <div >
-          <button className="budget-wrapper">Mini.Budget</button>
+          <button className="budget-wrapper" >Mini.Budget</button>
         </div>
         <div>
           <button className="budget-wrapper">Max.Budget</button>
         </div>
       </div>
       <div className="apply-button">
-        <div >
-          <button className="apply-wrapper">Clear</button>
+        <div className="clear-button">
+          <button className="apply">Clear</button>
         </div>
         <div>
           <button className="apply-wrapper">Apply</button>
         </div>
+      </div>
       </div>
     </div>
   );

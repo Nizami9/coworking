@@ -20,6 +20,7 @@
     "react-icons": "^4.7.1",
     "react-images-uploading": "^3.1.7",
     "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.2.13",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-time-picker-input": "^2.0.10",

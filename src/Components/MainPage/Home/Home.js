@@ -1,9 +1,14 @@
 import "./Home.css"
 import "./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf";
 import { NavLink } from "react-router-dom";
+import CS from "./ImagesHome/customerService.png";
+import calendar from "./ImagesHome/calendar.png"
+import spaces from "./ImagesHome/spaces.png";
+import user from "./ImagesHome/user.png";
+
 const Home = () => {
   return ( 
-    <div className="container">
+    <div className="containerMain">
       <div className="leftContainerMain">
         <h1>Find your perfect workspace</h1>
         <p>From a single desk to a whole building <br/>The choice is yours</p>
@@ -27,6 +32,30 @@ const Home = () => {
       </div>
       <div className="rightContainerMain"></div>
       <div className="bottomContainer">
+        <div className="mobileVersion">
+          <h2>What we offer</h2>
+          <p>Choosing our coworking - you get access to a variety of services and discounts... </p>
+          <div className="mobileContainers">
+            <img src={CS}></img>
+            <h3>Talk to an expert</h3>
+            <p>Speak to one of ourspecialists 24/7</p>
+          </div>
+          <div className="mobileContainers">
+          <img src={calendar}></img>
+            <h3>Book workspace</h3>
+            <p>Book meeting rooms and day offices now </p>
+          </div>
+          <div className="mobileContainers">
+          <img src={spaces}></img>
+            <h3>Set up a virtual office</h3>
+            <p>Start building a real presence today</p>
+          </div>
+          <div className="mobileContainers">
+          <img src={user}></img>
+            <h3>Buy a membership</h3>
+            <p>Access thousands of locations  on demand</p>
+          </div>
+        </div>
         <div className="bottomContainerLeft">
         <h1>Book a unique space for your activity</h1>
         <p>From a single desk to a whole building <br/>The choice is yours</p>
