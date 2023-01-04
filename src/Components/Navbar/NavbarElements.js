@@ -45,13 +45,22 @@ export const Bars = styled(FaBars)`
     font-size: 1.8rem;
     cursor: pointer;
   }
+  @media screen and (max-width: 425px) {
+    margin-right: -100px;
+  }
+  @media screen and (max-width: 375px) {
+    margin-right: -150px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-right: -200px;
+  }
 `;
 
 
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  margin-right: 0px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -62,9 +71,6 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: 24px;
-
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 `;
 

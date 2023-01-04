@@ -40,7 +40,6 @@ const Checkbox = ({ label }) => {
         <div className="budget-t"><h3>Budget</h3></div>
         <br></br>
         <p>The average desk price in Germany is 252 € per month</p>
-      </div>
       <div className="budget-button">
         <div >
           <button className="budget-wrapper" >Mini.Budget</button>
@@ -56,8 +55,9 @@ const Checkbox = ({ label }) => {
         <div>
           <button className="apply-wrapper">Apply</button>
         </div>
+        </div>
       </div>
-      </div>
+    </div>
     </div>
   );
 };

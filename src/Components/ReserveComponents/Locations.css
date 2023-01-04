@@ -14,13 +14,16 @@
 body{
   background-color:  #F5F5F5;
 }
+
+div.fPqLXB {
+  margin-right: 0px;
+}
 .checkbox {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 .check-wrapper{
-  height: 100vh;
   border-right:1px solid #dce3ed ;
   padding-right: 30px;
 }
@@ -31,10 +34,11 @@ body{
   padding-bottom: 50px;
 }
 
-/* .budget {
+.budget {
   width: 100%;
-} */
-.budget-wrapper{
+  height: 100%;
+}
+.budget-wrapper {
   border-radius: 4px;
   background-color:white;
   border:1px solid #dce3ed ;
@@ -76,13 +80,13 @@ body{
 
 .check {
   height: 24px;
-
 }
 
 .office-sp {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
 .duration {
   padding-bottom: 25.77px;
 }
@@ -138,13 +142,11 @@ body{
   font-family: "Outfit";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 110%;
+  font-size: 20px;
+  line-height: 100%;
 }
 
 .address-city-country {
-  display: flex;
-  align-items: flex-start;
   padding-top: 45px;
   gap: 20px;
   font-weight: 400;
@@ -192,6 +194,14 @@ body{
 
 @media screen and (max-width: 1160px) {
 
+  .checkbox-container {
+    padding-left: 10px;
+  }
+
+  .office-sp {
+    padding-top: 5px;
+  }
+
 .locations-container {
   display: flex;
   flex-wrap: wrap;
@@ -208,7 +218,6 @@ img.img {
 }
 
 .checkbox {
-  height: 100vh;
   display: block;
   border: none;
 }
@@ -221,7 +230,28 @@ img.img {
   border: none;
 }
 
-/* .address-city-country {
-  width: 90%;
-} */
+.title {
+  padding-top: 10px;
+}
+
+.address-city-country {
+  display: block;
+  padding-top: 5px;
+}
+
+.apply, .apply-wrapper {
+  width: 100px;
+}
+
+.apply-button {
+  padding-top: 10px;
+}
+
+.view-list {
+  padding-top: 5px;
+}
+}
+
+@media screen and (max-width: 426) {
+  
 }
