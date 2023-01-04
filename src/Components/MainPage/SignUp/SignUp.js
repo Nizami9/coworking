@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyProfileLeftSide from '../../MyProfileLeftSide/MyProfileLeftSide';
 import "./SignUp.css";
 import ProfileImage from "../../MyProfileLeftSide/ProfileImages/Ellipse.png";
+import PhoneInput from "react-phone-input-2";
+import { Link } from "react-router-dom";
+import "react-phone-input-2/lib/style.css";
 
-const SignUp = () => {
+export default class SignUp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+  }
+    render() {
   return (
     <div className='signUpSection'>
       <div className='signUpRightSide'>
@@ -24,14 +32,19 @@ const SignUp = () => {
           {/* <h3 className='signUpRightSideH3'>Address</h3> */}
           <label>Address</label>
           <input placeholder='Avonmore Road' className='inputGI'></input>
-          <label>Number</label>
-          <input placeholder='29' className='inputGI'></input>
           <label>City</label>
           <input placeholder='London' className='inputGI'></input>
           <label>Country</label>
           <input placeholder='Great Britain' className='inputGI'></input>
           <label>ZIP</label>
           <input placeholder='256809' className='inputGI'></input>
+          <label>Number</label>
+          <PhoneInput
+                className='PhoneInput'
+                country={"de"}
+                value={this.state.phone}
+                onChange={(phone) => this.setState({ phone })}
+              />
           </div>
           <button className='signUpButton'><p>Save All</p></button>
         </form>
@@ -39,5 +52,4 @@ const SignUp = () => {
     </div>
   )
 }
-
-export default SignUp
+}
