@@ -15,7 +15,6 @@ const List = () => {
               <div className="list-wrapper">
                 <div className="title">
                   {space.title}
-
                   <div className="address-city-country">
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>

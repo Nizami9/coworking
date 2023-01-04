@@ -5,8 +5,8 @@
 }
 
 .locations-container {
-  width: 1440px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -17,14 +17,10 @@ body{
 .checkbox {
   display: flex;
   justify-content: center;
-  width: 500px;
-
-  /* border-right: 1px solid #dce3ed; */
-
   margin-top: 10px;
 }
 .check-wrapper{
-  height: 1700px;
+  height: 100vh;
   border-right:1px solid #dce3ed ;
   padding-right: 30px;
 }
@@ -32,12 +28,12 @@ body{
 .input-wrapper {
   display: flex;
   gap: 15px;
-   padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
-.budget {
-  width: 265px;
-}
+/* .budget {
+  width: 100%;
+} */
 .budget-wrapper{
   border-radius: 4px;
   background-color:white;
@@ -47,7 +43,6 @@ body{
 .apply-button {
   display: flex;
   padding-top: 60px;
-  width: 120px;
   gap: 10px;
   border-radius: 17px;
 
@@ -62,16 +57,15 @@ body{
   color: #262626;
 }
 
-.annually {
+/* .annually {
   padding-left: 8px;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
-}
+} */
 
 .checkbox-input {
   display: flex;
-  width: 100px;
 }
 
 .checkbox-container {
@@ -79,11 +73,8 @@ body{
   padding-bottom: 60px;
   padding-left: 100px;
 }
-.locations{
-  height: 1700px;
-}
+
 .check {
-  width: 24px;
   height: 24px;
 
 }
@@ -98,40 +89,34 @@ body{
 
 
 .list {
-  width: 800px;
   display: flex;
 }
 
-.img {
-  width: 305px;
-}
 .card {
-  width: 800px;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-   padding-top: 24px; 
+  padding-top: 24px; 
   border-bottom: 1px solid #dce3ed;
   border-top: 1px solid #dce3ed;
 }
- .img {
+ img.img {
   display: flex;
   justify-content: flex-start;
-  width: 305px;
+  width: 300px;
   height: 167px;
 }
 .list-wrapper {
   display: flex;
   justify-content: flex-start;
-  width: 600px;
 }
 .view-list {
   color: #555d67;
   text-transform: capitalize;
   font-family: "Outfit";
-
   font-weight: 500;
   font-size: 20px;
-
   padding-top: 40px;
   padding-bottom: 10px;
 }
@@ -158,9 +143,7 @@ body{
 }
 
 .address-city-country {
-  width: 500px;
   display: flex;
-
   align-items: flex-start;
   padding-top: 45px;
   gap: 20px;
@@ -169,7 +152,6 @@ body{
 }
 
 .area-maxPeople-costperDay {
-  width: 500px;
   display: flex;
   gap: 20px;
   padding-top: 47px;
@@ -179,19 +161,16 @@ body{
 .budget-button {
   display: flex;
   padding-top: 20px;
-  width: 265px;
   gap: 10px;
 }
 
 .budget-wrapper {
-  width: 120px;
   height: 40px;
   font-weight: 600;
   font-size: 16px;
   
 }
 .apply-wrapper {
-  width: 120px;
   height: 40px;
   font-weight: 600;
   font-size: 16px;
@@ -200,7 +179,6 @@ body{
   border-radius: 4px;
 }
 .apply{
-  width: 120px;
   height: 40px;
   font-weight: 600;
   font-size: 16px;
@@ -208,4 +186,26 @@ body{
   background-color: white;
   border-radius: 4px;
   border:1px solid #FF7848; ;
+}
+
+@media screen and (max-width: 1160px) {
+
+.locations-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  height: 100vh;
+  display: block;
+  border: none;
+}
+
+.locations {
+  width: 100%;
+}
+
+.card, .check-wrapper {
+  border: none;
+}
 }
