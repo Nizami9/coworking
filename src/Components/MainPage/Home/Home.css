@@ -270,8 +270,13 @@ color: #FFFFFF;
     font-family: 'Monument';
     }
 
+    .mobileVersion>p {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center
+        }
+
     .mobileContainers {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -280,6 +285,7 @@ color: #FFFFFF;
     margin: 10px auto;
     background: #F9FAFC;
     border: 1px solid #DCE3ED;
+    width: 80%;
     }
 
     .mobileContainers > img {
