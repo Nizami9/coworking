@@ -1,7 +1,10 @@
 import Footer from "./Components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Locations from "./Components/MainPage/Locations/Locations";
+
+import Locations from "./Components/ReserveComponents/Locations";
+
+
 //  import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp/SignUp";

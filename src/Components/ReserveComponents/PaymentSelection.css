@@ -12,7 +12,7 @@
   gap: 2px;
 }
  .reserve-space-payM{
-width: auto;
+width: 700px;
 height: 700px;
 display: flex;
 justify-content: center;
@@ -20,7 +20,105 @@ justify-content: center;
 }
 
 .paymentSelection-payM {
-  width: auto;
+  width: 1440;
   height: 700px;
   
 } 
+ .payM{
+  height:150px;
+  width: -600px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-family: "Outfit";
+
+} 
+.form-2{
+  border-radius: 4px;
+  border: 1px solid #dce3ed;
+
+}
+
+.payM-wrapper{
+  width: 800px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p4-img-and-details {
+  display: inline-flex;
+}
+.p4-img {
+  margin: 3% 0;
+  margin-right: 3%;
+  width: 40%;
+}
+.p4-title-and-details {
+  margin: 1% 0;
+  width: 100%;
+}
+
+.p4-address-city-country,
+.show-date {
+  font-size: small;
+  margin-top: 27%;
+}
+hr {
+  width: 600px;
+  border-top: 0.7px solid #dce3ed;
+}
+.p4-location-icon {
+  width: 5%;
+  margin-right: 2%;
+}
+hr {
+  width: 600px;
+  border-top: 0.2px solid #dce3ed;
+}
+.p4-location-icon {
+  width: 5%;
+}
+.calendar-icon {
+  width: 5%;
+}
+.show-date-time {
+  display: flex;
+  justify-content: flex-start;
+  width: 600px;
+  height: 60px;
+  padding-bottom: 15px;
+  font-size: small;
+  margin-top: 15%;
+  border-bottom: 2px solid #dce3ed;
+}
+
+.back-link {
+  display: flex;
+  text-decoration: none;
+
+}
+.back-link img {
+  width: 2em;
+}
+.back-link span,
+.show-times {
+  font-size: small;
+}
+.back-link span {
+  display: inline-flex;
+  align-items: center;
+  color: #ff7848;
+}
+.total-pay{
+  height: 60px;
+  width: 70px;
+  font-family: 'Outfit';
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color:#262626;;
+
+}
