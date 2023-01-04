@@ -4,13 +4,14 @@
     margin: 0 auto;
 }
 
-/* .MyProfileRightSide > hr {
+
+.MyProfileRightSide > hr {
     width: 100%;
     margin-bottom: 20px;
-} */
+}
 
 .MyProfileRightSide {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 100px;
     width: 100%;
 }
@@ -30,14 +31,17 @@
     width: 50%;
 }
 
-.MyProfileCardInfo > h2{
-font-family: 'Outfit';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 110%;
-color: #262626;
+.MyProfileCardTitle {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    color: #262626;
+    margin: 0px;
+    text-align: left;
 }
+
 
 .MyProfileCard {
     display: flex;
@@ -47,12 +51,11 @@ color: #262626;
 
 .MyProfileCardImage {
     margin-right: 20px;
-    width: 35%;
 }
 
-.MyProfileCardImage >img {
+/* .MyProfileCardImage >img {
     width: 100%;
-}
+} */
 
 .MyProfileCardStars {
 width: 100%;
@@ -77,10 +80,29 @@ margin-top: 15px;
 .MyProfileCardDetails {
     display: flex;
     flex-wrap: nowrap;
+    width: 100%;
 }
 
 .MyProfileCardDetails > p,
 .MyProfileCardDetails > img {
     padding-top: 30px;
-    margin-right: 80px;
+    margin-right: 10px;
+    height: 50px;
+}
+
+
+@media screen and (max-width: 1160px) {
+.MyProfileCardDetails > p, .MyProfileCardDetails > img {
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+.MyProfileCardAdress {
+    display: block;
+    width: 100%;
+    margin-top:0px;
+}
+
+.MyProfileCardTitle {
+    width: 100%;
+}
 }

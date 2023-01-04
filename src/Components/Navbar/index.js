@@ -14,10 +14,10 @@ const Navbar = () => {
   return (
     <>
       <Nav>
+        <Bars />
         <NavLogo to="/">
           <img src={logoImage}></img>
         </NavLogo>
-        <Bars />
 
         <NavMenu>
           <NavLink to="/" activeStyle={{ color: "black" }}>

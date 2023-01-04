@@ -1,7 +1,10 @@
 import Footer from "./Components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+
 import Locations from "./Components/ReserveComponents/Locations";
+
+
 //  import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp/SignUp";
@@ -13,8 +16,10 @@ import Profile from "./Components/ProfilePage/Profile";
 import DateSelect from "./Components/CalendarPage/DateSelect";
 import ChangePassword from "./Components/ChangePassword/ChangePassword";
 import UsersLocations from "./Components/ReserveComponents/UsersLocations";
-  import Community from "./Components/ReserveComponents/Community";
-  import Userpayment from "./Components/ReserveComponents/Userpayment";
+import Community from "./Components/ReserveComponents/Community";
+import Userpayment from "./Components/ReserveComponents/Userpayment";
+import Thankyou from "./Components/Thankyou/Thankyou";
+
 
 function App() {
   return (
@@ -34,7 +39,8 @@ function App() {
         <Route path="/select-date" element={<DateSelect />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/UsersLocations" element={<UsersLocations />} />
-         <Route path="/Userpayment" element={<Userpayment />} /> 
+        <Route path="/Userpayment" element={<Userpayment />} /> 
+        <Route path="/thank-you" element={<Thankyou />} /> 
       </Routes>
     </BrowserRouter>
     <Footer />

@@ -124,7 +124,7 @@
    
 }
 hr{
-    width:90%;
+    width:95%;
     margin:0 0;
     border-top: 2px solid #DCE3ED;
 }
@@ -151,3 +151,49 @@ hr{
     align-items: center;
     margin-top:3%;
 }
+
+
+@media only screen and  (min-width: 37em) and (max-width: 48em) {
+  .cal-page-main-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .show-date-time span{
+    font-size: small;
+   }
+   .clock-icon{
+    width:6%;
+    margin-right:4%;
+  }
+  h2{
+    margin-top: 5%;
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 37em) {
+  .cal-page-main-grid {
+    display: flex;
+    flex-direction: column;
+   }
+   .show-date-time span{
+    font-size: x-small;
+   }
+   .show-times{
+   font-size:smaller; 
+   }
+   .p4-address-city-country{
+    font-size:smaller;
+   }
+   .clock-icon{
+    width:7%;
+    margin-right:3.5%;
+  }
+  h2{
+    margin-top: 5%;
+    text-align: center;
+  }
+} 
+
+

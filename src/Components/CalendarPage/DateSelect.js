@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState,useEffect } from "react";
+import { useState} from "react";
 import { Link } from 'react-router-dom';
 import './styleDateSelect.css';
 
@@ -19,30 +19,22 @@ function DateSelect() {
     const [fromDate, setFromDate] = useState(new Date());
     const [fromTime, setFromTime] = useState("00:00");
     const [toTime, setToTime] = useState("23:00");
-    const [btnClasname, setBtnClassname] = useState('continue-btn')
- 
-    let mockDate=new Date().toDateString();
-    
-    useEffect(( )=>{
-        console.log("d",date)
-       // console.log("date 0 and 1   ---",date[0],date[1]);
-    },[date])
-    const handleChangeCalendar =()=>{
-        // {setDate};
-        setDate();
-        // setFromDate(date[0]);
-        // setToDate(date[1]);
+    const [btnClasname, setBtnClassname] = useState('continue-btn');
+
+
+    const handleChangeCalendar =(e)=>{
+         setDate(e);
+         console.log(e); 
+         setFromDate(e[0]);
+         setToDate(e[1]);
     }
+ 
     const CalendarComp =
         (
             <div>
                 <div className="calendar-container">
-                    <Calendar onChange={setDate} value={date} selectRange={true} />
+                    <Calendar onChange={(e)=>handleChangeCalendar(e)} value={date} selectRange={true} />
                 </div>
-                   {/* { date.length > 0  ? (
-                    setFromDate(date[1].toDateString()),setToDate(date[2].toDateString()))
-                     : ""
-                 } */}
                 {/* {date.length > 0 ? (
                     <p className="text-center">
                         <span className="bold">Start:</span> {date[0].toDateString()}
@@ -108,14 +100,11 @@ function DateSelect() {
                     <div> <button className={btnClasname}>Continue</button></div>
                 </div>
                 <div className='space-col'>
-                    {
-                        console.log(fromDate.toDateString(),toDate.toDateString())
-                    }
                     <SingleSpace />
                     <div className='show-date-time'>
                         <div> 
                         <img src={require('../../icons/calendar-icon.png')} alt="calendar-icon" className="calendar-icon" />
-                        <span className='show-date'>{mockDate}</span>
+                        <span className='show-date'>{fromDate.toDateString()}{" - "}{toDate.toDateString()}</span>
                         </div>
                        
                        <div className='show-times'> 

@@ -1,0 +1,41 @@
+.thankyou-page{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Outfit';
+}
+.thankyou-page h1{
+    font-family: 'Monument';
+    font-weight: 400;
+    line-height: 80%;
+    margin-bottom: 8%;
+    color: #FF7848;
+    text-align: center;
+}
+.thankyou-page p{
+    text-align: center;
+}
+.thankyou-page span{
+    color:rgb(117, 116, 116);
+}
+.thankyou-box{
+    height:50vh;
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thankyou-page .link{
+        width:12.5em;
+        background-color: #FF7848;
+        color:white;
+        border: none;
+        height:2.5em;
+        margin-top:4%;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}

@@ -9,7 +9,7 @@ import Basket from "./myProfileImages/Basket.png"
 const MyProfile = () => {
   return (
     <div className='MyProfilePage'>
-      <MyProfileLeftSide />
+      <MyProfileLeftSide className='leftSide'/>
       <div className='MyProfileRightSide'>
         <h1>My Profile</h1>
         <div className='MyProfileCard'>
@@ -17,7 +17,7 @@ const MyProfile = () => {
                 <img src={office1}></img>
             </div>
             <div className='MyProfileCardInfo'>
-                <h2>The Workers League - Blackheath</h2>
+                <h2 className='MyProfileCardTitle'>The Workers League - Blackheath</h2>
                 <div className='MyProfileCardStars'>
                     <img src={star}></img>
                     <img src={star}></img>
@@ -41,7 +41,7 @@ const MyProfile = () => {
                 <img src={office2}></img>
             </div>
             <div className='MyProfileCardInfo'>
-                <h2>Fitzrovia House</h2>
+                <h2 className='MyProfileCardTitle'>Fitzrovia House</h2>
                 <div className='MyProfileCardStars'>
                     <img src={star}></img>
                     <img src={star}></img>
