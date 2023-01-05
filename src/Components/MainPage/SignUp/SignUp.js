@@ -5,6 +5,7 @@ import ProfileImage from "../../MyProfileLeftSide/ProfileImages/Ellipse.png";
 import PhoneInput from "react-phone-input-2";
 import { Link } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
+import ImageUploader from '../../ProfilePage/ImageUploader';
 
 export default class SignUp extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class SignUp extends React.Component {
     <div className='signUpSection'>
       <div className='signUpRightSide'>
         <h1>My profile</h1>        
-        <img src={ProfileImage}></img>
+        {<ImageUploader />}
         <h3 className='signUpRightSideH3'>General information</h3>
         <form>
           <div className='GIinput'>
