@@ -60,37 +60,32 @@ color: #fff;
 }
 `;
 
-
 export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
   @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: -20%;
+    display: block;
+    position: absolute;
+    top: 0;
     right: 0;
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
     &:hover {
       color: black;
-      display:flex;
-      >Dropdown {
-        display:flex;
-      }
     }
-  }
-  @media screen and (max-width: 425px) {
-    margin-right: -100px;
-  }
-  @media screen and (max-width: 375px) {
-    margin-right: -150px;
-  }
-  @media screen and (max-width: 320px) {
+   @media screen and (max-width: 425px) {
+     margin-right: -100px;
+    }
+   @media screen and (max-width: 375px) {
+     margin-right: -150px;
+   }
+   @media screen and (max-width: 320px) {
     margin-right: -200px;
+   }
   }
 `;
+
 
 
 export const NavMenu = styled.div`
