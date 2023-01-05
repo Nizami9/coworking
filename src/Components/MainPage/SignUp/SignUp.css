@@ -58,7 +58,7 @@ label {
     border-radius: 4px;
 }
 
-div.react-tel-input {
+.GIinput>.react-tel-input {
     margin-left: 5px;
     font-family: 'Roboto',sans-serif;
     font-size: 15px;
@@ -68,14 +68,14 @@ div.react-tel-input {
     display: flex;
 }
 
-div.react-tel-input input.form-control    {
+.GIinput>div.react-tel-input .GIinput>input.form-control    {
     width: 40%;
     height: 44px;
     border: 1px solid #DCE3ED;
     border-radius: 4px;
 }
 
-.PhoneInput, .special-label {
+.GIinput>.PhoneInput, .GIinput>.special-label {
     display: flex;
 }
 
