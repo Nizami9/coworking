@@ -9,7 +9,6 @@ input {
     background: #FFFFFF;
     border: 1px solid #DCE3ED;
     color: #555D67;
-    height: 50px;
     border: 1px solid #DCE3ED;
 }
 
@@ -97,12 +96,14 @@ input {
 }
 
 #selectOfficeType, #dateOption {
-width: 50%;
+width: 49%;
 }
 
 
 .selectDateOffice {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .leftContInputs>button {
