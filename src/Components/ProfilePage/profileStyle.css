@@ -9,7 +9,7 @@
 }
 
 .city-flex>.flex-col {
-    margin-right: 18px;
+    margin-right: -4px;
 }
 .my-profile-col div{
     margin-right:1%;
@@ -21,6 +21,9 @@
     font-size: small;
     font-family: 'Outfit';
 }
+.city-flex input{
+    width:90%;
+}
 .name-flex input,.email-flex input{
     width:20em;
 }
@@ -29,6 +32,9 @@
 }
 .address-bar input {
     width: 26.5em;
+}
+.name-flex div,.email-flex div {
+    margin-right:4%;
 }
 .number-input {
     margin-left: 1%;
@@ -64,6 +70,10 @@
     width:100%;
     margin-top:10%;
     margin-left: 2%;
+    cursor: pointer;
+}
+.profile-list li:hover{
+    color: #FF7848;
 }
 .profile-list li{
     list-style: none;
@@ -105,12 +115,13 @@ button{
 }
 
 /* react phone input styling */
-.react-tel-input .form-control {
-    width:19.5em;
-    border: 1px solid rgb(133, 133, 133);
+.flex-col .react-tel-input .form-control {
+    width:19em !important;
+    border: 1px solid #DCE3ED ;
     margin-top: 1px !important;
+    border-radius: 0;
 }
-.react-tel-input .flag-dropdown{
+.flex-col .react-tel-input .flag-dropdown{
     top: -12%;
     bottom:1%;
 }
@@ -121,22 +132,28 @@ button{
     .name-flex,.email-flex,.address-flex,.city-flex{
         display: flex;
         flex-direction: column;
+        margin-top:3%;
         font-size: small;
     }
-    .name-flex input,.email-flex input,.address-flex input,.city-flex input{
-        width: 26.5em;
+    .address-flex input{
+        width: 26.3em;
     }
-    .react-tel-input .form-control {
-        width: 25em;
-        border: 1px solid rgb(133, 133, 133);
+    .city-flex input{
+        width: 26.4em;
+    }
+    .name-flex input,.email-flex input{
+        width: 26.2em;
+    }
+    .flex-col .react-tel-input .form-control {
+        width: 25em !important;
+        border: 1px solid #DCE3ED !important;
         margin-top: 1px !important;
+        border-radius: 0;
     }
     
     .flex-col>.phone-input {
         width: 10%;
     }
-
-
     .profile-list li{
         margin-top:0;
         margin-left: 0%;
@@ -175,8 +192,17 @@ button{
         font-size: small;
         margin-left:10%;
     }
-    button,.name-flex input,.email-flex input,.address-flex input,.city-flex input,.phone-input{
+    .name-flex input,.email-flex input,.phone-input{
         width: 100%;
+    }
+    button{
+        width: 95%;
+    }
+    .address-flex input{
+        width:97%;
+    }
+    .city-flex input{
+        width:95%;
     }
     .profile-list li span{
         display: none;
@@ -195,14 +221,20 @@ button{
     .profile-pic-div h5{
         font-size:medium;
     }
-    .react-tel-input .form-control {
-        width:100%;
-        border: 1px solid rgb(133, 133, 133);
+    .flex-col .react-tel-input .form-control {
+        width: 100% !important;
+        border: 1px solid #DCE3ED !important;
         margin-top: 1px !important;
+        border-radius: 0;
     }
     .react-tel-input .flag-dropdown{
         top: -16%;
         bottom: 1%;
+    }
+    .cam-icon{
+        width:1.8em;
+        margin-top: -35%;
+        margin-left: 85%;
     }
    
   }
