@@ -47,7 +47,7 @@ function ImageUploader() {
               <img 
             className='profile-img'
             alt='prifle-pic-icon'
-            src={require('../../icons/profile-icon.png')}
+            src={require('../MyProfileLeftSide/ProfileImages/Ellipse.png')}
             style={{width : '100px'}}
               />
               }

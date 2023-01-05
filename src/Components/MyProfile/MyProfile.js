@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MyProfileLeftSide from '../MyProfileLeftSide/MyProfileLeftSide';
 import "./MyProfile.css";
 import office1 from "./myProfileImages/Office1.png";
 import office2 from "./myProfileImages/Office2.png";
 import star from "./myProfileImages/Star.png";
 import MapIcon from "./myProfileImages/MapIcon.png";
-import Basket from "./myProfileImages/Basket.png"
+import Basket from "./myProfileImages/Basket.png";
+
 const MyProfile = () => {
   return (
     <div className='MyProfilePage'>

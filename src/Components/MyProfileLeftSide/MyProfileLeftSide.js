@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ProfileImage from './ProfileImages/Ellipse.png';
 import "./MyprofileLeftSide.css";
 import { NavLink } from "react-router-dom";
-import Vector from "./ProfileImages/Vector.png"
+import Vector from "./ProfileImages/Vector.png";
+import ImageUploader from "../ProfilePage/ImageUploader";
+
 const MyProfileLeftSide = () => {
+  const [imgUrl, setImgUrl] = useState(require('../MyProfileLeftSide/ProfileImages/Ellipse.png'));
+
   return (
     <div>
         <div className='containerMyProfle'>
             <div className='containerMyProfleLeft'>
                 <div className='myProfileImg'>
-                    <img src={ProfileImage}></img>
+                {<ImageUploader />}
                     <h2>John Smith</h2>
                 </div>
 
