@@ -16,7 +16,10 @@
       border: 1px solid black;
       border-radius: 5rem;
     }
-    input{
+    .changePass>input, .newPass, .verify{
+      background: #FFFFFF;
+      border: 1px solid #DCE3ED;
+      height: 50px;
       width:80%;
     }
     .p10-form button{

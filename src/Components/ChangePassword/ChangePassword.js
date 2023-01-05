@@ -12,7 +12,7 @@ function ChangePassword() {
             <h2>My profile</h2>
             <h3>Change Password</h3>
             <div className='p10-form'>
-                <div>
+                <div className='changePass'>
                 <label htmlFor='currentPass'>Current Password</label>
                 <input type='text'  id='currentPass' className='currentPass' />
                 </div>
