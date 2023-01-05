@@ -5,7 +5,7 @@ import CS from "./ImagesHome/customerService.png";
 import calendar from "./ImagesHome/calendar.png"
 import spaces from "./ImagesHome/spaces.png";
 import user from "./ImagesHome/user.png";
-
+import adress from "./ImagesHome/pin_drop.png";
 const Home = () => {
   return ( 
     <div className="containerMain">
@@ -14,7 +14,7 @@ const Home = () => {
         <p>From a single desk to a whole building <br/>The choice is yours</p>
         <div className="leftContInputs">
           <div className="locationInput">
-            <i class="fa fa-user icon"></i>
+            <img class="adressIcon" src={adress}></img>
             <input type='text' placeholder="Hamburg"></input>
           </div>
           <div className="selectDateOffice">
@@ -53,7 +53,7 @@ const Home = () => {
           <div className="mobileContainers">
           <img src={user}></img>
             <h3>Buy a membership</h3>
-            <p>Access thousands of locations  on demand</p>
+            <p>Access thousands of locations on demand</p>
           </div>
         </div>
         <div className="bottomContainerLeft">
