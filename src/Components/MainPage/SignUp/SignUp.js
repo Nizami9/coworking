@@ -27,10 +27,17 @@ export default class SignUp extends React.Component {
               <input placeholder='Smith' className='inputGI'></input>
               <label>Email</label>
               <input placeholder='John Smith@gmail.com' className='inputGI'></input>
-              <label>Phone number</label>
-              <input placeholder='+44 4356 5678' className='inputGI'></input>
-
-          {/* <h3 className='signUpRightSideH3'>Address</h3> */}
+              <label>Password</label>
+              <input type='password' className='inputGI'></input>
+              <div className='phoneNumberField'>
+              <label className='phoneNumber'>Phone number</label>
+              <PhoneInput
+                className='PhoneInput'
+                country={"de"}
+                value={this.state.phone}
+                onChange={(phone) => this.setState({ phone })}
+              />
+              </div>
           <label>Address</label>
           <input placeholder='Avonmore Road' className='inputGI'></input>
           <label>City</label>
@@ -39,13 +46,6 @@ export default class SignUp extends React.Component {
           <input placeholder='Great Britain' className='inputGI'></input>
           <label>ZIP</label>
           <input placeholder='256809' className='inputGI'></input>
-          <label>Number</label>
-          <PhoneInput
-                className='PhoneInput'
-                country={"de"}
-                value={this.state.phone}
-                onChange={(phone) => this.setState({ phone })}
-              />
           </div>
           <button className='signUpButton'><p>Save All</p></button>
         </form>
