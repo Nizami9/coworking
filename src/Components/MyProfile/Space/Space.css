@@ -22,9 +22,15 @@
     width: 40%;
 }
 
-.rightImageSpace > img {
+/* .rightImageSpace > img {
     width: 305px;
     height: 160px;
+    margin-bottom: 20px;
+} */
+
+.leftImageSpace > img {
+    width: 605px;
+    height: 350px;
     margin-bottom: 20px;
 }
 

@@ -58,17 +58,6 @@ label {
     border-radius: 4px;
 }
 
-/* div.PhoneInput>.react-tel-input {
-    margin-left: 5px;
-    font-family: 'Roboto',sans-serif;
-    font-size: 15px;
-    position: relative;
-    height: auto;
-    left: 30%;
-    display: flex;
-    width: 100%;
-} */
-
 .signUpRightSide > form {
     width: 100%;
 }
