@@ -122,3 +122,50 @@ hr {
   color:#262626;;
 
 }
+
+
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  .paymentSelection-Container{
+    height: 800px;
+  display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+
+ 
+ 
+  img.img  {
+    margin: 10px;
+    width: 50%;
+    height: 50%;
+  }
+  .reserve-space-payM {
+    height: 500px;
+     display: flex; 
+    justify-content: center;
+    flex-direction: column;
+  }
+  .payM-wrapper.reserve-space-payM{
+    height: 0px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p4-img-and-details {
+    display: inline-flex;
+    border: 2px;
+}
+}
+.show-date-time-2 {
+  display: flex;
+  justify-content: flex-start;
+padding-bottom: 15px;
+  font-size: small;
+  margin-top: 22%;
+  border-bottom: 2px solid #dce3ed;
+}
