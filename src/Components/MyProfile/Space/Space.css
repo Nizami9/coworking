@@ -106,11 +106,9 @@ p.spacePrice {
     width:305px;
     height: 45px;
     margin-top: 10px;
+    padding-top: 10px;
     margin-bottom: 10px;
     border: none;
-}
-
-.reserveSpaceButton>p {
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
@@ -118,6 +116,7 @@ p.spacePrice {
     line-height: 120%;
     text-align: center;
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 span.info {

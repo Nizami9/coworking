@@ -7,14 +7,16 @@
     "ownerPhone":"0123456789",
     "costperDay":"20$",
     "maxPeople":"100",
-    "description":"we build customisable office spaces for rent according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"More than simply a place to plug in your laptop. What really makes Spaces unique is the community we have worked to cultivate. Add an international network of mobile workspaces and a full calendar of business events, speakers and networking lunches. You shall see just how Spaces keeps you engaged and open to new possibilities",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-9_mrn2kk.jpg",
     "address":"53 Avonmore Road",
     "city":"Berlin",
     "zip":"10115",
     "counrty":"Germany",
     "reviews":"good",
-    "available":true
+    "available":true,
+    "openHours": "07:00 am - 23:00 pm",
+    "openDays": "Monday - Friday"
     },
     {
     "id":"002",
@@ -24,7 +26,7 @@
     "ownerPhone":"0123456789",
     "costperDay":"25$",
     "maxPeople":"80",
-    "description":"we build customisable office spaces for rent according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"The business center is located directly in the city park in a modern building architecture, which offers a beautiful view of the green surroundings. From the very central building you can reach the airport and in a few minutes by car the city center: Very central building, Administrative support by a professional team, Conference rooms as required, Good accessibility to public transport, Ideal transport connections by car and public transport",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-4_ett53c.jpg",
     "address":"34 Royal Parade Mews Road",
     "city":"Stuttgart",
@@ -32,7 +34,9 @@
     "zip":"70174",
     "counrty":"Germany",
     "reviews":"very good",
-    "available":true
+    "available":true,
+    "openHours": "08:00 am - 22:00 pm",
+    "openDays": "Monday - Thursday"
     },
     {
     "id":"003",
@@ -42,7 +46,7 @@
     "ownerPhone":"0123456789",
     "costperDay":"15$",
     "maxPeople":"100",
-    "description":"we build customisable office spaces for rent  according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"We offer creative working environments with a unique entrepreneurial spirit. More than simply a place to plug in your laptop. What really makes Spaces unique is the community we’ve worked to cultivate. Add an international network of mobile workspaces and a full calendar of business events, speakers and networking lunches, and you’ll see just how Spaces keeps you engaged and open to new possibilities. We believe work is about people and ideas. Enquire now.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-2_nawplq.webp",
     "address":"4  King's Road",
     "city":"Ruhland",
@@ -50,7 +54,10 @@
     "zip":"01986",
     "counrty":"Germany",
     "reviews":"good",
-    "available":true
+    "available":true,
+    "openHours": "09:00 am - 21:00 pm",
+    "openDays": "Monday - Sunday"
+
     },
     {
     "id":"004",
@@ -60,7 +67,7 @@
     "ownerPhone":"0123456789",
     "costperDay":"15$",
     "maxPeople":"100",
-    "description":"we build customisable office spaces for rent  according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"From its ideal waterfront location in the central Hafencity district of Hamburg, Signature by Regus Watermark Hamburg is a workspace for discerning businesses. Situated within the remarkable Watermark building, this flexible co-working environment spans two floors of luxurious interiors, creating a refined and confident business experience that inspires calm, focus and success.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-7_v7cisn.webp",
     "address":"Bodney Road",
     "city":"Mannheim",
@@ -68,7 +75,9 @@
     "zip":"68161",
     "counrty":"Germany",
     "reviews":"perfect place to work",
-    "available":true
+    "available":true,
+    "openHours": "10:00 am - 20:00 pm",
+    "openDays": "Monday - Saturday"
     },
     {
     "id":"005",
@@ -78,7 +87,7 @@
     "ownerPhone":"0123456789",
     "costperDay":"15$",
     "maxPeople":"100",
-    "description":"we build customisable office spaces for rent  according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"In the very center of Hamburg, close to city hall, you can visit the latest addition to Hamburg’s coworking scene: Places. They opened their doors in November 2012, and make Eames fans drool over the awesomeness of their interior design. The founders are furniture dealers by profession and their love for contemporary furnishing is apparent here. Eames and lounge chairs are all around, and the Bouroullec-brothers’ Algues envelop the open space. Coffee is served at Café Ray and private screenings take place at the in-house cinema Club Charles.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-5_he8j1g.jpg",
     "address":"Bodney Road",
     "city":"Mannheim",
@@ -86,7 +95,9 @@
     "zip":"68161",
     "counrty":"Germany",
     "reviews":"perfect place to work",
-    "available":true
+    "available":true,
+    "openHours": "11:00 am - 19:00 pm",
+    "openDays": "Monday - Friday"
     },
     {
     "id":"006",
@@ -96,15 +107,17 @@
     "ownerPhone":"0123456789",
     "costperDay":"25$",
     "maxPeople":"70",
-    "description":"We at DevX provide top-notch office Spaces for Rent in Frankfurt with multiple amenities and services necessary for an ergonomic seating.",
+    "description":"A global network of workspaces that enable people to work where, when and how they want. Here we can tailor build your office space from 1 to 100 desks or more. We bring all the benefits of the office while your team concentrates on the business providing a choice of professional, inspiring and collaborative workspaces, communities and services. Enquire now. Office Space: Private, fully furnished and equipped offices for one person or an entire company which are customised for your needs. Options include Executive Office Suites in prestigious locations with iconic views.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630192/co-worker-spaces/office-space-1_nkca2x.jpg",
     "address":" 10 Mortimer Street",
     "city":"Frankfurt",
-    "state":"Hessen",
+    "state":"Frankfurt",
     "zip":"60439",
     "counrty":"Germany",
     "reviews":"perfect place ",
-    "available":true
+    "available":true,
+    "openHours": "12:00 am - 18:00 pm",
+    "openDays": "Monday - Saturday"
     },
     {
     "id":"007",
@@ -114,15 +127,17 @@
     "ownerPhone":"0123456789",
     "costperDay":"20$",
     "maxPeople":"75",
-    "description":"we build customisable office spaces for rent  according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"A global network of workspaces that enable people to work where, when and how they want. Here we can tailor build your office space from 1 to 100 desks or more. We bring all the benefits of the office while your team concentrates on the business providing a choice of professional, inspiring and collaborative workspaces, communities and services. Enquire now. Office Space: Private, fully furnished and equipped offices for one person or an entire company which are customised for your needs. Options include Executive Office Suites in prestigious locations with iconic views.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630193/co-worker-spaces/office-space-6_j4usdq.jpg",
     "address":" 9 Golden  Street",
-    "city":"Kassel",
-    "state":"Hessen",
+    "city":"Leipzig",
+    "state":"Leipzig",
     "zip":"34117",
     "counrty":"Germany",
     "reviews":"perfect ! ",
-    "available":true
+    "available":true,
+    "openHours": "13:00 am - 23:00 pm",
+    "openDays": "Monday - Thursday"
     },
     {
     "id":"008",
@@ -132,14 +147,16 @@
     "ownerPhone":"0123456789",
     "costperDay":"15$",
     "maxPeople":"100",
-    "description":"we build customisable office spaces for rent according to your needs and requirements. Our designers can adjust any aspect to meet your specifications.",
+    "description":"The Hannover Podbi 333 centre is named after its central position on Podbielskistrasse, one of the main routes through Hannover. Your business will have easy access to motorways and public transport as well as the Hannover Fairgrounds, which host many of the world’s biggest trade fairs. Our building has 21 offices and two conference rooms in the sleek modern glass-fronted building. It is close to Klinikum Oststadt-Heidehaus Bus Station and Buchholz/Betriebshof Light Rail Station. The local area of Bothfeld has plenty of amenities and shops within an easy walk, including a pharmacy, organic food store, book shop and bakery.",
     "imgUrl":"https://res.cloudinary.com/dc5lux2d9/image/upload/v1671630194/co-worker-spaces/office-space-3_tite31.jpg",
     "address":"14 Brimely ",
-    "city":"Hamburg",
-    "state":"Hamburg",
+    "city":"Hannover",
+    "state":"Hannover",
     "zip":"20144",
     "counrty":"Germany",
     "reviews":"very good place ! ",
-    "available":true
+    "available":true,
+    "openHours": "14:00 am - 00:00 pm",
+    "openDays": "Monday - Friday"
     }
     ]

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import DateSelect from '../../CalendarPage/DateSelect';
 import Navbar from "../../Navbar/index";
 import Footer from "../../Footer/Footer";
 import calendar from "./ImagesSpace/calendar.png";
@@ -27,7 +29,7 @@ const Space = () => {
                 <span className='info'>Available 57 desks</span>
             <p className='spacePrice'>{space.costperDay} / day</p>
             <p className='reserveOnlineP'>Reserve online</p>
-            <button className='reserveSpaceButton'><p>Reserve space</p></button>
+            <Link className='reserveSpaceButton' to='/select-date'><p>Reserve space</p></Link>
             <div className='hrOr'>
             <hr />
             <p>or</p>
@@ -41,11 +43,11 @@ const Space = () => {
                 <h3>Opening hours:</h3>
                 <div className='dataInfo1'>
                     <img src={calendar}></img>
-                    <p>Monday - Friday</p>
+                    <p>{space.openDays}</p>
                 </div>
                 <div className='dataInfo2'>
                     <img src={schedule}></img>
-                    <p>07:00 am - 23:00 pm</p>
+                    <p>{space.openHours}</p>
                 </div>
             </div>
 
@@ -55,9 +57,9 @@ const Space = () => {
                     <p>
                     {space.description}
                     </p>
+                    </div>
                 </div>
             </div>
-</div>
         </div>
                 )
             }
