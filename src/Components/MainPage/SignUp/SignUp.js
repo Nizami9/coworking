@@ -6,51 +6,108 @@ import PhoneInput from "react-phone-input-2";
 import { Link } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
 import ImageUploader from '../../ProfilePage/ImageUploader';
+import axios from 'axios';
 
-export default class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
+export default function SignUp () {
+  // const[firstName,setFirstName] = useState();
+  // const[lastName,setLastName] = useState();
+  // const[email,setEmail] = useState();
+  // const[password,setPassword] = useState();
+  // const[phone,setPhone] = useState();
+  // const[address,setAddress] = useState();
+  // const[city,setCity] = useState();
+  // const[country,setCountry] = useState();
+  // const[zip,setZip] = useState();
+  const[token,setToken] = useState();
+  const[phone,setPhone] =useState('');
+  const [input, setInput] = useState({firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', zip: ''}) 
+//"phone":input.phone,
+  let regData= {
+    "firstName":input.firstName,
+        "lastName":input.lastName,
+        "email":input.email,
+        "password": input.password,
+        
+        "address":input.address,
+        "city":input.city,
+        "country":input.country,
+        "zip":input.zip
   }
-    render() {
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value
+    });
+  }
+  console.log(input.firstName, input.lastName,phone)
+  const handleSubmitRegistration = async (e)=>{
+    try{
+        e.preventDefault();
+        console.log("data --- ",regData)
+      const { data } = await axios.post('http://localhost:3100/user/register', {
+      
+   
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email,
+          password: input.password,
+          phone: phone,
+          address: input.address,
+          city: input.city,
+          country: input.country,
+          zip: input.zip
+        
+      });
+      console.log("after axios")
+      localStorage.setItem('token', data);
+      setToken(data);
+      console.log("registration success",token)
+    }catch(err){
+        console.log(err);
+    }
+  }
+
+
   return (
     <div className='signUpSection'>
       <div className='signUpRightSide'>
         <h1>My profile</h1>        
         {<ImageUploader />}
         <h3 className='signUpRightSideH3'>General information</h3>
-        <form>
+        <form onSubmit={handleSubmitRegistration}>
           <div className='GIinput'>
               <label>First name</label>
-              <input placeholder='John' className='inputGI'></input>
+              <input name='firstName' value={input.firstName} type='text' placeholder='John' className='inputGI'  onChange={handleChange}></input>
               <label>Last name</label>
-              <input placeholder='Smith' className='inputGI'></input>
+              <input  name='lastName' value={input.lastName}  type='text' placeholder='Smith' className='inputGI' onChange={handleChange}></input>
               <label>Email</label>
-              <input placeholder='John Smith@gmail.com' className='inputGI'></input>
+              <input   name='email' value={input.email} type='text' placeholder='John Smith@gmail.com' className='inputGI'  onChange={handleChange}></input>
               <label>Password</label>
-              <input type='password' className='inputGI'></input>
+              <input  name='password' value={input.password} type='password' className='inputGI'  onChange={handleChange}></input>
               <div className='phoneNumberField'>
-              <label className='phoneNumber'>Phone number</label>
+              <label className='phoneNumber'></label>
               <PhoneInput
                 className='PhoneInput'
-                country={"de"}
-                value={this.state.phone}
-                onChange={(phone) => this.setState({ phone })}
+                defaultCountry="DE"
+                name='phone'
+                value={phone}
+                onChange={value => setPhone(value)}
               />
               </div>
           <label>Address</label>
-          <input placeholder='Avonmore Road' className='inputGI'></input>
+          <input   name='address' value={input.address} type='text' placeholder='Avonmore Road' className='inputGI' onChange={handleChange}></input>
           <label>City</label>
-          <input placeholder='London' className='inputGI'></input>
+          <input name='city' value={input.city}   type='text' placeholder='London' className='inputGI' onChange={handleChange}></input>
           <label>Country</label>
-          <input placeholder='Great Britain' className='inputGI'></input>
+          <input   name='country' value={input.country} type='text' placeholder='Great Britain' className='inputGI'  onChange={handleChange}></input>
           <label>ZIP</label>
-          <input placeholder='256809' className='inputGI'></input>
+          <input name='zip' value={input.zip} placeholder='256809' className='inputGI' onChange={handleChange}></input>
           </div>
-          <button className='signUpButton'><p>Save All</p></button>
+          <button type='submit' className='signUpButton'><p>Save All</p></button>
         </form>
       </div>
     </div>
   )
-}
 }
