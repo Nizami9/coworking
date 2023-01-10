@@ -7,18 +7,14 @@ import { Link } from "react-router-dom";
 import "react-phone-input-2/lib/style.css";
 import ImageUploader from '../../ProfilePage/ImageUploader';
 import axios from 'axios';
+import { useAuthContext } from '../../../context/AuthContext';
+import {  Navigate } from 'react-router-dom';
 
 export default function SignUp () {
-  // const[firstName,setFirstName] = useState();
-  // const[lastName,setLastName] = useState();
-  // const[email,setEmail] = useState();
-  // const[password,setPassword] = useState();
-  // const[phone,setPhone] = useState();
-  // const[address,setAddress] = useState();
-  // const[city,setCity] = useState();
-  // const[country,setCountry] = useState();
-  // const[zip,setZip] = useState();
-  const[token,setToken] = useState();
+
+  const { isAuthenticated, setToken } = useAuthContext();
+
+  //const[token,setToken] = useState();
   const[phone,setPhone] =useState('');
   const [input, setInput] = useState({firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', zip: ''}) 
 
@@ -30,7 +26,7 @@ export default function SignUp () {
       [e.target.name]: e.target.value
     });
   }
-  console.log(input.firstName, input.lastName,phone)
+ // console.log(input.firstName, input.lastName,phone)
   const handleSubmitRegistration = async (e)=>{
     try{
         e.preventDefault();
@@ -45,15 +41,17 @@ export default function SignUp () {
           country: input.country,
           zip: input.zip
       });
-      localStorage.setItem('token', data);
-      setToken(data);
-      console.log("registration success. token is ",token)
+      localStorage.setItem('token', data.token);
+      setToken(data.token);
+      console.log("registration success. ",data);
+      return <Navigate to='/' />
     }catch(err){
         console.log(err);
     }
   }
 
-
+if(isAuthenticated) return <Navigate to='/' />
+else
   return (
     <div className='signUpSection'>
       <div className='signUpRightSide'>
