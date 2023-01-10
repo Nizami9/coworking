@@ -21,18 +21,7 @@ export default function SignUp () {
   const[token,setToken] = useState();
   const[phone,setPhone] =useState('');
   const [input, setInput] = useState({firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', zip: ''}) 
-//"phone":input.phone,
-  let regData= {
-    "firstName":input.firstName,
-        "lastName":input.lastName,
-        "email":input.email,
-        "password": input.password,
-        
-        "address":input.address,
-        "city":input.city,
-        "country":input.country,
-        "zip":input.zip
-  }
+
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -45,10 +34,7 @@ export default function SignUp () {
   const handleSubmitRegistration = async (e)=>{
     try{
         e.preventDefault();
-        console.log("data --- ",regData)
       const { data } = await axios.post('http://localhost:3100/user/register', {
-      
-   
           firstName: input.firstName,
           lastName: input.lastName,
           email: input.email,
@@ -58,12 +44,10 @@ export default function SignUp () {
           city: input.city,
           country: input.country,
           zip: input.zip
-        
       });
-      console.log("after axios")
       localStorage.setItem('token', data);
       setToken(data);
-      console.log("registration success",token)
+      console.log("registration success. token is ",token)
     }catch(err){
         console.log(err);
     }

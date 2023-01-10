@@ -1,47 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link  } from 'react-router-dom';
 import './style.css';
-import users from '../../UserData.json';
+//import users from '../../UserData.json';
 import { Navigate } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
       // React States
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-
+  const [isAuthenticated,setIsAuthenticated] = useState(false);
+  const [logEmail,setLogEmail]=useState();
+  const [logPassword,setLogPassword]=useState();
+  const [loggedUser,setLoggedUser]=useState();
   
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
-  };
+  
+  const [token,setToken] = useState();
+
+  // const errors = {
+  //   uname: "invalid username",
+  //   pass: "invalid password"
+  // };
    
   //handle submit
-  const handleSubmit = (e) => {
-    //Prevent page reload
+  const handleSubmit = async(e) => {
+   
     e.preventDefault();
 
     let { uname, pass } = document.forms[0];
+    setLogEmail(uname.value);
+    setLogPassword(pass.value);
 
 
-
-
-    // Find user login info
-    const userinfo = users.find((user) => user.userName === uname.value);
-    
-
-    // Compare user info
-    if (userinfo) {
-      if (userinfo.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+    try {
+      const { data } = await axios.post('http://localhost:3100/user/login',{
+        email:logEmail,
+        password:logPassword
+      } );
+      localStorage.setItem('token', data);
+      setToken(data);
+      setIsAuthenticated(true);
+      //setLoggedUser(JSON.parse(data))
+      console.log("Success",data);
+    }catch(err){
+      console.log(err);
     }
+   
+    // Find user login info
+   // const userinfo = users.find((user) => user.userName === uname.value);
+
+    // // Compare user info
+    // if (userinfo) {
+    //   if (userinfo.password !== pass.value) {
+    //     // Invalid password
+    //     setErrorMessages({ name: "pass", message: errors.pass });
+    //   } else {
+    //     setIsSubmitted(true);
+    //   }
+    // } else {
+    //   // Username not found
+    //   setErrorMessages({ name: "uname", message: errors.uname });
+    // }
   };
   
   // Generate JSX code for error message
@@ -49,7 +67,7 @@ function Login() {
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
-
+    
     // JSX code for login form
     const renderForm = (
         <div className="form">
@@ -80,12 +98,16 @@ function Login() {
           </form>
         </div>
       );
+
+      {
+        console.log("data ----------",token)
+      }
     
   return (
     <div className="app">
     <div className="login-form">
       <div className="title">Sign In</div>
-      {isSubmitted ? <Navigate to="/profile" replace={true}/> : renderForm}
+      {isAuthenticated ? <Navigate to="/" replace={true}/> : renderForm}
     </div>
   </div>
   )
