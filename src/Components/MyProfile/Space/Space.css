@@ -2,7 +2,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 30px;
+    margin: 30px 0 0 30px;
     justify-content: space-between;
 }
 
@@ -10,7 +10,6 @@
     width: 52%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 
 
@@ -24,14 +23,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 41%;
-    margin-top: 30px;
     padding-left: 50px;
 }
 
 .spaceReservations>h1 {
     font-family: 'Monument';
-    font-style: normal;
-    font-weight: 400;
     font-size: 30px;
     line-height: 135%;
     color: #262626;
@@ -39,9 +35,6 @@
 
 
 .spaceReservations>p {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 130%;
     color: #9AA0B3;
@@ -52,10 +45,7 @@
 
 p.spacePrice {
     font-family: 'Monument';
-    font-style: normal;
-    font-weight: 400;
     font-size: 30px;
-    line-height: 135%;
     color: #FF7848;
     margin: 20px 0px 20px;
 }
@@ -67,16 +57,11 @@ p.spacePrice {
     border: 2px solid #FF7848;
     width:50%;
     height:10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
 }
 
 .bookTourButton>p {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 600;
     font-size: 16px;
-    line-height: 120%;
     text-align: center;
     color: #FF7848;
 }
@@ -89,16 +74,11 @@ p.spacePrice {
     align-items: center;
     justify-content: center;
     margin: 10px 0 10px 0;
-    font-weight: 600;
     color: #FFFFFF;
     text-decoration: none;
 }
 
 span.info {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
     color: #555D67;
     margin-top: 10px;
     width: 50%;
@@ -129,7 +109,6 @@ span.info {
 }
 
 .openingHours>h3 {
-    font-family: 'Outfit';
     font-weight: 500;
     font-size: 20px;
     color: #262626;
@@ -149,10 +128,6 @@ span.info {
 }
 
 .descriptionText>p {
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
     line-height: 140%;
     color: #555D67;
     margin-left: 50px;
@@ -163,8 +138,6 @@ span.info {
 @media screen and (max-width: 1160px) {
     .leftImageSpace > img {
         width: 170%;
-        height: 100%;
-        margin-bottom: 20px;
     }
 
     .spaceReservations {
@@ -174,10 +147,6 @@ span.info {
     .spaceReservations>p {
         width:100%;
         margin-top: 0px;
-    }
-
-    .dataInfo1>img, .dataInfo2>img {
-        display: none;
     }
 
     .dataInfo1, .dataInfo2 {
