@@ -32,6 +32,7 @@ function App() {
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/space" element={<Space />} />
+        <Route path="/space/:id" element={<Space />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/select-date" element={<DateSelect />} />
         <Route path="/change-password" element={<ChangePassword />} />

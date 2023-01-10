@@ -22,9 +22,15 @@
     width: 40%;
 }
 
-.rightImageSpace > img {
+/* .rightImageSpace > img {
     width: 305px;
     height: 160px;
+    margin-bottom: 20px;
+} */
+
+.leftImageSpace > img {
+    width: 605px;
+    height: 350px;
     margin-bottom: 20px;
 }
 
@@ -100,11 +106,9 @@ p.spacePrice {
     width:305px;
     height: 45px;
     margin-top: 10px;
+    padding-top: 10px;
     margin-bottom: 10px;
     border: none;
-}
-
-.reserveSpaceButton>p {
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
@@ -112,6 +116,7 @@ p.spacePrice {
     line-height: 120%;
     text-align: center;
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 span.info {

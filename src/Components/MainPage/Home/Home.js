@@ -6,7 +6,22 @@ import calendar from "./ImagesHome/calendar.png"
 import spaces from "./ImagesHome/spaces.png";
 import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
+import { useState,useEffect  } from "react";
+import axios from 'axios';
 const Home = () => {
+  const [noResult,setNoResult]=useState(false);
+  const [users,setUsers]=useState([]);
+
+   const getAllUsers = async () =>{
+    const { data } = await axios.get('http://localhost:3100/spaces');
+    setUsers(data);
+   }
+
+  useEffect(()=>{
+   // getAllUsers();
+    //console.log("users --",users)
+},[]);
+
   return ( 
     <div className="containerMain">
       <div className="leftContainerMain">
@@ -15,7 +30,7 @@ const Home = () => {
         <div className="leftContInputs">
           <div className="locationInput">
             <img class="adressIcon" src={adress}></img>
-            <input type='text' placeholder="Hamburg"></input>
+            <input type='text' placeholder="Hamburg" ></input>
           </div>
           <div className="selectDateOffice">
           <input type='date' id="dateOption"></input>
@@ -27,10 +42,13 @@ const Home = () => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-          <button><p>Search</p></button>
+          <button ><p>Search</p></button>
         </div>
+        {/* <div>
+              { noResult && <div>No Result</div>}
+        </div> */}
       </div>
-      <div className="rightContainerMain"></div>
+      <div  className="rightContainerMain"></div>
       <div className="bottomContainer">
         <div className="mobileVersion">
           <h2>What we offer</h2>

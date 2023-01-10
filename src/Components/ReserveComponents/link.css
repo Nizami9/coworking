@@ -1,0 +1,13 @@
+.spacesLink {
+    height: 19px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FF7848;
+    text-decoration: none;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
