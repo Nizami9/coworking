@@ -1,36 +1,22 @@
 .containerSpace {
-    width: 100%;
-    height: 700px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 30px;
+    justify-content: space-between;
 }
 
-.spaceImages {
+.leftImageSpace {
     width: 52%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
-    margin-left: 30px;
 }
 
-
-.leftImageSpace {
-    margin-right: 20px;
-}
-
-.rightImageSpace {
-    width: 40%;
-}
-
-/* .rightImageSpace > img {
-    width: 305px;
-    height: 160px;
-    margin-bottom: 20px;
-} */
 
 .leftImageSpace > img {
-    width: 605px;
-    height: 350px;
+    width: 80%;
+    height: 80%;
     margin-bottom: 20px;
 }
 
@@ -38,9 +24,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 41%;
-    margin-left: 60px;
-    height: 200px;
     margin-top: 30px;
+    padding-left: 50px;
 }
 
 .spaceReservations>h1 {
@@ -62,12 +47,7 @@
     color: #9AA0B3;
     width:305px;
     margin-top: 10px;
-/* or 18px */
-
-
-/* Gray / 1 */
-
-color: #9AA0B3;
+    color: #9AA0B3;
 }
 
 p.spacePrice {
@@ -85,8 +65,8 @@ p.spacePrice {
 .bookTourButton {
     background-color: #F5F5F5;
     border: 2px solid #FF7848;
-    width:305px;
-    height: 45px;
+    width:50%;
+    height:10%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -103,18 +83,13 @@ p.spacePrice {
 
 .reserveSpaceButton {
     background-color: #FF7848;
-    width:305px;
-    height: 45px;
-    margin-top: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    border: none;
-    font-family: 'Outfit';
-    font-style: normal;
+    width:50%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 120%;
-    text-align: center;
     color: #FFFFFF;
     text-decoration: none;
 }
@@ -124,14 +99,13 @@ span.info {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 130%;
     color: #555D67;
     margin-top: 10px;
-    width: 100%;
+    width: 50%;
 }
 
 .hrOr {
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
     display: flex;
 }
@@ -146,55 +120,32 @@ span.info {
 .hrOr>p {
     margin: 0 10px 0 10px;
     font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
     color: #9AA0B3;
 }
 
 .openingHours {
     display: flex;
-    margin-bottom: 40px;
+    margin: 20px 0px 20px 0;
 }
 
 .openingHours>h3 {
     font-family: 'Outfit';
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 130%;
     color: #262626;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin-right: 50px;
 }
 
 .dataInfo1, .dataInfo2 {
-    width: 248px;
-    height: 48px;
     background: #DCE3ED;
     opacity: 0.75;
     border-radius: 4px;
-    margin-left: 33px;
+    margin-left: 20px;
     display: flex;
     padding: 12px;
 }
 
-.dataInfo1>img, .dataInfo2>img {
-    width: 21px;
-    height: 23.33px;
-    margin-left: 20px;
-}
-
 .dataInfo1>p, .dataInfo2>p {
     padding-left: 20px;
-}
-
-.descriptionText {
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
 }
 
 .descriptionText>p {
@@ -205,6 +156,41 @@ span.info {
     line-height: 140%;
     color: #555D67;
     margin-left: 50px;
-    width: 100%;
+    width: 52%;
     text-align: justify;
+}
+
+@media screen and (max-width: 1160px) {
+    .leftImageSpace > img {
+        width: 170%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .spaceReservations {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .spaceReservations>p {
+        width:100%;
+        margin-top: 0px;
+    }
+
+    .dataInfo1>img, .dataInfo2>img {
+        display: none;
+    }
+
+    .dataInfo1, .dataInfo2 {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .openingHours>h3 {
+        display: none;
+    }
+
+    .descriptionText>p {
+        margin-left: 0px;
+        width: 90%;
+    }
 }

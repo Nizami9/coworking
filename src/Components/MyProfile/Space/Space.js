@@ -15,15 +15,9 @@ const Space = () => {
         SpaceData.map((space) => {
   return (
     <div className='containerSpace'>
-        <div className='spaceImages'>
             <div className='leftImageSpace'>
                 <img src={space.imgUrl}></img>
             </div>
-            {/* <div className='rightImageSpace'>
-                <img src={space.imgUrl}></img>
-                <img src={space.imgUrl}></img>
-            </div> */}
-        </div>
         <div className='spaceReservations'>
                 <h1>{space.title}</h1>
                 <span className='info'>Available 57 desks</span>

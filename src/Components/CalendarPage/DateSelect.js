@@ -97,7 +97,7 @@ function DateSelect() {
                     <div className='timer'>
                         {timerComp}
                     </div>
-                    <div> <button className={btnClasname}>Continue</button></div>
+                    <div> <button className={btnClasname}><Link to='/community'>Continue</Link></button></div>
                 </div>
                 <div className='space-col'>
                     <SingleSpace />
