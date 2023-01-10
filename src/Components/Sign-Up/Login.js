@@ -4,17 +4,20 @@ import './style.css';
 //import users from '../../UserData.json';
 import { Navigate } from "react-router-dom";
 import axios from 'axios';
+import { useAuthContext } from '../../context/AuthContext';
 
 function Login() {
-      // React States
+
+  const { isAuthenticated, setToken } = useAuthContext();
+  
   const [errorMessages, setErrorMessages] = useState({});
-  const [isAuthenticated,setIsAuthenticated] = useState(false);
+  //const [isAuthenticated,setIsAuthenticated] = useState(false);
   const [logEmail,setLogEmail]=useState();
   const [logPassword,setLogPassword]=useState();
   const [loggedUser,setLoggedUser]=useState();
   
   
-  const [token,setToken] = useState();
+  //const [token,setToken] = useState();
 
   // const errors = {
   //   uname: "invalid username",
@@ -36,9 +39,9 @@ function Login() {
         email:logEmail,
         password:logPassword
       } );
-      localStorage.setItem('token', data);
-      setToken(data);
-      setIsAuthenticated(true);
+      localStorage.setItem('token', data.token);
+      setToken(data.token);
+      //setIsAuthenticated(true);
       //setLoggedUser(JSON.parse(data))
       console.log("Success",data);
     }catch(err){
@@ -99,9 +102,9 @@ function Login() {
         </div>
       );
 
-      {
-        console.log("data ----------",token)
-      }
+      // {
+      //   console.log("data ----------",token)
+      // }
     
   return (
     <div className="app">
