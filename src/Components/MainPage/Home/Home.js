@@ -6,11 +6,21 @@ import calendar from "./ImagesHome/calendar.png"
 import spaces from "./ImagesHome/spaces.png";
 import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
-import { useState } from "react";
-
+import { useState,useEffect  } from "react";
+import axios from 'axios';
 const Home = () => {
   const [noResult,setNoResult]=useState(false);
+  const [users,setUsers]=useState([]);
 
+   const getAllUsers = async () =>{
+    const { data } = await axios.get('http://localhost:3100/spaces');
+    setUsers(data);
+   }
+
+  useEffect(()=>{
+   // getAllUsers();
+    //console.log("users --",users)
+},[]);
 
   return ( 
     <div className="containerMain">
