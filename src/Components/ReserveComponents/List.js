@@ -12,11 +12,7 @@ const List = () => {
    const { allSpaces } = useSpaceContext();
 
    const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
-   console.log("available spaces are ",spaces)
    
-   useEffect(()=>{
-
-   },[])
 
   return (
     <div>
@@ -36,7 +32,11 @@ const List = () => {
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>
-                    <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space→</Link></div>
+
+                    <div><Link className="spacesLink" to={`/space/${space.id}`}>Explore space →</Link></div>
+
+                    {/* <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space →</Link></div> */}
+
                     <div className="area-maxPeople-costperDay">
                     <div className="area"> {space.area}</div>
                     <div className="maxpeople"> {space.maxPeople} </div>

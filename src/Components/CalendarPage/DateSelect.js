@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState} from "react";
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import './styleDateSelect.css';
 
 
@@ -10,17 +10,15 @@ import 'react-calendar/dist/Calendar.css';
 import TimeInput from 'react-time-picker-input';
 import "react-time-picker-input/dist/components/TimeInput.css"
 import SingleSpace from './SingleSpace';
-
+import { useSpaceContext } from '../../context/SpaceContext';
 
 
 function DateSelect() {
     const [date, setDate] = useState(new Date());
-    const [toDate, setToDate] = useState(new Date());
-    const [fromDate, setFromDate] = useState(new Date());
-    const [fromTime, setFromTime] = useState("00:00");
-    const [toTime, setToTime] = useState("23:00");
+    const {setFromDate,setToDate,setFromTime,setToTime,fromDate,toDate,fromTime,toTime} =useSpaceContext();
     const [btnClasname, setBtnClassname] = useState('continue-btn');
-
+    
+    const {id} = useParams();
 
     const handleChangeCalendar =(e)=>{
          setDate(e);
@@ -35,19 +33,6 @@ function DateSelect() {
                 <div className="calendar-container">
                     <Calendar onChange={(e)=>handleChangeCalendar(e)} value={date} selectRange={true} />
                 </div>
-                {/* {date.length > 0 ? (
-                    <p className="text-center">
-                        <span className="bold">Start:</span> {date[0].toDateString()}
-                        &nbsp;|&nbsp;
-                        <span className="bold">End:</span> {date[1].toDateString()}
-                    </p>
-                ) : (
-                    <p className="text-center">
-                        <span className="bold">Default selected date:</span>{" "}
-                        {date.toDateString()}
-                    </p>
-                )} */}
-
             </div>
         );
 
@@ -97,7 +82,7 @@ function DateSelect() {
                     <div className='timer'>
                         {timerComp}
                     </div>
-                    <div> <button className={btnClasname}><Link to='/community'>Continue</Link></button></div>
+                    <div> <button className={btnClasname}><Link to='/enter-details'>Continue</Link></button></div>
                 </div>
                 <div className='space-col'>
                     <SingleSpace />

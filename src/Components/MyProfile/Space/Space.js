@@ -5,29 +5,40 @@ import SpaceData from "../../../spaceData.json";
 import "./Space.css";
 import { useSpaceContext } from '../../../context/SpaceContext';
 
+
 const Space = () => {
 
+     const{ allSpaces,setSelectedSpace,selectedSpace} = useSpaceContext();
+     
      const { id } =useParams();
-     const{ allSpaces } = useSpaceContext();
+    
+      
 
-     const spaces = allSpaces.filter(space => space.id === id);
-   
-    return (
-        <div>
-    {SpaceData && SpaceData
+     const space = allSpaces.filter(singleSpace => singleSpace.id === id);
+     setSelectedSpace(space[0]);
+     console.log("space is",space);
+     console.log("selectedSpace  ---",selectedSpace);
+
+
+     {
+        return( selectedSpace &&
+        <div>  
+
+  {/* {SpaceData && SpaceData
+
     .filter(space => id ? id === space.id : space)
-    .map(space => {
-  return (
-    <div className='containerSpace'>
+  .map(space => { */}
+
+  <div className='containerSpace'>
             <div className='leftImageSpace'>
-                <img src={space.imgUrl}></img>
+                <img src={selectedSpace.imgUrl} alt='office-picture'></img>
             </div>
         <div className='spaceReservations'>
-                <h1>{space.title}</h1>
+                <h1>{selectedSpace.title}</h1>
                 <span className='info'>Available 57 desks</span>
-            <p className='spacePrice'>{space.costperDay} / day</p>
+            <p className='spacePrice'>{selectedSpace.costperDay} / day</p>
             <p className='reserveOnlineP'>Reserve online</p>
-            <Link className='reserveSpaceButton' to='/select-date'><p>Reserve space</p></Link>
+            <Link className='reserveSpaceButton' to={`/space/${id}/select-date`}><p>Reserve space</p></Link>
             <div className='hrOr'>
             <hr />
             <p>or</p>
@@ -41,11 +52,11 @@ const Space = () => {
                 <h3>Opening hours:</h3>
                 <div className='dataInfo1'>
                     <img src={calendar}></img>
-                    <p>{space.openDays}</p>
+                    <p>{selectedSpace.openDays}</p>
                 </div>
                 <div className='dataInfo2'>
                     <img src={schedule}></img>
-                    <p>{space.openHours}</p>
+                    <p>{selectedSpace.openHours}</p>
                 </div>
             </div>
 
@@ -53,18 +64,19 @@ const Space = () => {
                 <h3>Description:</h3>
                 <div className='descriptionText'>
                     <p>
-                    {space.description}
+                    {selectedSpace.description}
                     </p>
                     </div>
                 </div>
             </div>
         </div>
-                )
-            }
+
+
+             {/* }
         )
-    }
+     } */}
     </div>
-    )
+    )   }
 }
 
-export default Space;
+ export default Space;

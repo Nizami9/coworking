@@ -10,6 +10,15 @@ const SpaceContext = createContext();
 function SpaceProvider({ children }) {
 
     const [allSpaces, setAllSpaces] = useState([]);
+    const [selectedSpace,setSelectedSpace]=useState();
+    const [toDate, setToDate] = useState(new Date());
+    const [fromDate, setFromDate] = useState(new Date());
+    const [fromTime, setFromTime] = useState("00:00");
+    const [toTime, setToTime] = useState("23:00");
+    // const [selectedDate,setSelectedDate]=useState({
+    //   from:new Date(),
+    //   to:new Date()
+    // });
 
     const getAllSpaces = async() => {
         try {
@@ -27,9 +36,20 @@ function SpaceProvider({ children }) {
 
       const value = {
         allSpaces,
-        setAllSpaces
+        setAllSpaces,
+        selectedSpace,
+        setSelectedSpace,
+        toDate,
+        setToDate,
+        fromDate,
+        setFromDate,
+        toTime,
+        setToTime,
+        fromTime,
+        setFromTime
+        
        };
- return <SpaceContext.Provider value={{ allSpaces }}>{children}</SpaceContext.Provider>;
+ return <SpaceContext.Provider value={value}>{children}</SpaceContext.Provider>;
 
 }
 

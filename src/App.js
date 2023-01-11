@@ -24,16 +24,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations/:searchKey" element={<Locations />} />
-        <Route path="/locations" element={<Locations />} />
-        <Route path="/community" element={<Community />} />
+
+        {/* <Route path="/community" element={<Community />} /> */}
+
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/space" element={<Space />} />
         <Route path="/space/:id" element={<Space />} />
+        <Route path="/space/:id/select-date" element={<DateSelect />} />
+        <Route path="/enter-details" element={<Community />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/select-date" element={<DateSelect />} />
+        {/* <Route path="/select-date" element={<DateSelect />} /> */}
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/UsersLocations" element={<UsersLocations />} />
         <Route path="/Userpayment" element={<Userpayment />} /> 
