@@ -15,9 +15,10 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
   
     const verifyToken = async () => {
+        console.log("token from ls is",token)
       try {
         const { data } = await axios.post(
-          'http://localhost:3100/user/auth',
+          'https://real-red-gosling-hose.cyclic.app/user/auth',
           {},
           { headers: { Authorization: token } }
         );

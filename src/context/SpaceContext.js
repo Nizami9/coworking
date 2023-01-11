@@ -14,7 +14,7 @@ function SpaceProvider({ children }) {
     const getAllSpaces = async () => {
         try {
           const { data } = await axios.post(
-            'http://localhost:3100/spaces');
+            'https://real-red-gosling-hose.cyclic.app/spaces');
             setAllSpaces(data);
         } catch (error) {
           console.error(error);
