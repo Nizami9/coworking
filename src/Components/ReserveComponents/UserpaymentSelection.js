@@ -14,7 +14,7 @@ function UserpaymentSelection() {
     <div className="p4-space-wrapper">
       <div className="space-wrape">
         {" "}
-        <h2>Reserve Space </h2>
+        <h4>Reserve Space </h4>
       </div>
       <div className="space-wrapper-2">
         {space && (
@@ -44,7 +44,7 @@ function UserpaymentSelection() {
           </div>
         )}
       </div>
-      <div className="show-date-time">
+      <div className="show-date-time--">
         <div>
           <img
             src={require("../../icons/calendar-icon.png")}
