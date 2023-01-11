@@ -10,15 +10,16 @@ import { useSpaceContext } from '../../context/SpaceContext';
   // const [fromTime, setFromTime] = useState("00:00");
   // const [toTime, setToTime] = useState("23:00");
 
- // const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+ 
  // console.log("space ",selectedSpace)
 
 function UserpaymentSelection() {
-  let space = Space[0];
-  const [toDate, setToDate] = useState(new Date());
-  const [fromDate, setFromDate] = useState(new Date());
-  const [fromTime, setFromTime] = useState("00:00");
-  const [toTime, setToTime] = useState("23:00");
+  const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+  // let space = Space[0];
+  // const [toDate, setToDate] = useState(new Date());
+  // const [fromDate, setFromDate] = useState(new Date());
+  // const [fromTime, setFromTime] = useState("00:00");
+  // const [toTime, setToTime] = useState("23:00");
 
 
   let spaceComponent = (
@@ -31,7 +32,7 @@ function UserpaymentSelection() {
         {selectedSpace && (
           <div>
             <hr />
-            <div className="p4-img-and-details" key={space.id}>
+            <div className="p4-img-and-details" key={selectedSpace.id}>
               <img src={selectedSpace.imgUrl} alt="img" className="p4-img" />
               <div className="p4-title-and-details">
                 <div className="p4-title">

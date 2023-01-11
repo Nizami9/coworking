@@ -23,7 +23,7 @@ function ReserveSpace() {
       </div>
 
       <div className="space-wrapper-sp">
-        {selectedSpace && (
+        {selectedSpace && (<>
           <div>
             <hr />
             <div className="p4-img-and-details-king" key={selectedSpace.id}>
@@ -50,8 +50,8 @@ function ReserveSpace() {
             </div>
             <hr />
           </div>
-        )}
-      </div>
+     
+      </div> 
       <div className="show-date-time-sp">
         <div>
           <img
@@ -78,9 +78,13 @@ function ReserveSpace() {
         </div>
         
       </div>
-      <div className="total-pay"><h3>Total</h3></div>
+      <div className="total-pay"><h3>Total</h3></div> 
+    </>
+
+      )}
     </div>
-  );
+    </div> 
+  ); 
 
   return <div>{spaceComponent}</div>;
 }
