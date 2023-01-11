@@ -42,6 +42,7 @@ const UserPay = () => {
               <br></br>
               <h6>Name</h6>
               <input
+                required
                 className="form-2"
                 style={{
                   height: "44px",
@@ -53,6 +54,7 @@ const UserPay = () => {
               <br></br>
               <h6>Card Number</h6>
               <input
+                required
                 className="form-2"
                 style={{
                   height: "44px",
@@ -70,7 +72,7 @@ const UserPay = () => {
                 }}
                 type="submit"
               >
-                Complete
+                <Link to='/thank-you'>Complete</Link>
               </button>
             </form>
           </div>

@@ -11,6 +11,8 @@ import axios from 'axios';
 const Home = () => {
   const [noResult,setNoResult]=useState(false);
   const [users,setUsers]=useState([]);
+  const [searchKey,setSearchKey]=useState([]);
+  const [availaleSpaces,setAvaialableSpaces]=useState([])
 
    const getAllUsers = async () =>{
     const { data } = await axios.get('http://localhost:3100/spaces');
@@ -19,8 +21,22 @@ const Home = () => {
 
   useEffect(()=>{
    // getAllUsers();
-    //console.log("users --",users)
+    //console.log("users --",users);
 },[]);
+
+const handleChange =(e) =>{
+  setSearchKey(e.target.value.toLowerCase());
+}
+
+const handleSearch = async(e) => {
+  e.preventDefault();
+   console.log(searchKey);
+   const { data } = await axios.post(`http://localhost:3100/spaces/location`,{
+    searchKey:searchKey.toLowerCase()
+  } );
+  setAvaialableSpaces(data);
+   console.log("data from  ",data)
+}
 
   return ( 
     <div className="containerMain">
@@ -30,7 +46,7 @@ const Home = () => {
         <div className="leftContInputs">
           <div className="locationInput">
             <img class="adressIcon" src={adress}></img>
-            <input type='text' placeholder="Hamburg" ></input>
+            <input type='text' placeholder="Hamburg" onChange={handleChange}></input>
           </div>
           <div className="selectDateOffice">
           <input type='date' id="dateOption"></input>
@@ -42,7 +58,7 @@ const Home = () => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-          <button ><p>Search</p></button>
+         <NavLink to='/locations/:searchKey'><button onClick={handleSearch}><p>Search</p></button></NavLink>
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}

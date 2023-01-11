@@ -92,16 +92,15 @@ export default class NameForm extends React.Component {
                 />
               </div>
             </label>
-            <input
-              className="form"
-              style={{
-                height: "44px",
-                width: "305px",
-                background: " #FF7848",
-              }}
-              type="submit"
-              value="Submit"
-            />
+            <button
+            className="form"
+            style={{
+              height: "44px",
+              width: "305px",
+              background: " #FF7848",
+            }}
+            >
+              <Link to='/Userpayment'>Submit</Link></button>
           </form>
         </div>
       </div>
