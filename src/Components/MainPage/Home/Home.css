@@ -106,11 +106,11 @@ width: 49%;
     justify-content: space-between;
 }
 
-.leftContInputs>button {
+.searchButtonMain {
     width: 100%;
-    height: 56px;
     background-color:#FF7848;
     border: none;
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -118,13 +118,15 @@ width: 49%;
     margin: 0 auto;
 }
 
-.leftContInputs>button>p {
-    font-family: 'Outfit';
-    font-style: normal;
+button.buttonSearchMain {
+    margin-top: auto;
+    height: 50px;
+}
+
+.buttonSearchMain>p {
     font-weight: 600;
     font-size: 16px;
     line-height: 120%;
-    text-align: center;
     color: #FFFFFF;
 }
 

@@ -58,7 +58,7 @@ const handleSearch = async(e) => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-         <NavLink to='/locations/:searchKey'><button onClick={handleSearch}><p>Search</p></button></NavLink>
+         <NavLink to='/locations/:searchKey' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}
