@@ -1,7 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import DateSelect from '../../CalendarPage/DateSelect';
-import Navbar from "../../Navbar/index";
-import Footer from "../../Footer/Footer";
 import calendar from "./ImagesSpace/calendar.png";
 import schedule from "./ImagesSpace/schedule.png";
 import SpaceData from "../../../spaceData.json";
@@ -10,6 +7,7 @@ import { useSpaceContext } from '../../../context/SpaceContext';
 import { useParams } from 'react-router-dom';
 
 const Space = () => {
+<<<<<<< Updated upstream
 
      const { id } =useParams();
      const{ allSpaces } = useSpaceContext();
@@ -18,6 +16,10 @@ const Space = () => {
    
 
 
+=======
+    const {id} = useParams();
+    console.log(id);
+>>>>>>> Stashed changes
     return (
         <div>
     {SpaceData && SpaceData

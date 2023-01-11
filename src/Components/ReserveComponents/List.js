@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //import Space from "../../spaceData.json";
 import { Link,useParams } from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
@@ -22,12 +23,29 @@ const List = () => {
 
 
 
+=======
+import SpaceData from "../../spaceData.json";
+import { useParams, Link } from "react-router-dom";
+import "./link.css";
+
+const List = () => {
+  let {city} = useParams();
+  console.log(city);
+>>>>>>> Stashed changes
   return (
+    <div>
+      {SpaceData && SpaceData
+      .filter(space => city ? city === space.city : space)
+      .map(space => {
+    return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
+<<<<<<< Updated upstream
       {spaces &&
         spaces.map((space) => {
           return (
+=======
+>>>>>>> Stashed changes
             <div className="card" key={space.id}>
                 {" "}
                 <img src={space.imgUrl} alt="img" className="img" />
@@ -52,10 +70,8 @@ const List = () => {
                 </div>
               </div>
             </div>
-          );
-        })}
-    </div>
-  );
-};
-
+            </div>
+      )})}
+      </div>
+  )}
 export default List;

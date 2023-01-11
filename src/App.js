@@ -2,7 +2,6 @@ import Footer from "./Components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Locations from "./Components/ReserveComponents/Locations";
-//  import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp/SignUp";
 import Home from "./Components/MainPage/Home/Home";
@@ -26,7 +25,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+<<<<<<< Updated upstream
         <Route path="/locations/:searchKey" element={<Locations />} />
+=======
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations/:city" element={<Locations />} />
+>>>>>>> Stashed changes
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
