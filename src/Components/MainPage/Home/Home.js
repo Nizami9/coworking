@@ -22,8 +22,6 @@ const Home = () => {
     setUsers(data);
    }
 
-  //  const {allSpaces } = useSpaceContext();
-  //  console.log("all space in home ",allSpaces);
 
   useEffect(()=>{
    // getAllUsers();
@@ -64,7 +62,7 @@ const handleSearch = async(e) => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-         <NavLink to={`/locations/:${searchKey}`}><button onClick={handleSearch}><p>Search</p></button></NavLink>
+         <NavLink to={`/locations/${searchKey}`}><button onClick={handleSearch}><p>Search</p></button></NavLink>
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}

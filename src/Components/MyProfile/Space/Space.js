@@ -7,8 +7,16 @@ import calendar from "./ImagesSpace/calendar.png";
 import schedule from "./ImagesSpace/schedule.png";
 import SpaceData from "../../../spaceData.json";
 import "./Space.css";
+import { useSpaceContext } from '../../../context/SpaceContext';
+import { useParams } from 'react-router-dom';
 
 const Space = () => {
+     const { id } =useParams();
+     const{ allSpaces } = useSpaceContext();
+
+     const spaces = allSpaces.filter(space => space.id === id);
+   
+
     return (
         <div>
     {SpaceData &&

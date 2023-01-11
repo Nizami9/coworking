@@ -5,16 +5,15 @@ import axios from 'axios';
 
 const SpaceContext = createContext();
 
-export const useSpaceContext = () => useContext(SpaceContext);
+ const useSpaceContext = () => useContext(SpaceContext);
 
 function SpaceProvider({ children }) {
 
-    const [allSpaces, setAllSpaces] = useState(null);
+    const [allSpaces, setAllSpaces] = useState([]);
 
-    const getAllSpaces = async () => {
+    const getAllSpaces = async() => {
         try {
-            console.log("inside try of list")
-          const { data } = await axios.post(
+          const { data } = await axios.get(
             'https://real-red-gosling-hose.cyclic.app/spaces');
             setAllSpaces(data);
         } catch (error) {
@@ -25,14 +24,13 @@ function SpaceProvider({ children }) {
     useEffect(() => {
        getAllSpaces();
       }, []);
-    
 
       const value = {
         allSpaces,
         setAllSpaces
        };
- return <SpaceContext.Provider value={value}>{children}</SpaceContext.Provider>;
+ return <SpaceContext.Provider value={{ allSpaces }}>{children}</SpaceContext.Provider>;
 
 }
 
-export default SpaceProvider
+export  { SpaceProvider, useSpaceContext }
