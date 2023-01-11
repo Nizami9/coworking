@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowseRouter, Router, Route, Switch, Redirect} from 'react-dom';
 import AuthProvider from './context/AuthContext';
-import SpaceProvider from './context/SpaceContext';
+import {SpaceProvider} from './context/SpaceContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

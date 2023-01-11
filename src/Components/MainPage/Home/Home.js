@@ -8,16 +8,20 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
+//import useSpaceContext from '../../../context/SpaceContext'
+
 const Home = () => {
+
   const [noResult,setNoResult]=useState(false);
   const [users,setUsers]=useState([]);
   const [searchKey,setSearchKey]=useState([]);
   const [availaleSpaces,setAvaialableSpaces]=useState([])
 
    const getAllUsers = async () =>{
-    const { data } = await axios.get('http://localhost:3100/spaces');
+    const { data } = await axios.get('https://real-red-gosling-hose.cyclic.app/spaces');
     setUsers(data);
    }
+
 
   useEffect(()=>{
    // getAllUsers();
@@ -29,11 +33,11 @@ const handleChange =(e) =>{
 }
 
 const handleSearch = async(e) => {
-  e.preventDefault();
+  //e.preventDefault();
    console.log(searchKey);
-   const { data } = await axios.post(`http://localhost:3100/spaces/location`,{
+   const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces/location`,{
     searchKey:searchKey.toLowerCase()
-  } );
+  })
   setAvaialableSpaces(data);
    console.log("data from  ",data)
 }
@@ -45,7 +49,7 @@ const handleSearch = async(e) => {
         <p>From a single desk to a whole building <br/>The choice is yours</p>
         <div className="leftContInputs">
           <div className="locationInput">
-            <img class="adressIcon" src={adress}></img>
+            <img className="adressIcon" src={adress}></img>
             <input type='text' placeholder="Hamburg" onChange={handleChange}></input>
           </div>
           <div className="selectDateOffice">
@@ -58,7 +62,9 @@ const handleSearch = async(e) => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-         <NavLink to='/locations/:searchKey' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
+          
+         <NavLink to='/locations/${searchKey}' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
+
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}

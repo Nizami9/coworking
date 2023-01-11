@@ -30,7 +30,7 @@ export default function SignUp () {
   const handleSubmitRegistration = async (e)=>{
     try{
         e.preventDefault();
-      const { data } = await axios.post('http://localhost:3100/user/register', {
+      const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/register', {
           firstName: input.firstName,
           lastName: input.lastName,
           email: input.email,
