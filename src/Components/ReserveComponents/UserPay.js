@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-const PaymentSelection = () => {
+const UserPay = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
 
@@ -34,7 +34,7 @@ const PaymentSelection = () => {
                 className="form-2"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 {...register("payment method")}
                 placeholder="Apply pay"
@@ -46,7 +46,7 @@ const PaymentSelection = () => {
                 className="form-2"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 {...register("name")}
                 placeholder="kingsley best"
@@ -58,7 +58,7 @@ const PaymentSelection = () => {
                 className="form-2"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 {...register("Card Number")}
                 placeholder="xxxx xxxx xxxx xxxx"
@@ -82,4 +82,4 @@ const PaymentSelection = () => {
   );
 };
 
-export default PaymentSelection;
+export default UserPay;

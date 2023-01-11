@@ -4,21 +4,28 @@ import Space from "../../spaceData.json";
 import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
 
-function ReserveSpace() {
-   let space = Space[0];
+
   // const [toDate, setToDate] = useState(new Date());
   // const [fromDate, setFromDate] = useState(new Date());
   // const [fromTime, setFromTime] = useState("00:00");
   // const [toTime, setToTime] = useState("23:00");
 
-  const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
-  console.log("space ",selectedSpace)
+ // const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+ // console.log("space ",selectedSpace)
+
+function UserpaymentSelection() {
+  let space = Space[0];
+  const [toDate, setToDate] = useState(new Date());
+  const [fromDate, setFromDate] = useState(new Date());
+  const [fromTime, setFromTime] = useState("00:00");
+  const [toTime, setToTime] = useState("23:00");
+
 
   let spaceComponent = (
     <div className="p4-space-wrapper">
       <div className="space-wrape">
         {" "}
-        <h2>Reserve Space </h2>
+        <h4>Reserve Space </h4>
       </div>
       <div className="space-wrapper-2">
         {selectedSpace && (
@@ -48,7 +55,7 @@ function ReserveSpace() {
           </div>
         )}
       </div>
-      <div className="show-date-time">
+      <div className="show-date-time--">
         <div>
           <img
             src={require("../../icons/calendar-icon.png")}
@@ -81,4 +88,4 @@ function ReserveSpace() {
   return <div>{spaceComponent}</div>;
 }
 
-export default ReserveSpace;
+export default UserpaymentSelection;

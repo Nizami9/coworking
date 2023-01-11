@@ -1,7 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import DateSelect from '../../CalendarPage/DateSelect';
-import Navbar from "../../Navbar/index";
-import Footer from "../../Footer/Footer";
 import calendar from "./ImagesSpace/calendar.png";
 import schedule from "./ImagesSpace/schedule.png";
 import SpaceData from "../../../spaceData.json";
@@ -28,6 +25,7 @@ const Space = () => {
         <div>  
 
   {/* {SpaceData && SpaceData
+
     .filter(space => id ? id === space.id : space)
   .map(space => { */}
 

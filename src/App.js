@@ -2,7 +2,6 @@ import Footer from "./Components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Locations from "./Components/ReserveComponents/Locations";
-//  import Community from "./Components/MainPage/Community";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp/SignUp";
 import Home from "./Components/MainPage/Home/Home";
@@ -17,8 +16,6 @@ import Community from "./Components/ReserveComponents/Community";
 import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/Thankyou/Thankyou";
 
-
-
 function App() {
   return (
     <div>
@@ -27,7 +24,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations/:searchKey" element={<Locations />} />
+
         {/* <Route path="/community" element={<Community />} /> */}
+
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/myprofileftside" element={<MyProfileLeftSide />} />
