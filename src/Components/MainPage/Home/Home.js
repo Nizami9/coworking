@@ -63,7 +63,7 @@ const handleSearch = async(e) => {
               </select>
           </div>
           
-         <NavLink to='/locations/${searchKey}' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
+         <NavLink to={`/locations/${searchKey}`} className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
 
         </div>
         {/* <div>

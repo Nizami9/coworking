@@ -2,13 +2,18 @@ import React from "react";
 import Space from "../../spaceData.json";
 // import "./styleChangePass.css";
 import { useState } from "react";
+import { useSpaceContext } from '../../context/SpaceContext';
 
 function ReserveSpace() {
-  let space = Space[0];
-  const [toDate, setToDate] = useState(new Date());
-  const [fromDate, setFromDate] = useState(new Date());
-  const [fromTime, setFromTime] = useState("00:00");
-  const [toTime, setToTime] = useState("23:00");
+  // let space = Space[0];
+  // const [toDate, setToDate] = useState(new Date());
+  // const [fromDate, setFromDate] = useState(new Date());
+  // const [fromTime, setFromTime] = useState("00:00");
+  // const [toTime, setToTime] = useState("23:00");
+
+  const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+  console.log("data from context",toDate,fromDate,fromTime,toTime,selectedSpace)
+  console.log("in reser space ",selectedSpace);
 
   let spaceComponent = (
     <div className="p4-space-wrapper">
@@ -17,14 +22,14 @@ function ReserveSpace() {
         <h2>Reserve Space </h2>
       </div>
       <div className="space-wrapper-2">
-        {space && (
+        {selectedSpace && (
           <div>
             <hr />
-            <div className="p4-img-and-details" key={space.id}>
-              <img src={space.imgUrl} alt="img" className="p4-img" />
+            <div className="p4-img-and-details" key={selectedSpace.id}>
+              <img src={selectedSpace.imgUrl} alt="img" className="p4-img" />
               <div className="p4-title-and-details">
                 <div className="p4-title">
-                  <h4> {space.title}</h4>
+                  <h4> {selectedSpace.title}</h4>
                 </div>
                 <div className="p4-address-city-country">
                   <img
@@ -32,11 +37,11 @@ function ReserveSpace() {
                     alt="location-icon"
                     className="p4-location-icon"
                   />
-                  {space.address}
+                  {selectedSpace.address}
                   {","}
-                  {space.city}
+                  {selectedSpace.city}
                   {","}
-                  {space.counrty}
+                  {selectedSpace.counrty}
                 </div>
               </div>
             </div>
