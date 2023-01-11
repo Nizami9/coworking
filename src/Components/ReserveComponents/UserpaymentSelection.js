@@ -3,7 +3,7 @@ import Space from "../../spaceData.json";
 // import "./styleChangePass.css";
 import { useState } from "react";
 
-function ReserveSpace() {
+function UserpaymentSelection() {
   let space = Space[0];
   const [toDate, setToDate] = useState(new Date());
   const [fromDate, setFromDate] = useState(new Date());
@@ -14,7 +14,7 @@ function ReserveSpace() {
     <div className="p4-space-wrapper">
       <div className="space-wrape">
         {" "}
-        <h2>Reserve Space </h2>
+        <h4>Reserve Space </h4>
       </div>
       <div className="space-wrapper-2">
         {space && (
@@ -44,7 +44,7 @@ function ReserveSpace() {
           </div>
         )}
       </div>
-      <div className="show-date-time">
+      <div className="show-date-time--">
         <div>
           <img
             src={require("../../icons/calendar-icon.png")}
@@ -77,4 +77,4 @@ function ReserveSpace() {
   return <div>{spaceComponent}</div>;
 }
 
-export default ReserveSpace;
+export default UserpaymentSelection;

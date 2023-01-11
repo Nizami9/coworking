@@ -1,6 +1,6 @@
 import ReserveSpace from "../ReserveComponents/ReserveSpace";
- import "./UserReserveSelection.css";
-import Information from "../ReserveComponents/Information";
+ import "./ReserveSpace.css";
+import ReserveSpaceInfo from "../ReserveComponents/ReserveSpaceInfo";
 import React from "react";
 
 
@@ -9,10 +9,10 @@ const Community = () => {
       <div className="reserveSpace-container">
           
           <div>
-            <Information />
+            <ReserveSpaceInfo />
           </div>
           <div>
-            < ReserveSpace />
+            <ReserveSpace />
           </div>
       </div>
   );

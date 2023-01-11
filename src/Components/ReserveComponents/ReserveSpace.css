@@ -1,0 +1,217 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.reserveSpace-container {
+  /* width: 100%; */
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Outfit";
+  gap: 2px;
+}
+.reserve-space {
+  /* height: 500px; */
+  display: flex;
+}
+
+.info-title {
+  height: 90px;
+  /* width: 470px; */
+  display: flex;
+   justify-content: center;
+  padding-top: 40px;
+  font-family: "Outfit";
+}
+/* .info-title {
+  width: 500;
+  display: flex;
+  justify-items: flex-end;
+} */
+.p4-title {
+  display: flex;
+  height: 20%;
+}
+.form-2 {
+  height: 120px;
+}
+.form {
+  border-radius: 4px;
+  border: 1px solid #dce3ed;
+}
+
+.form-1-wrapper {
+  /* height: 500px; */
+  display: flex;
+  justify-content: center;
+}
+
+.input-message {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/* .p4-space-wrapper-king {
+  display: flex;
+  font-family: "Outfit";
+
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+  align-items: flex-start;
+} */
+.space-wrape {
+  /* height: 250px; */
+
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.space-wrapper-2 {
+  height: px;
+  /*   width: 600px; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.p4-img-and-details-king {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.p4-img-sp {
+  margin: 3% 0;
+  margin-right: 3%;
+   width: 55%; 
+}
+.p4-space-wrapper-king {
+  font-family: "Outfit";
+  height: 100%;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 11%;
+}
+
+
+.p4-title-and-details-king {
+  margin: 1% 0;
+  width: 40%;
+}
+
+.p4-address-city-country-king
+{
+  font-size: small;
+padding-top: 160px;
+}
+/* hr {
+  width: 600px;
+  border-top: 0.7px solid #dce3ed;
+} */
+.p4-location-icon-king {
+  width: 15px;
+  margin-right:15px ;
+}
+/* hr {
+  width: 600px;
+  border-top: 0.2px solid #dce3ed;
+} */
+.p4-location-icon {
+  width: 5%;
+}
+.calendar-icon-ss {
+  width: 5%;
+}
+.show-date-time-sp {
+  display: flex;
+  justify-content: flex-start;
+  width: 300px;
+  font-size: small;
+  border-bottom: 2px solid #dce3ed;
+}
+
+.back-link {
+  display: flex;
+  text-decoration: none;
+}
+.back-link img {
+  width: 2em;
+}
+.back-link span,
+.show-times-sp {
+  font-size: small;
+}
+.back-link span {
+  display: inline-flex;
+  align-items: center;
+  color: #ff7848;
+}
+.total-pay {
+  height: 60px;
+  width: 70px;
+  font-family: "Outfit";
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #262626;
+  padding-left: 25px;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  .reserveSpace-container {
+    height: 100%;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    margin:5px;
+  }
+
+.p4-img-sp {
+    margin: 10px;
+    width: 305px;
+    height: 167px;
+    padding-left: 25px;
+  }
+  .form-1-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 24px;
+  }
+
+  .p4-img-and-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p4-img-and-details {
+    display: inline-flex;
+    border: 2px;
+  }
+  .show-date-time-sp {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    font-size: small;
+    margin-top: 5%;
+    padding-left: 25px;
+    border-bottom: 2px solid #dce3ed;
+  }
+  .p4-space-wrapper-king {
+    display: flex;
+    font-family: "Outfit";
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+}
+

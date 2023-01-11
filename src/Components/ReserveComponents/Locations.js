@@ -1,6 +1,9 @@
-import List from "../ReserveComponents/List";
+import CheckboxList from "../ReserveComponents/CheckboxList";
 import Checkbox from "../ReserveComponents/Checkbox";
-import "./Locations.css";
+
+ import "./Checkbox.css";
+
+
 const Locations = () => {
   return (
     <div className="locations-container">
@@ -8,7 +11,9 @@ const Locations = () => {
       <Checkbox /> 
       </div>
       <div className="list">
-        <List/>
+
+        <CheckboxList />
+
       </div>
     </div>
   );
