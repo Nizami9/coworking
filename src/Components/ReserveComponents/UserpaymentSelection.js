@@ -3,7 +3,7 @@ import Space from "../../spaceData.json";
 // import "./styleChangePass.css";
 import { useState } from "react";
 
-function ReserveSpace() {
+function UserpaymentSelection() {
   let space = Space[0];
   const [toDate, setToDate] = useState(new Date());
   const [fromDate, setFromDate] = useState(new Date());
@@ -77,4 +77,4 @@ function ReserveSpace() {
   return <div>{spaceComponent}</div>;
 }
 
-export default ReserveSpace;
+export default UserpaymentSelection;

@@ -11,26 +11,26 @@ function ReserveSpace() {
   const [toTime, setToTime] = useState("23:00");
 
   let spaceComponent = (
-    <div className="p4-space-wrapper">
-      <div className="space-wrape">
+    <div className="p4-space-wrapper-king">
+      <div className="space-wrape-sp">
         {" "}
         <h2>Reserve Space </h2>
       </div>
-      <div className="space-wrapper-2">
+      <div className="space-wrapper-sp">
         {space && (
           <div>
             <hr />
-            <div className="p4-img-and-details" key={space.id}>
-              <img src={space.imgUrl} alt="img" className="p4-img" />
-              <div className="p4-title-and-details">
+            <div className="p4-img-and-details-king" key={space.id}>
+              <img src={space.imgUrl} alt="img" className="p4-img-sp" />
+              <div className="p4-title-and-details-king">
                 <div className="p4-title">
                   <h4> {space.title}</h4>
                 </div>
-                <div className="p4-address-city-country">
+                <div className="p4-address-city-country-king">
                   <img
                     src={require("../../icons/location-icon.png")}
                     alt="location-icon"
-                    className="p4-location-icon"
+                    className="p4-location-icon-king"
                   />
                   {space.address}
                   {","}
@@ -44,21 +44,21 @@ function ReserveSpace() {
           </div>
         )}
       </div>
-      <div className="show-date-time">
+      <div className="show-date-time-sp">
         <div>
           <img
             src={require("../../icons/calendar-icon.png")}
             alt="calendar-icon"
-            className="calendar-icon"
+            className="calendar-icon-ss"
           />
-          <span className="show-date">
+          <span className="show-date-sp">
             {fromDate.toDateString()}
             {" - "}
             {toDate.toDateString()}
           </span>
         </div>
 
-        <div className="show-times">
+        <div className="show-times-sp">
           <img
             src={require("../../icons/clock-icon.png")}
             alt="clock-icon"

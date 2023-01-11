@@ -49,7 +49,7 @@ export default class NameForm extends React.Component {
                 className="form"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 type="name"
                 placeholder="Name"
@@ -59,7 +59,7 @@ export default class NameForm extends React.Component {
                 className="form"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 type="text"
                 placeholder="email"
@@ -69,7 +69,7 @@ export default class NameForm extends React.Component {
                 className="form"
                 style={{
                   height: "44px",
-                  width: "522px",
+                  width: "450px",
                 }}
                 type="text"
                 placeholder="Company"
@@ -85,7 +85,7 @@ export default class NameForm extends React.Component {
                   className="form"
                   style={{
                    height: "120px",
-                    width: "522px",
+                    width: "450px",
                   }}
                   type="text"
                   placeholder="Message or additional reguirement"

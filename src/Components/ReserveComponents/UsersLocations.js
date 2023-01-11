@@ -1,18 +1,18 @@
-import List from "./List";
+import List from "./CheckboxList";
 import Checkbox from "./Checkbox";
-import "./Locations.css"
+import "./Checkbox.css"
 
 const UsersLocations = () => {
   return (
     <div className="locations-container">
       
-      <div className="checkbox"> 
+      {/* <div className="checkbox"> 
       <Checkbox /> 
       </div>
 
       <div className="list">
         <List />
-      </div>
+      </div> */}
       <div></div>
     </div>
   );
