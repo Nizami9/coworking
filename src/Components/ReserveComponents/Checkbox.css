@@ -192,6 +192,14 @@ div.fPqLXB {
   border:1px solid #FF7848; ;
 }
 
+.spacesLink {
+  text-decoration: none;
+  color: orange;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF7848;
+}
+
 @media screen and (max-width: 1160px) {
 
   .checkbox-container {

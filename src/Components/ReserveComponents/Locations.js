@@ -11,9 +11,7 @@ const Locations = () => {
       <Checkbox /> 
       </div>
       <div className="list">
-
         <CheckboxList />
-
       </div>
     </div>
   );
