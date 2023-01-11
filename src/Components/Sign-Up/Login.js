@@ -8,7 +8,7 @@ import { useAuthContext } from '../../context/AuthContext';
 
 function Login() {
 
-  const { isAuthenticated, setToken } = useAuthContext();
+  const { isAuthenticated, setToken ,setUserId} = useAuthContext();
   
   const [errorMessages, setErrorMessages] = useState({});
   //const [isAuthenticated,setIsAuthenticated] = useState(false);
@@ -26,7 +26,7 @@ function Login() {
    
   //handle submit
   const handleSubmit = async(e) => {
-   
+
     e.preventDefault();
 
     let { uname, pass } = document.forms[0];
@@ -35,12 +35,15 @@ function Login() {
 
 
     try {
-      const { data } = await axios.post('http://localhost:3100/user/login',{
+      const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/login',{
         email:logEmail,
         password:logPassword
       } );
       localStorage.setItem('token', data.token);
+      localStorage.setItem('userId',data.userId);
       setToken(data.token);
+      setUserId(data.userId)
+      
       //setIsAuthenticated(true);
       //setLoggedUser(JSON.parse(data))
       console.log("Success",data);

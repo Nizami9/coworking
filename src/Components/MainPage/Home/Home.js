@@ -1,6 +1,6 @@
 import "./Home.css"
 import "./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CS from "./ImagesHome/customerService.png";
 import calendar from "./ImagesHome/calendar.png"
 import spaces from "./ImagesHome/spaces.png";
@@ -8,16 +8,24 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
+<<<<<<< Updated upstream
+//import useSpaceContext from '../../../context/SpaceContext'
+=======
+import space from "../../../spaceData.json";
+>>>>>>> Stashed changes
+
 const Home = () => {
+
   const [noResult,setNoResult]=useState(false);
   const [users,setUsers]=useState([]);
   const [searchKey,setSearchKey]=useState([]);
   const [availaleSpaces,setAvaialableSpaces]=useState([])
 
    const getAllUsers = async () =>{
-    const { data } = await axios.get('http://localhost:3100/spaces');
+    const { data } = await axios.get('https://real-red-gosling-hose.cyclic.app/spaces');
     setUsers(data);
    }
+
 
   useEffect(()=>{
    // getAllUsers();
@@ -29,11 +37,11 @@ const handleChange =(e) =>{
 }
 
 const handleSearch = async(e) => {
-  e.preventDefault();
+  //e.preventDefault();
    console.log(searchKey);
-   const { data } = await axios.post(`http://localhost:3100/spaces/location`,{
+   const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces/location`,{
     searchKey:searchKey.toLowerCase()
-  } );
+  })
   setAvaialableSpaces(data);
    console.log("data from  ",data)
 }
@@ -45,7 +53,7 @@ const handleSearch = async(e) => {
         <p>From a single desk to a whole building <br/>The choice is yours</p>
         <div className="leftContInputs">
           <div className="locationInput">
-            <img class="adressIcon" src={adress}></img>
+            <img className="adressIcon" src={adress}></img>
             <input type='text' placeholder="Hamburg" onChange={handleChange}></input>
           </div>
           <div className="selectDateOffice">
@@ -58,7 +66,9 @@ const handleSearch = async(e) => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-         <NavLink to='/locations/:searchKey' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
+          
+         <NavLink to='/locations/${searchKey}' className='searchButtonMain'><button className="buttonSearchMain" onClick={handleSearch}><p>Search</p></button></NavLink>
+
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}
@@ -96,7 +106,7 @@ const handleSearch = async(e) => {
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
-          <NavLink to="/locations" className='pic1'
+          <NavLink to={`../locations/${space.city}`} className='pic1'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
@@ -104,7 +114,7 @@ const handleSearch = async(e) => {
               <p>Hamburg</p>
           </NavLink>
           <div className="pic24">
-          <NavLink to="/locations"
+          <NavLink to={`../locations/${space.city}`}
           className='pic2'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
@@ -112,7 +122,7 @@ const handleSearch = async(e) => {
           })}>
               <p>Munich</p>
           </NavLink>
-          <NavLink to="/locations" className='pic4'
+          <NavLink to={`../locations/${space.city}`} className='pic4'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
@@ -120,21 +130,21 @@ const handleSearch = async(e) => {
               <p>Frankfurt</p>
           </NavLink>
           </div>
-          <NavLink to="/locations" className='pic3'
+          <NavLink to={`../locations/${space.city}`} className='pic3'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
           })}>
               <p>Hannover</p>
           </NavLink>
-          <NavLink to="/locations" className='pic5'
+          <NavLink to={`../locations/${space.city}`} className='pic5'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
           })}>
               <p>Berlin</p>
           </NavLink>
-          <NavLink to="/locations" className='pic6'
+          <NavLink to={`../locations/${space.city}`} className='pic6'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
