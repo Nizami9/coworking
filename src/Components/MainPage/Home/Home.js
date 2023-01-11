@@ -8,11 +8,7 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
-<<<<<<< Updated upstream
-//import useSpaceContext from '../../../context/SpaceContext'
-=======
 import space from "../../../spaceData.json";
->>>>>>> Stashed changes
 
 const Home = () => {
 

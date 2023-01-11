@@ -16,8 +16,6 @@ import Community from "./Components/ReserveComponents/Community";
 import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/Thankyou/Thankyou";
 
-
-
 function App() {
   return (
     <div>
@@ -25,12 +23,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-<<<<<<< Updated upstream
         <Route path="/locations/:searchKey" element={<Locations />} />
-=======
         <Route path="/locations" element={<Locations />} />
-        <Route path="/locations/:city" element={<Locations />} />
->>>>>>> Stashed changes
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/sign-up" element={<SignUp />} />

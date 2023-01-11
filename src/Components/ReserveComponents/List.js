@@ -1,6 +1,5 @@
-<<<<<<< Updated upstream
-//import Space from "../../spaceData.json";
-import { Link,useParams } from "react-router-dom";
+import SpaceData from "../../spaceData.json";
+import { Link, useParams } from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
 import { useEffect } from "react";
 import "./link.css";
@@ -19,19 +18,6 @@ const List = () => {
 
    },[])
 
-
-
-
-
-=======
-import SpaceData from "../../spaceData.json";
-import { useParams, Link } from "react-router-dom";
-import "./link.css";
-
-const List = () => {
-  let {city} = useParams();
-  console.log(city);
->>>>>>> Stashed changes
   return (
     <div>
       {SpaceData && SpaceData
@@ -40,12 +26,6 @@ const List = () => {
     return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
-<<<<<<< Updated upstream
-      {spaces &&
-        spaces.map((space) => {
-          return (
-=======
->>>>>>> Stashed changes
             <div className="card" key={space.id}>
                 {" "}
                 <img src={space.imgUrl} alt="img" className="img" />
@@ -56,11 +36,7 @@ const List = () => {
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>
-
-                    <div><Link className="spacesLink" to={`/space/${space.id}`}>Explore space →</Link></div>
-
-                  //  <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space →</Link></div>
-
+                    <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space→</Link></div>
                     <div className="area-maxPeople-costperDay">
                     <div className="area"> {space.area}</div>
                     <div className="maxpeople"> {space.maxPeople} </div>
