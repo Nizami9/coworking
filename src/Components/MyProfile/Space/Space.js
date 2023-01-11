@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import DateSelect from '../../CalendarPage/DateSelect';
 import Navbar from "../../Navbar/index";
 import Footer from "../../Footer/Footer";
@@ -9,10 +8,12 @@ import SpaceData from "../../../spaceData.json";
 import "./Space.css";
 
 const Space = () => {
+    const {id} = useParams();
     return (
         <div>
-    {SpaceData &&
-        SpaceData.map((space) => {
+    {SpaceData && SpaceData
+    .filter(space => id ? id === space.id : space)
+    .map(space => {
   return (
     <div className='containerSpace'>
             <div className='leftImageSpace'>
