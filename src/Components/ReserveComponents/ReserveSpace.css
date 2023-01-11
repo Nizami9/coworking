@@ -52,16 +52,16 @@
   padding-bottom: 50px;
 }
 
-.p4-space-wrapper-king {
+/* .p4-space-wrapper-king {
   display: flex;
   font-family: "Outfit";
-  /* margin: 30px; */
+
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  /* align-content: center; */
+  
   align-items: flex-start;
-}
+} */
 .space-wrape {
   /* height: 250px; */
 
@@ -77,14 +77,27 @@
   /* align-items: center; */
 }
 
-.p4-img-and-details {
-  display: inline-flex;
+.p4-img-and-details-king {
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
 .p4-img-sp {
   margin: 3% 0;
   margin-right: 3%;
-   width: 40%; 
+   width: 55%; 
 }
+.p4-space-wrapper-king {
+  font-family: "Outfit";
+  height: 100%;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 11%;
+}
+
+
 .p4-title-and-details-king {
   margin: 1% 0;
   width: 40%;
@@ -93,7 +106,7 @@
 .p4-address-city-country-king
 {
   font-size: small;
-padding-top: 60px;
+padding-top: 160px;
 }
 /* hr {
   width: 600px;
@@ -117,10 +130,7 @@ padding-top: 60px;
   display: flex;
   justify-content: flex-start;
   width: 300px;
-  /* height: 60px; */
-  /* padding-bottom: 15px; */
   font-size: small;
-  /* margin-top: 25%; */
   border-bottom: 2px solid #dce3ed;
 }
 
@@ -169,16 +179,13 @@ padding-top: 60px;
     padding-left: 25px;
   }
   .form-1-wrapper {
-    /* height: 500px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 24px;
   }
-  /* .space-wrapper-2*/
-  .p4-img-and-details {
-    /* height: 0px; */
 
+  .p4-img-and-details {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,14 +204,14 @@ padding-top: 60px;
     padding-left: 25px;
     border-bottom: 2px solid #dce3ed;
   }
-}
-/* .show-date-time-2 {
-  display: flex;
-  justify-content: flex-start;
-padding-bottom: 15px;
-  font-size: small;
-  margin-top: 22%;
-  border-bottom: 2px solid #dce3ed;
+  .p4-space-wrapper-king {
+    display: flex;
+    font-family: "Outfit";
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-  
-} */
+}
+
