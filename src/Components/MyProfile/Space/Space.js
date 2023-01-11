@@ -7,19 +7,12 @@ import { useSpaceContext } from '../../../context/SpaceContext';
 import { useParams } from 'react-router-dom';
 
 const Space = () => {
-<<<<<<< Updated upstream
 
      const { id } =useParams();
      const{ allSpaces } = useSpaceContext();
 
      const spaces = allSpaces.filter(space => space.id === id);
    
-
-
-=======
-    const {id} = useParams();
-    console.log(id);
->>>>>>> Stashed changes
     return (
         <div>
     {SpaceData && SpaceData
