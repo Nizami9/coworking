@@ -56,16 +56,23 @@ const List = () => {
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>
+<<<<<<< Updated upstream
 
                     <div><Link className="spacesLink" to={`/space/${space.id}`}>Explore space →</Link></div>
 
                   //  <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space →</Link></div>
 
+=======
+                    <div className="exploreSpaceLink">
+                      <Link className="spacesLink" to={`../space/${space.id}`}>Explore space→</Link>
+                    </div>
+                    fdfddf
+>>>>>>> Stashed changes
                     <div className="area-maxPeople-costperDay">
-                    <div className="area"> {space.area}</div>
-                    <div className="maxpeople"> {space.maxPeople} </div>
-                    <div className="costperDay"> {space.costperDay}</div>
-                  </div>
+                      <div className="area"> {space.area}</div>
+                      <div className="maxpeople"> {space.maxPeople} </div>
+                      <div className="costperDay"> {space.costperDay}</div>
+                    </div>
                   </div>
                 </div>
               </div>
