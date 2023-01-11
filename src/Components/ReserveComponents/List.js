@@ -1,7 +1,17 @@
 import Space from "../../spaceData.json";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import { useSpaceContext } from '../../context/SpaceContext';
 import "./link.css";
+
+
 const List = () => {
+
+   const {serachKey} = useParams();
+
+   const {allSpaces } = useSpaceContext();
+
+  console.log("space from space context ",allSpaces)
+
   return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>

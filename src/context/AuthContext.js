@@ -13,6 +13,7 @@ const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
+    const [userId, setUserId] = useState(null);
   
     const verifyToken = async () => {
         console.log("token from ls is",token)
@@ -39,6 +40,8 @@ const AuthProvider = ({ children }) => {
       setIsAuthenticated,
       user,
       setUser,
+      userId,
+      setUserId
      };
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
  

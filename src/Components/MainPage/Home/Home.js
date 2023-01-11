@@ -8,7 +8,10 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
+//import useSpaceContext from '../../../context/SpaceContext'
+
 const Home = () => {
+
   const [noResult,setNoResult]=useState(false);
   const [users,setUsers]=useState([]);
   const [searchKey,setSearchKey]=useState([]);
@@ -18,6 +21,9 @@ const Home = () => {
     const { data } = await axios.get('https://real-red-gosling-hose.cyclic.app/spaces');
     setUsers(data);
    }
+
+  //  const {allSpaces } = useSpaceContext();
+  //  console.log("all space in home ",allSpaces);
 
   useEffect(()=>{
    // getAllUsers();
@@ -34,9 +40,6 @@ const handleSearch = async(e) => {
    const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces/location`,{
     searchKey:searchKey.toLowerCase()
   })
-  // .then (res => setAvaialableSpaces(res))
-  // .catch((err) => console.log(err) )
-  
   setAvaialableSpaces(data);
    console.log("data from  ",data)
 }
@@ -61,7 +64,7 @@ const handleSearch = async(e) => {
                 <option value="f4">Complaint</option>
               </select>
           </div>
-         <NavLink to='/locations/'><button onClick={handleSearch}><p>Search</p></button></NavLink>
+         <NavLink to={`/locations/:${searchKey}`}><button onClick={handleSearch}><p>Search</p></button></NavLink>
         </div>
         {/* <div>
               { noResult && <div>No Result</div>}

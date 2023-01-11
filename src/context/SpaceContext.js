@@ -13,6 +13,7 @@ function SpaceProvider({ children }) {
 
     const getAllSpaces = async () => {
         try {
+            console.log("inside try of list")
           const { data } = await axios.post(
             'https://real-red-gosling-hose.cyclic.app/spaces');
             setAllSpaces(data);
@@ -24,8 +25,13 @@ function SpaceProvider({ children }) {
     useEffect(() => {
        getAllSpaces();
       }, []);
+    
 
- return <SpaceContext.Provider value={allSpaces}>{children}</SpaceContext.Provider>;
+      const value = {
+        allSpaces,
+        setAllSpaces
+       };
+ return <SpaceContext.Provider value={value}>{children}</SpaceContext.Provider>;
 
 }
 
