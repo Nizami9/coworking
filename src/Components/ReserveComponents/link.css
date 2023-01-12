@@ -11,3 +11,8 @@
     order: 0;
     flex-grow: 0;
 }
+
+.checkBoxFlexBox {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}

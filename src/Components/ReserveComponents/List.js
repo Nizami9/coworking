@@ -3,6 +3,7 @@ import { Link} from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
 import { useEffect } from "react";
 import "./link.css";
+import Checkbox from "./Checkbox";
 
 
 const List = () => {
@@ -21,6 +22,8 @@ const List = () => {
     //   .filter(space => city ? city === space.city : space)
     //   .map(space => {
     // return (
+      <div className="checkBoxFlexBox">
+      <Checkbox />
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
      {allSpaces &&
@@ -55,7 +58,7 @@ const List = () => {
 
             </div>
       
-    // )})}
+    // ))
     //   </div>
   )}
 export default List;

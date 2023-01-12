@@ -102,7 +102,7 @@ const handleSearch = async(e) => {
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
-          <NavLink to={`../locations/${space.city}`} className='pic1'
+          <NavLink to={`/locations`} className='pic1'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
@@ -110,7 +110,7 @@ const handleSearch = async(e) => {
               <p>Hamburg</p>
           </NavLink>
           <div className="pic24">
-          <NavLink to={`../locations/${space.city}`}
+          <NavLink to={`/locations`}
           className='pic2'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
@@ -118,7 +118,7 @@ const handleSearch = async(e) => {
           })}>
               <p>Munich</p>
           </NavLink>
-          <NavLink to={`../locations/${space.city}`} className='pic4'
+          <NavLink to={`/locations`} className='pic4'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
@@ -126,21 +126,21 @@ const handleSearch = async(e) => {
               <p>Frankfurt</p>
           </NavLink>
           </div>
-          <NavLink to={`../locations/${space.city}`} className='pic3'
+          <NavLink to={`/locations`} className='pic3'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
           })}>
               <p>Hannover</p>
           </NavLink>
-          <NavLink to={`../locations/${space.city}`} className='pic5'
+          <NavLink to={`/locations`} className='pic5'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
           })}>
               <p>Berlin</p>
           </NavLink>
-          <NavLink to={`../locations/${space.city}`} className='pic6'
+          <NavLink to={`/locations`} className='pic6'
           style={({ isActive }) => ({
             color: isActive ? '#ffffff' : '#ffffff',
             textDecoration: isActive ? 'none' : 'none',
