@@ -1,6 +1,7 @@
 import React from "react";
 import logoImage from "../Footer/images/CoWo.png";
 import {Link} from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContext';
 import {
   Nav,
   NavLogo,
@@ -14,7 +15,15 @@ import {
 
 
 const Navbar = () => {
+  const{ user,setUser,setUserId,setIsAuthenticated} = useAuthContext();
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    setIsAuthenticated(false);
+    setUser(null);
+    setUserId(null);
+  };
 
   return (
     <>
@@ -34,12 +43,21 @@ const Navbar = () => {
           <NavLink to="/community" activeStyle={{ color: "black" }}>
             Community
           </NavLink>
-          <NavLink to="/signin" activeStyle={{ color: "black" }}>
+        {      
+          user ? 
+          <NavLink to="/"  onClick={handleLogout} activeStyle={{ color: "black" }}>
+          Log out
+        </NavLink>
+        :
+           <>        
+           <NavLink to="/signin" activeStyle={{ color: "black" }}>
             Sign In
           </NavLink>
           <NavBtn>
             <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>
           </NavBtn>
+          </> }
+
         </NavMenu>
       </Nav>
     </>
