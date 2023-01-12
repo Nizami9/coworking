@@ -45,6 +45,7 @@ export default function NameForm() {
   }
   return (
     <div className="information">
+        <ScrollToTopOnMount />
       <div>
         <Link className="back-link" to="/back">
           <img
@@ -58,6 +59,7 @@ export default function NameForm() {
         {" "}
         <h3 className="info">Enter information for your order</h3>
       </div>
+
       <div className="form-1-wrapper">
         <form onSubmit={handleSubmit}>
           <label>
@@ -72,17 +74,7 @@ export default function NameForm() {
               type="name"
               placeholder="Name"
               onChange={handleChange}
-
-    return (
-      <div className="information">
-                  <ScrollToTopOnMount />
-        <div>
-          <Link className="back-link" to="/back">
-            <img
-              alt="back-arrow-icon"
-              src={require("../../icons/orange-arrow.png")}
-
-            />
+              />
             <h6>Email</h6>
             <input
               className="form"
