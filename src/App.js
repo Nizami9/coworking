@@ -25,7 +25,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/locations" element={<List/>} />
+        <Route path="/locations" element={<List />} />
         <Route path="/locations/:searchKey" element={<Locations />} />
         {/* <Route path="/community" element={<Community />} /> */}
         <Route path="/signin" element={<Signin />} />

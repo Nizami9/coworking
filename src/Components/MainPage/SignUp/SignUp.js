@@ -12,7 +12,7 @@ import {  Navigate } from 'react-router-dom';
 
 export default function SignUp () {
 
-  const { isAuthenticated, setToken } = useAuthContext();
+  const { isAuthenticated, setToken ,setIsAuthenticated, setUserId} = useAuthContext();
 
   //const[token,setToken] = useState();
   const[phone,setPhone] =useState('');
@@ -43,6 +43,8 @@ export default function SignUp () {
       });
       localStorage.setItem('token', data.token);
       setToken(data.token);
+     // setUserId(data.userId)
+      setIsAuthenticated(true);
       console.log("registration success. ",data);
       return <Navigate to='/' />
     }catch(err){
