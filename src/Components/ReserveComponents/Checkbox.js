@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Checkbox.css";
 
 const Checkbox = ({ label }) => {
   const [Checkbox, setCheckbox] = useState("");

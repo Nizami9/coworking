@@ -16,3 +16,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+
+.locations {
+    width: 100%;
+    padding-left: 60px;
+  }
