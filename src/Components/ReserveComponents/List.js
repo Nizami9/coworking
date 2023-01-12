@@ -4,7 +4,7 @@ import { useSpaceContext } from '../../context/SpaceContext';
 import { useEffect } from "react";
 import "./link.css";
 import Checkbox from "./Checkbox";
-
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 const List = () => {
 
@@ -23,6 +23,7 @@ const List = () => {
     //   .map(space => {
     // return (
       <div className="checkBoxFlexBox">
+        <ScrollToTopOnMount />
       <Checkbox />
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>

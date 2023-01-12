@@ -1,9 +1,12 @@
 import { useState } from "react";
+import "./Checkbox.css";
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 const Checkbox = ({ label }) => {
   const [Checkbox, setCheckbox] = useState("");
   return (
     <div className="checkbox-container">
+                <ScrollToTopOnMount />
       <div className="office-sp">
         <h3>Office Space</h3>
       </div>

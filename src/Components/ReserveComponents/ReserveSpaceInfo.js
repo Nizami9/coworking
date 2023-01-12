@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+
 import { Link, Navigate  } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
+
 
 
 
@@ -38,6 +41,7 @@ export default function NameForm() {
       console.log(err);
     }
 
+
   }
   return (
     <div className="information">
@@ -68,6 +72,16 @@ export default function NameForm() {
               type="name"
               placeholder="Name"
               onChange={handleChange}
+
+    return (
+      <div className="information">
+                  <ScrollToTopOnMount />
+        <div>
+          <Link className="back-link" to="/back">
+            <img
+              alt="back-arrow-icon"
+              src={require("../../icons/orange-arrow.png")}
+
             />
             <h6>Email</h6>
             <input

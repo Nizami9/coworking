@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
 import './profileStyle.css'
-
+import ScrollToTopOnMount from '../../ScrollToTopOnMount';
 import ImageUploader from './ImageUploader';
 
 
@@ -20,6 +20,7 @@ function Profile() {
 
     const profileComponent = (
         <div className='main-grid'>
+                      <ScrollToTopOnMount />
             <div className='pic-col'>
                 <div className='profile-pic-div'>
                             {<ImageUploader />}

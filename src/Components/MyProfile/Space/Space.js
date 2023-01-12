@@ -4,25 +4,19 @@ import schedule from "./ImagesSpace/schedule.png";
 import SpaceData from "../../../spaceData.json";
 import "./Space.css";
 import { useSpaceContext } from '../../../context/SpaceContext';
-
+import ScrollToTopOnMount from '../../../ScrollToTopOnMount';
 
 const Space = () => {
-
      const{ allSpaces,setSelectedSpace,selectedSpace} = useSpaceContext();
-     
      const { id } =useParams();
-    
-      
-
      const space = allSpaces.filter(singleSpace => singleSpace.id === id);
      setSelectedSpace(space[0]);
      console.log("space is",space);
      console.log("selectedSpace  ---",selectedSpace);
-
-
      {
         return( selectedSpace &&
-        <div>  
+        <div>
+                      <ScrollToTopOnMount />
 
   {/* {SpaceData && SpaceData
 

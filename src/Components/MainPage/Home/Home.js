@@ -9,7 +9,7 @@ import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
 import space from "../../../spaceData.json";
-
+import ScrollToTopOnMount from "../../../ScrollToTopOnMount";
 const Home = () => {
 
   const [noResult,setNoResult]=useState(false);
@@ -44,6 +44,7 @@ const handleSearch = async(e) => {
 
   return ( 
     <div className="containerMain">
+                <ScrollToTopOnMount />
       <div className="leftContainerMain">
         <h1>Find your perfect workspace</h1>
         <p>From a single desk to a whole building <br/>The choice is yours</p>
