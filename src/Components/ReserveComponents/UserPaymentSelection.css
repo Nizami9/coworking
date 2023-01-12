@@ -121,6 +121,28 @@ hr {
   color: #262626;
 }
 
+.visa-card{
+ 
+  font-family: "Outfit";
+  
+    
+    /* color: #555D67; */
+
+}
+.expiry-cvc{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+
+  font-size: small;
+}
+
+.cvv{
+  
+   width: 60px;
+}
+
+
 @media only screen and (min-width: 360px) and (max-width: 768px) {
   .paymentSelection-Container {
     display: flex;
