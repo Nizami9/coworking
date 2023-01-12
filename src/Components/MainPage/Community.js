@@ -1,3 +1,4 @@
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 const Community = () => {
   return (
       <div
@@ -8,6 +9,7 @@ const Community = () => {
               height: '100vh'
           }}
       >
+                  <ScrollToTopOnMount />
           <h1>community</h1>
       </div>
   );

@@ -1,7 +1,7 @@
 // import Space from "../../spaceData.json";
 import { Link, useParams } from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
-
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 const CheckboxList = () => {
 
@@ -15,6 +15,7 @@ const CheckboxList = () => {
 
   return (
     <div className="locations">
+                <ScrollToTopOnMount />
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
       {spaces &&
         spaces.map((space) => {

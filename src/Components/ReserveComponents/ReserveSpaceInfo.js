@@ -4,6 +4,7 @@ import React from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Link } from "react-router-dom";
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 export default class NameForm extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class NameForm extends React.Component {
   render() {
     return (
       <div className="information">
+                  <ScrollToTopOnMount />
         <div>
           <Link className="back-link" to="/back">
             <img

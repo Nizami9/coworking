@@ -6,10 +6,13 @@ import office2 from "./myProfileImages/Office2.png";
 import star from "./myProfileImages/Star.png";
 import MapIcon from "./myProfileImages/MapIcon.png";
 import Basket from "./myProfileImages/Basket.png";
+import ScrollToTopOnMount from '../../ScrollToTopOnMount';
 
 const MyProfile = () => {
   return (
     <div className='MyProfilePage'>
+                  <ScrollToTopOnMount />
+
       <MyProfileLeftSide className='leftSide'/>
       <div className='MyProfileRightSide'>
         <h1>My Profile</h1>

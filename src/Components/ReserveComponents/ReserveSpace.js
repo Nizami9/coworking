@@ -3,7 +3,7 @@ import Space from "../../spaceData.json";
 // import "./styleChangePass.css";
 import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
-
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 function ReserveSpace() {
   // let space = Space[0];
   // const [toDate, setToDate] = useState(new Date());
@@ -17,6 +17,7 @@ function ReserveSpace() {
 
   let spaceComponent = (
     <div className="p4-space-wrapper-king">
+                <ScrollToTopOnMount />
       <div className="space-wrape-sp">
         {" "}
         <h2>Reserve Space </h2>
