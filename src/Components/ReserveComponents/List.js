@@ -1,5 +1,5 @@
 import SpaceData from "../../spaceData.json";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
 import { useEffect } from "react";
 import "./link.css";
@@ -7,12 +7,13 @@ import "./link.css";
 
 const List = () => {
 
-   const {searchKey} = useParams();
+
 
    const { allSpaces } = useSpaceContext();
+   console.log("allSpace ", allSpaces);
 
-   const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
-   console.log("spaces are ",spaces);
+   //const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
+   //console.log("spaces are ",spaces);
 
   return (
     // <div>
@@ -22,8 +23,8 @@ const List = () => {
     // return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
-     {spaces &&
-        spaces.map((space) => {
+     {allSpaces &&
+        allSpaces.map((space) => {
           return (   
             <div className="card" key={space.id}>
                 {" "}

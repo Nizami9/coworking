@@ -121,7 +121,7 @@
 .p4-address-city-country,.show-date{
     font-size: small;
     margin-top: 27%;
-   
+    /* width: 18em; */
 }
 hr{
     width:95%;

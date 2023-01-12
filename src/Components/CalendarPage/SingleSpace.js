@@ -27,8 +27,8 @@ function SingleSpace() {
               </div>
               <div className="p4-address-city-country">
                 <img src={require('../../icons/location-icon.png')} alt="location-icon" className="p4-location-icon" />
-                {selectedSpace.address}{","}
-                {selectedSpace.city}{","}
+                {selectedSpace.address}{", "}
+                {selectedSpace.city}{", "}
                 {selectedSpace.counrty}
               </div>
             </div>

@@ -15,6 +15,8 @@ import UsersLocations from "./Components/ReserveComponents/UsersLocations";
 import Community from "./Components/ReserveComponents/Community";
 import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/Thankyou/Thankyou";
+import List from "./Components/ReserveComponents/List"
+import { Component } from "react";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/locations" element={<List/>} />
         <Route path="/locations/:searchKey" element={<Locations />} />
 
         {/* <Route path="/community" element={<Community />} /> */}
