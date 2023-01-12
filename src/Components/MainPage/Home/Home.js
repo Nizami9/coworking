@@ -1,6 +1,6 @@
 import "./Home.css"
 import "./MonumentExtended-FreeForPersonal/MonumentExtended-Regular.otf";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import CS from "./ImagesHome/customerService.png";
 import calendar from "./ImagesHome/calendar.png"
 import spaces from "./ImagesHome/spaces.png";
@@ -8,14 +8,16 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
-import space from "../../../spaceData.json";
 import ScrollToTopOnMount from "../../../ScrollToTopOnMount";
 const Home = () => {
 
   const [noResult,setNoResult]=useState(false);
   const [users,setUsers]=useState([]);
   const [searchKey,setSearchKey]=useState([]);
-  const [availaleSpaces,setAvaialableSpaces]=useState([])
+  const [availaleSpaces,setAvaialableSpaces]=useState([]);
+  const [clickedCity, setClickedCity] = useState();
+
+  const navigate = useNavigate();
 
    const getAllUsers = async () =>{
     const { data } = await axios.get('https://real-red-gosling-hose.cyclic.app/spaces');
@@ -32,6 +34,13 @@ const handleChange =(e) =>{
   setSearchKey(e.target.value.toLowerCase());
 }
 
+const handleChangeCity = (e) =>{
+  navigate(`/locations/${e.target.textContent.toLowerCase()}`)
+  // setClickedCity(e.target.textContent);
+  console.log(e.target.textContent);
+}
+
+
 const handleSearch = async(e) => {
   //e.preventDefault();
    console.log(searchKey);
@@ -42,7 +51,7 @@ const handleSearch = async(e) => {
    console.log("data from  ",data)
 }
 
-  return ( 
+  return (  
     <div className="containerMain">
                 <ScrollToTopOnMount />
       <div className="leftContainerMain">
@@ -103,51 +112,26 @@ const handleSearch = async(e) => {
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
-          <NavLink to={`/locations`} className='pic1'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          <div onClick={handleChangeCity} className='pic1'>
               <p>Hamburg</p>
-          </NavLink>
-          <div className="pic24">
-          <NavLink to={`/locations`}
-          className='pic2'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
-              <p>Munich</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic4'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
-              <p>Frankfurt</p>
-          </NavLink>
           </div>
-          <NavLink to={`/locations`} className='pic3'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          <div className="pic24">
+          <div onClick={handleChangeCity} className='pic2'>
+              <p>Munich</p>
+          </div>
+          <div onClick={handleChangeCity} className='pic4'>
+              <p>Frankfurt</p>
+          </div>
+          </div>
+          <div onClick={handleChangeCity} className='pic3'>
               <p>Hannover</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic5'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          </div>
+          <div onClick={handleChangeCity} className='pic5'>
               <p>Berlin</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic6'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          </div>
+          <div onClick={handleChangeCity} className='pic6'>
               <p>Leipzig</p>
-          </NavLink>
+          </div>
           </div>
         </div>
       </div>
