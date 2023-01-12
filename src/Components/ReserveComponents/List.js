@@ -12,16 +12,19 @@ const List = () => {
    const { allSpaces } = useSpaceContext();
 
    const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
-   
+   console.log("spaces are ",spaces);
 
   return (
-    <div>
-      {SpaceData && SpaceData
-      .filter(space => city ? city === space.city : space)
-      .map(space => {
-    return (
+    // <div>
+    //   {SpaceData && SpaceData
+    //   .filter(space => city ? city === space.city : space)
+    //   .map(space => {
+    // return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
+     {spaces &&
+        spaces.map((space) => {
+          return (   
             <div className="card" key={space.id}>
                 {" "}
                 <img src={space.imgUrl} alt="img" className="img" />
@@ -46,8 +49,12 @@ const List = () => {
                 </div>
               </div>
             </div>
+               )})}
+
+
             </div>
-      )})}
-      </div>
+      
+    // )})}
+    //   </div>
   )}
 export default List;

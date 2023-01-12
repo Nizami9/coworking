@@ -1,12 +1,23 @@
-import Space from "../../spaceData.json";
-import { Link } from "react-router-dom";
+//import Space from "../../spaceData.json";
+import { Link, useParams } from "react-router-dom";
+import { useSpaceContext } from '../../context/SpaceContext';
+
 
 const CheckboxList = () => {
+
+  const {searchKey} = useParams();
+
+  const { allSpaces } = useSpaceContext();
+
+  const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
+  console.log("spaces are ",spaces);
+
+
   return (
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
-      {Space &&
-        Space.map((space) => {
+      {spaces &&
+        spaces.map((space) => {
           return (
             <div className="card" key={space.id}>
                 {" "}
