@@ -172,6 +172,12 @@ button.buttonSearchMain {
     height: 70%;
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 135%;
+    color: #FFFFFF;
 }
 
 .pic1 {
@@ -183,14 +189,6 @@ button.buttonSearchMain {
     margin-bottom: 20px;
 }
 
-.citesOptionPictures{
-font-family: 'Monument';
-font-style: normal;
-font-weight: 400;
-font-size: 30px;
-line-height: 135%;
-color: #FFFFFF;
-}
 
 .pic24 {
     display: flex;

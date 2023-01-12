@@ -112,51 +112,26 @@ const handleSearch = async(e) => {
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
-          <div value='hamburg' onClick={handleChangeCity} className='pic1'>
-          {/* // style={({ isActive }) => ({
-          //   color: isActive ? '#ffffff' : '#ffffff',
-          //   textDecoration: isActive ? 'none' : 'none',
-          // })}> */}
+          <div onClick={handleChangeCity} className='pic1'>
               <p>Hamburg</p>
           </div>
           <div className="pic24">
-          <NavLink to={`/locations`}
-          className='pic2'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          <div onClick={handleChangeCity} className='pic2'>
               <p>Munich</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic4'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
-              <p>Frankfurt</p>
-          </NavLink>
           </div>
-          <NavLink to={`/locations`} className='pic3'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          <div onClick={handleChangeCity} className='pic4'>
+              <p>Frankfurt</p>
+          </div>
+          </div>
+          <div onClick={handleChangeCity} className='pic3'>
               <p>Hannover</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic5'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          </div>
+          <div onClick={handleChangeCity} className='pic5'>
               <p>Berlin</p>
-          </NavLink>
-          <NavLink to={`/locations`} className='pic6'
-          style={({ isActive }) => ({
-            color: isActive ? '#ffffff' : '#ffffff',
-            textDecoration: isActive ? 'none' : 'none',
-          })}>
+          </div>
+          <div onClick={handleChangeCity} className='pic6'>
               <p>Leipzig</p>
-          </NavLink>
+          </div>
           </div>
         </div>
       </div>
