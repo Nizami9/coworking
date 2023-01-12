@@ -5,15 +5,9 @@ import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
 
 function ReserveSpace() {
-  // let space = Space[0];
-  // const [toDate, setToDate] = useState(new Date());
-  // const [fromDate, setFromDate] = useState(new Date());
-  // const [fromTime, setFromTime] = useState("00:00");
-  // const [toTime, setToTime] = useState("23:00");
 
   const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
-  console.log("data from context",toDate,fromDate,fromTime,toTime,selectedSpace)
-  console.log("in reser space ",selectedSpace);
+  
 
   let spaceComponent = (
     <div className="p4-space-wrapper-king">
