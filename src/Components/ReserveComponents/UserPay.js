@@ -2,10 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useBookContext } from '../../context/BookContext';
+
 
 const UserPay = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+
+  const {formDetails}= useBookContext();
+  console.log("form details from context ",formDetails )
 
   return (
     <div className="paymentSelection-payM">

@@ -8,31 +8,18 @@ import { useAuthContext } from '../../context/AuthContext';
 
 function Login() {
 
-  const { isAuthenticated, setToken ,setUserId} = useAuthContext();
+  const { isAuthenticated, setToken ,setUserId,setIsAuthenticated} = useAuthContext();
   
   const [errorMessages, setErrorMessages] = useState({});
-  //const [isAuthenticated,setIsAuthenticated] = useState(false);
   const [logEmail,setLogEmail]=useState();
   const [logPassword,setLogPassword]=useState();
   const [loggedUser,setLoggedUser]=useState();
-  
-  
-  //const [token,setToken] = useState();
 
-  // const errors = {
-  //   uname: "invalid username",
-  //   pass: "invalid password"
-  // };
-   
+
   //handle submit
   const handleSubmit = async(e) => {
 
     e.preventDefault();
-
-    let { uname, pass } = document.forms[0];
-    setLogEmail(uname.value);
-    setLogPassword(pass.value);
-
 
     try {
       const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/login',{
@@ -43,9 +30,8 @@ function Login() {
       localStorage.setItem('userId',data.userId);
       setToken(data.token);
       setUserId(data.userId)
-      
-      //setIsAuthenticated(true);
-      //setLoggedUser(JSON.parse(data))
+      setIsAuthenticated(true);
+  
       console.log("Success",data);
     }catch(err){
       console.log(err);
@@ -79,13 +65,13 @@ function Login() {
         <div className="form">
           <form onSubmit={handleSubmit}>
             <div className="input-container">
-              <label htmlFor='uname'>Username </label>
-              <input type="text" id='uname' name="uname" required />
+              <label htmlFor='uname'>Email </label>
+              <input type="text" id='uname' name="uname" onChange={(e)=>{setLogEmail(e.target.value)}} required />
               {renderErrorMessage("uname")}
             </div>
             <div className="input-container">
               <label htmlFor='password'>Password </label>
-              <input id='password' type="password" name="pass" required />
+              <input id='password' type="password" name="pass" onChange={(e)=>{setLogPassword(e.target.value)}} required />
               {renderErrorMessage("pass")}
             </div>
             <div className="button-container">
@@ -105,10 +91,7 @@ function Login() {
         </div>
       );
 
-      // {
-      //   console.log("data ----------",token)
-      // }
-    
+
   return (
     <div className="app">
     <div className="login-form">
