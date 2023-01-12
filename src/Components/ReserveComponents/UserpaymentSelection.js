@@ -5,23 +5,13 @@ import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
 
 
-  // const [toDate, setToDate] = useState(new Date());
-  // const [fromDate, setFromDate] = useState(new Date());
-  // const [fromTime, setFromTime] = useState("00:00");
-  // const [toTime, setToTime] = useState("23:00");
-
- 
  // console.log("space ",selectedSpace)
 
 function UserpaymentSelection() {
   const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+  console.log('in payment page space is ',selectedSpace )
   // let space = Space[0];
-  // const [toDate, setToDate] = useState(new Date());
-  // const [fromDate, setFromDate] = useState(new Date());
-  // const [fromTime, setFromTime] = useState("00:00");
-  // const [toTime, setToTime] = useState("23:00");
-
-
+ 
   let spaceComponent = (
     <div className="p4-space-wrapper">
       <div className="space-wrape">

@@ -9,9 +9,7 @@ function SingleSpace() {
 
  // const{id}=useParams();
 
-  const{ selectedSpace } = useSpaceContext();
-  console.log(selectedSpace)
-
+  const{ selectedSpace} = useSpaceContext();
 
   let spaceComponent = (
     <div className="p4-space-wrapper">
