@@ -1,7 +1,7 @@
 import SpaceData from "../../spaceData.json";
 import { Link} from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
-import { useEffect } from "react";
+import { useAuthContext } from '../../context/AuthContext';
 import "./link.css";
 import Checkbox from "./Checkbox";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
@@ -11,6 +11,7 @@ const List = () => {
 
 
    const { allSpaces } = useSpaceContext();
+   const { isAuthenticated } = useAuthContext();
    console.log("allSpace ", allSpaces);
 
    //const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
@@ -41,7 +42,7 @@ const List = () => {
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>
 
-                    <div><Link className="spacesLink" to={`/space/${space.id}`}>Explore space →</Link></div>
+                    <div><Link className="spacesLink" to={ isAuthenticated ? `../space/${space.id}` : '/signin'}>Explore space →</Link></div>
 
                     {/* <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space →</Link></div> */}
 
