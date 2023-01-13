@@ -35,7 +35,7 @@ const List = () => {
                 <img src={space.imgUrl} alt="img" className="img" />
               <div className="list-wrapper">
                 <div className="title">
-                  {space.title}
+                <div className='checkBoxTitle'>{space.title}</div>
                   <div className="address-city-country">
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
@@ -55,11 +55,7 @@ const List = () => {
               </div>
             </div>
                )})}
-
-
             </div>
-      
-    // ))
-    //   </div>
+      </div>
   )}
 export default List;
