@@ -4,7 +4,8 @@
 }
 
 .paymentSelection-Container {
-  width: 100vw;
+   width: 100vw; 
+  height: 700px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
@@ -15,9 +16,24 @@
 }
  .space-wrape-sp{
   padding-left: 25px;
-  /* padding-top: 200px; */
-
 }
+.space-wrape-sp h4{
+  font-family: 'Monument Extended';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 135%;
+  color: #262626;
+}
+.p4-title {
+ 
+  font-family: 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+padding-bottom: 10px;
+}
+
 .payM {
   display: flex;
   justify-content: flex-start;
@@ -27,18 +43,17 @@
 }
 .form-2 {
   border-radius: 4px;
-  border: 1px solid #dce3ed;
 }
 .p4-space-wrapper{
+  height: 100%;
   width: 73%;
 }
 
 .payM-wrapper {
-  width: 00px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+    display: flex;
+    padding-left: 29px;
+    justify-content: space-evenly;
 }
 
 .p4-img-and-details {
@@ -51,14 +66,14 @@ h4 {
  
 }
 
-.p4-img {
+.p4-img-sp {
   margin: 3% 0;
   margin-right: 3%;
-  width: 50%;
+
 }
-.p4-title-and-details {
+.p4-title-and-details-king {
   margin: 1% 0;
-  width: 20%;
+
 }
 
 .p4-address-city-country,
@@ -66,18 +81,15 @@ h4 {
   font-size: small;
   margin-top: 27%;
 }
-hr {
-  width: 300px;
-  border-top: 0.7px solid #dce3ed;
-}
+
 .p4-location-icon {
   width: 5%;
   margin-right: 2%;
 }
-hr {
+/* hr {
   width: 300px;
-  border-top: 0.2px solid #dce3ed;
-}
+   border-top: 0.2px solid #dce3ed; 
+} */
 .p4-location-icon {
   width: 5%;
 }
@@ -87,12 +99,10 @@ hr {
 .show-date-time-- {
   display: flex;
   justify-content: flex-start;
-  /* width: 600px;
-  height: 60px; */
   padding-bottom: 15px;
   font-size: small;
    margin-top: 15px; 
-  border-bottom: 2px solid #dce3ed;
+ 
 }
 
 .back-link {
@@ -112,8 +122,6 @@ hr {
   color: #ff7848;
 }
 .total-pay {
-  /* height: 60px;
-  width: 70px; */
   font-family: "Outfit";
   display: flex;
   justify-content: flex-start;
@@ -124,81 +132,48 @@ hr {
 .visa-card{
  
   font-family: "Outfit";
-  
-    
-    /* color: #555D67; */
-
 }
 .expiry-cvc{
-  padding-top: 10px;
+  padding-top: 15px;
   display: flex;
-  justify-content: space-around;
-
+  justify-content: flex-start;
   font-size: small;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .cvv{
   
    width: 60px;
 }
+.form-sub{
+  padding-top: 60px;
+}
 
-
-@media only screen and (min-width: 360px) and (max-width: 768px) {
+@media only screen and  (max-width: 768px)and (max-width: 1160px) {
   .paymentSelection-Container {
-    display: flex;
+    height: 100%;
+    display: inline-block;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: baseline;
-    margin: 39px;
+    flex-wrap: nowrap;
+    margin:5px;
   }
+  .payM-wrapper{
+    height: 100%;
+    display: flex;
+    padding-left: 154px;
+    /* align-items: center; */
+    justify-content: space-evenly;
+}
 
-  img.img {
-    margin: 10px;
-    width: 50%;
-    height: 50%;
-  }
   .form-1-wrapper {
-    /* height: 500px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
-  .space-wrapper-2.p4-img-and-details-king {
-    /* width: 600px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 24px;
   }
 
-  .p4-img-and-details-king {
-    display: inline-flex;
-    border: 2px;
-    padding-top: 5%;
-  }
 }
-.show-date-time-2 {
-  display: flex;
-  justify-content: flex-start;
-  padding-bottom: 15px;
-  font-size: small;
-  margin-top: 22%;
-  border-bottom: 2px solid #dce3ed;
-}
-.payM-wrapper {
-   width: 100%;
 
-  display: flex;
-  /* justify-content: center;
-  align-items: baseline;
-  flex-direction: column; */
-  flex-wrap: nowrap;
-  /* align-content: flex-start; */
-}
-.paymentSelection-payM {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.p4-title {
-  display: flex;
-  flex-direction: column;
-}

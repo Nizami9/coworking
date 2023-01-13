@@ -13,26 +13,26 @@ function UserpaymentSelection() {
   // let space = Space[0];
  
   let spaceComponent = (
-    <div className="p4-space-wrapper">
-      <div className="space-wrape">
+    <div className="p4-space-wrapper-king">
+      <div className="space-wrape-sp">
         {" "}
         <h4>Reserve Space </h4>
       </div>
-      <div className="space-wrapper-2">
+      <div className="space-wrapper-sp">
         {selectedSpace && (
           <div>
             <hr />
-            <div className="p4-img-and-details" key={selectedSpace.id}>
-              <img src={selectedSpace.imgUrl} alt="img" className="p4-img" />
-              <div className="p4-title-and-details">
+            <div className="p4-img-and-details-king" key={selectedSpace.id}>
+              <img src={selectedSpace.imgUrl} alt="img" className="p4-img-sp" />
+              <div className="p4-title-and-details-king">
                 <div className="p4-title">
-                  <h4> {selectedSpace.title}</h4>
+                  <h3> {selectedSpace.title}</h3>
                 </div>
-                <div className="p4-address-city-country">
+                <div className="p4-address-city-country-king">
                   <img
                     src={require("../../icons/location-icon.png")}
                     alt="location-icon"
-                    className="p4-location-icon"
+                    className="p4-location-icon-king"
                   />
                   {selectedSpace.address}
                   {","}
@@ -46,21 +46,21 @@ function UserpaymentSelection() {
           </div>
         )}
       </div>
-      <div className="show-date-time--">
+      <div className="show-date-time-sp">
         <div>
           <img
             src={require("../../icons/calendar-icon.png")}
             alt="calendar-icon"
-            className="calendar-icon"
+            className="calendar-icon-ss"
           />
-          <span className="show-date">
+          <span className="show-date-sp">
             {fromDate.toDateString()}
             {" - "}
             {toDate.toDateString()}
           </span>
         </div>
 
-        <div className="show-times">
+        <div className="show-times-sp">
           <img
             src={require("../../icons/clock-icon.png")}
             alt="clock-icon"
