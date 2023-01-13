@@ -42,7 +42,7 @@ export default function SignUp () {
           city: input.city,
           country: input.country,
           zip: input.zip,
-
+          profilePicUrl:imageUrl
       });
       localStorage.setItem('token', data.token);
       setToken(data.token);
@@ -74,10 +74,10 @@ else
               <label>Password</label>
               <input  name='password' value={input.password} type='password' className='inputGI'  onChange={handleChange}></input>
               <div className='phoneNumberField'>
-              <label className='phoneNumber'></label>
+              <label className='phoneNumber'>Phone</label>
               <PhoneInput
                 className='PhoneInput'
-                defaultCountry="DE"
+                country="de"
                 name='phone'
                 value={phone}
                 onChange={value => setPhone(value)}
