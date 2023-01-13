@@ -8,8 +8,10 @@
 .bookTourLeftContainer {
     width: 57%;
     margin: 20px 0 0 20px;
-    display: flex;
-    flex-wrap: wrap;
+}
+
+.react-calendar .react-calendar--selectRange {
+    margin: 0px;
 }
 
 .bookTourRightContainer {
@@ -74,22 +76,67 @@
 .bookTourLeftCont {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .imageContainer {
     width: 50%;
-    margin-left: 5%;
+    margin: 30px 0 0 5%;
+}
+
+.bookTourLeftDetails {
+    margin-top: 15px;
 }
 
 .react-tel-input .form-control {
     width: 80%;
 }
 
-@media screen and (max-width: 1160px) {
+.imageContainer>p {
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .BookTourContainer {
+        width: 80%;
+        margin: 0 auto;
+    }
     .imageContainer {
         display: none;
     }
-    .bookTourForm {
-        width: 120%;
+
+    .bookTourRightContainer {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .bookTourRightContainer {
+        width: 100%;
+        margin-left: 70px;
+    }
+    .bookTourLeftCont>hr {
+        display: none;
+    }
+    .submitButtonBookTour {
+        margin-left: -30px;
+    }
+    .bookTourRightMessage {
+        margin-left: -20px;
+    }
+
+    .calendar {
+        margin: 0 auto;
+    }
+    
+    .calendar-container {
+        margin-left: 10px;
+    }
+
+    .bookTourLeftTitle>h2 {
+        margin-left: 60px;
+        width: 100%;
+    }
+    .timer {
+        margin-left: -5px;
+        text-align: center;
     }
 }

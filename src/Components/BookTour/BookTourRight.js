@@ -90,7 +90,7 @@ export default function NameForm() {
               />
             </div>
           </label>
-          <button type='submit'>
+          <button type='submit' className="submitButtonBookTour">
             <Link to='/Userpayment'>Submit</Link>
           </button>
         </form>
