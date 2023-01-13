@@ -12,7 +12,7 @@ const CheckboxList = () => {
   const { isAuthenticated } = useAuthContext();
 
   const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
-  console.log("spaces are ",spaces);
+ 
 
   const checkAuth = (id) =>{
     console.log("inside checkAuth... and auth is ",isAuthenticated);

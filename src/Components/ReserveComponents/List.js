@@ -12,7 +12,7 @@ const List = () => {
 
    const { allSpaces } = useSpaceContext();
    const { isAuthenticated } = useAuthContext();
-   console.log("allSpace ", allSpaces);
+
 
    //const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
    //console.log("spaces are ",spaces);
