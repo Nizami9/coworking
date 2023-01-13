@@ -32,7 +32,7 @@ export default function SignUp () {
   const handleSubmitRegistration = async (e)=>{
     try{
         e.preventDefault();
-      const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/register', {
+     const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/register', {
           firstName: input.firstName,
           lastName: input.lastName,
           email: input.email,
@@ -44,9 +44,9 @@ export default function SignUp () {
           zip: input.zip,
           profilePicUrl:imageUrl
       });
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token',data.token);
       setToken(data.token);
-      //setUserId(data.userId)
+      setUserId(data.userid);
       setIsAuthenticated(true);
       console.log("registration success. ",data);
       return <Navigate to='/' />
