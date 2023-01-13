@@ -95,7 +95,7 @@ function Login() {
   return (
     <div className="app">
     <div className="login-form">
-      <div className="title">Sign In</div>
+      <div className="titleLogin">Sign In</div>
       {isAuthenticated ? <Navigate to="/" replace={true}/> : renderForm}
     </div>
   </div>
