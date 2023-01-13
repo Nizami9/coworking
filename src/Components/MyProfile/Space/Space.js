@@ -39,7 +39,7 @@ const Space = () => {
             <hr />
             </div>
             <p>Visit this space in person following our new safety measures.</p>
-            <button className='bookTourButton'><p>Book a Tour</p></button>
+            <Link className='bookTourButton' to={`/space/${id}/book-tour`}><p>Book a Tour</p></Link>
         </div>
         <div className='spaceImages'>
             <div className='openingHours'>

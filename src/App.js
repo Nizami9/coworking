@@ -16,6 +16,7 @@ import Community from "./Components/ReserveComponents/Community";
 import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/Thankyou/Thankyou";
 import List from "./Components/ReserveComponents/List"
+import BookTour from "./Components/BookTour/BookTour";
 import { Component } from "react";
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
         <Route path="/space/:id/select-date" element={<DateSelect />} />
         <Route path="/enter-details" element={<Community />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/space/:id/book-tour" element={<BookTour />} />
+
         {/* <Route path="/select-date" element={<DateSelect />} /> */}
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/UsersLocations" element={<UsersLocations />} />
