@@ -16,6 +16,8 @@ export default function SignUp () {
 
   //const[token,setToken] = useState();
   const[phone,setPhone] =useState('');
+  const [imageUrl, setImageUrl] = useState(null);
+  const [image, setImage] = useState(null);
   const [input, setInput] = useState({firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', zip: ''}) 
 
 
@@ -39,11 +41,12 @@ export default function SignUp () {
           address: input.address,
           city: input.city,
           country: input.country,
-          zip: input.zip
+          zip: input.zip,
+          profilePicUrl:imageUrl
       });
       localStorage.setItem('token', data.token);
       setToken(data.token);
-     // setUserId(data.userId)
+      //setUserId(data.userId)
       setIsAuthenticated(true);
       console.log("registration success. ",data);
       return <Navigate to='/' />
@@ -58,7 +61,7 @@ else
     <div className='signUpSection'>
       <div className='signUpRightSide'>
         <h1>My profile</h1>        
-        {<ImageUploader />}
+        {<ImageUploader image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl}  />}
         <h3 className='signUpRightSideH3'>General information</h3>
         <form onSubmit={handleSubmitRegistration}>
           <div className='GIinput'>
@@ -71,10 +74,10 @@ else
               <label>Password</label>
               <input  name='password' value={input.password} type='password' className='inputGI'  onChange={handleChange}></input>
               <div className='phoneNumberField'>
-              <label className='phoneNumber'></label>
+              <label className='phoneNumber'>Phone</label>
               <PhoneInput
                 className='PhoneInput'
-                defaultCountry="DE"
+                country="de"
                 name='phone'
                 value={phone}
                 onChange={value => setPhone(value)}
