@@ -2,11 +2,11 @@
 /node_modules
 /.pnp
 .pnp.js
-
+.env
 /coverage
 
 /build
-
+.env
 .DS_Store
 .env.local
 .env.development.local

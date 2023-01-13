@@ -1,63 +1,52 @@
-import React from 'react';
-import ImageUploading from "react-images-uploading";
+import React, { useState } from 'react';
 import './profileStyle.css'
+import axios from 'axios';
 
 function ImageUploader() {
 
-    const [images, setImages] = React.useState([]);
- 
-    const onChange = (imageList, addUpdateIndex) => {
-         // data for submit
-    console.log("image list",imageList);
-    setImages(imageList);
-  };
-     
-  return (
-    <div>
-         <ImageUploading
-        multiple
-        value={images}
-        onChange={onChange}
-        maxNumber='69'
-        dataURLKey="data_url"
-        acceptType={["jpg","png","webp"]}
-      >
-        {({
-          imageList,
-          onImageUpload,
-          onImageUpdate,
-          onImageRemove,
-          isDragging,
-          dragProps
-        }) => (
-          // write your building UI
-          <div className="upload__image-wrapper">
-             <div
-              className='profile-photo'
-              style={isDragging ? { color: 'red' } : undefined}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
-       {    images.length >= 1 ? <img 
-            className='profile-img'
-            alt='profile photo'
-            src={imageList[imageList.length-1].data_url}
-            style={{width : '100px'}}
-              />  :
-              <img 
-            className='profile-img'
-            alt='prifle-pic-icon'
-            src={require('../../icons/profile-icon.png')}
-            style={{width : '100px'}}
-              />
-              }
-            <img className='cam-icon' alt='camera-icon' src={require('../../icons/camera.png')} />
-         </div>
-         </div>
-        )}
-      </ImageUploading>
-    </div>
-  )
+	const [image, setImage] = useState(null);
+	const [imageUrl, setImageUrl] = useState(null);
+
+	const handleChange = (event) => {
+		setImage(event.target.files[0]);
+		setImageUrl(URL.createObjectURL(event.target.files[0]));
+	};
+
+	const handleUpload = async () => {
+
+		// Get your Cloudinary configuration
+		const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;                           
+		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
+
+		// Prepare the form data for the request
+		let formData = new FormData();
+		formData.append('file', image);
+		formData.append('upload_preset', cloudinaryPreset);
+
+		// Make the request to Cloudinary
+		try {
+			const response = await axios.post(cloudinaryUrl, formData);
+			setImageUrl(response.data.secure_url);
+			console.log("uploaded.",response.status);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+
+	return (
+		<div>
+			<div>
+
+				<label htmlFor="file-input">
+					<img src={imageUrl || require('../../icons/profile-icon.png')}  className='profile-img' alt="Choose image" width='100' height='100' />
+				</label>
+				<img src={require('../../icons/upload-icon.webp')}  onClick={handleUpload} className='upload-icon'  />
+				<input type="file" id="file-input" onChange={handleChange}  style={{ display: 'none' }} />
+    
+			</div>
+		</div>
+	)
 }
 
 export default ImageUploader

@@ -15,7 +15,7 @@ import {
 
 
 const Navbar = () => {
-  const{ user,setUser,setUserId,setIsAuthenticated} = useAuthContext();
+  const{ user,setUser,setUserId,setIsAuthenticated,isAuthenticated} = useAuthContext();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -44,7 +44,7 @@ const Navbar = () => {
             Community
           </NavLink>
         {      
-          user ? 
+          isAuthenticated ? 
           <NavLink to="/"  onClick={handleLogout} activeStyle={{ color: "black" }}>
           Log out
         </NavLink>
