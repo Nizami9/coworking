@@ -13,8 +13,9 @@ import ImageUploader from './ImageUploader';
 function Profile() {
     <script src="https://unpkg.com/react-phone-input-2@2.x/dist/lib.js"></script>
     const [phoneNumber, setPhoneNumber] = useState();
-    const [imgUrl, setImgUrl] = useState(require('../../icons/profile-icon.png'));
-
+   
+    const [imageUrl, setImageUrl] = useState(null);
+    const [image, setImage] = useState(null);
 
 
 
@@ -23,7 +24,7 @@ function Profile() {
                       <ScrollToTopOnMount />
             <div className='pic-col'>
                 <div className='profile-pic-div'>
-                            {<ImageUploader />}
+                            {<ImageUploader  image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
                            <h5>hello me</h5>
                 </div>
                 <div className='profile-list'>
