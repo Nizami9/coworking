@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
 .reserveSpace-container {
   /* width: 100%; */
   height: 700px;
@@ -7,13 +13,11 @@
   gap: 2px;
 }
 .reserve-space {
-  /* height: 500px; */
   display: flex;
 }
 
 .info-title {
   height: 90px;
-  /* width: 470px; */
   display: flex;
    justify-content: center;
   padding-top: 40px;
@@ -29,11 +33,11 @@
 }
 .form {
   border-radius: 4px;
-  border: 1px solid #dce3ed;
+
 }
 
 .form-1-wrapper {
-  /* height: 500px; */
+
   display: flex;
   justify-content: center;
 }
@@ -44,21 +48,20 @@
 }
 
 
-.space-wrape {
+.space-wrape-sp {
   display: flex;
   justify-content: flex-start;
 }
-.space-wrapper-2 {
-  height: px;
-  display: flex;
-  justify-content: center;
-}
+
 
 .p4-img-and-details-king {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
+
+
 
 .p4-img-sp {
   margin: 3% 0;
@@ -71,19 +74,24 @@ align-items: center;
   display: block;
   justify-content: space-between;
   align-items: center;
-  padding-top: 11%;
+  padding-top: 10.5%;
 }
 
 
 .p4-title-and-details-king {
-  margin: 1% 0;
-  width: 40%;
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 30px;
 }
 
 .p4-address-city-country-king
 {
+  font-family: "Outfit";
   font-size: small;
-padding-top: 60px;
+padding-top: 100px;
 }
 
 .p4-location-icon-king {
@@ -100,9 +108,15 @@ padding-top: 60px;
 .show-date-time-sp {
   display: flex;
   justify-content: flex-start;
-  width: 300px;
+  width: 85%;
+  height: 60px;
+  padding-top: 15px;
   font-size: small;
   border-bottom: 2px solid #dce3ed;
+}
+hr {
+  width: 85%;
+  border-top: 0.7px solid #dce3ed; 
 }
 
 .back-link {
@@ -132,7 +146,7 @@ padding-top: 60px;
   padding-left: 25px;
 }
 
-@media only screen and (min-width: 360px) and (max-width: 768px) {
+@media only screen and  (max-width: 768px)and (max-width: 1160px) {
   .reserveSpace-container {
     height: 100%;
     display: inline-block;
@@ -144,9 +158,9 @@ padding-top: 60px;
   }
 
 .p4-img-sp {
-    margin: 10px;
-    width: 305px;
-    height: 167px;
+
+    width: 485px;
+    /* height: 267px; */
     padding-left: 25px;
   }
   .form-1-wrapper {
@@ -156,16 +170,14 @@ padding-top: 60px;
     margin: 24px;
   }
 
-  .p4-img-and-details {
+  .p4-img-and-details-king {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
-
-  .p4-img-and-details {
-    display: inline-flex;
-    border: 2px;
-  }
+  
+  
   .show-date-time-sp {
     display: flex;
     justify-content: flex-start;
@@ -173,8 +185,12 @@ padding-top: 60px;
     font-size: small;
     margin-top: 5%;
     padding-left: 25px;
-    border-bottom: 2px solid #dce3ed;
+     border-bottom: 2px solid #dce3ed;  
+    width: 500px;
   }
+
+
+
   .p4-space-wrapper-king {
     display: flex;
     font-family: "Outfit";
@@ -183,6 +199,24 @@ padding-top: 60px;
     justify-content: space-between;
     align-items: flex-start;
   }
+
+  .p4-title-and-details-king {
+    display: flex;
+     height: unset; 
+    padding-top: 0px;
+    width: 500px;
+    padding-left: 11px;
+
+}
+.p4-address-city-country-king {
+  font-size: small;
+  padding-top: 20px;
+}
+
+hr {
+  width: 500px;
+  border-top: 0.7px solid #dce3ed; 
+}
 
 }
 

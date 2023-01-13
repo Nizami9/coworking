@@ -110,13 +110,13 @@ const UserPay = () => {
                             : undefined
                         }
                         validationText={touchedInputs.cvc && erroredInputs.cvc}
-                        maxWidth="rem" 
+                        maxWidth="5rem" 
                       />
                     </div>
                   </div>
                 </FieldSet>
               </div>
-
+<div className="form-sub">
               <button
                 className="form-2"
                 style={{
@@ -128,6 +128,7 @@ const UserPay = () => {
               >
                 <Link to="/thank-you">Complete</Link>
               </button>
+              </div>
             </form>
           </div>
         </div>

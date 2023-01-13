@@ -68,7 +68,7 @@ export default function NameForm() {
               className="form"
               style={{
                 height: "44px",
-                width: "450px",
+                width: "465px",
               }}
               name='fullname'
               type="name"
@@ -80,7 +80,7 @@ export default function NameForm() {
               className="form"
               style={{
                 height: "44px",
-                width: "450px",
+                width: "465px",
               }}
               type="text"
               placeholder="email"
@@ -92,7 +92,7 @@ export default function NameForm() {
               className="form"
               style={{
                 height: "44px",
-                width: "450px",
+                width: "465px",
               }}
               type="text"
               placeholder="Company"
@@ -111,7 +111,7 @@ export default function NameForm() {
                 className="form"
                 style={{
                   height: "120px",
-                  width: "450px",
+                  width: "465px",
                 }}
                 name='requirements'
                 type="text"
