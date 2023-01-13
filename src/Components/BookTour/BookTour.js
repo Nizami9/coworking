@@ -1,11 +1,13 @@
 import React from 'react';
-import "../BookTour/BookTour.css";
-import ReservSpace from "../ReserveSpace/ReserveSpace";
+import BookTourLeft from './BookTourLeft.js';
+import BookTourRight from "./BookTourRight";
+import "./BookTour.css";
 
 const BookTour = () => {
   return (
-    <div>
-      <ReservSpace />
+    <div className='BookTourContainer'>
+    <BookTourRight />
+    <BookTourLeft />
     </div>
   )
 }

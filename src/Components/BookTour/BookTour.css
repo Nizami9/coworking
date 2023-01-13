@@ -1,0 +1,95 @@
+.BookTourContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookTourLeftContainer {
+    width: 57%;
+    margin: 20px 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookTourRightContainer {
+    width: 40%;
+    margin: 20px 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.bookTourRightForm {
+    width: 100%
+}
+
+.bookTourRightInfo {
+    margin: 10px 0 0px 0;
+}
+
+.bookTourForm {
+    width: 80%;
+    height: 40px;
+    margin: 5px 0 5px 0;
+}
+
+.bookTourRightMessage {
+    width: 90%;
+    height: 120px;
+}
+.flag-dropdown {
+    height: 88%;
+}
+
+.bookTourLeftSpaceTitle,
+.bookTourLeftLocation,
+.bookTourLeftShowDate,
+.bookTourLeftShowTime {
+    margin: 10px 0 10px 0;
+    display: none;
+}
+
+.bookTourLeftImg {
+    width: 100%;
+}
+
+.bookTourLeftLocationIcon, .bookTourLeftCalendarIcon, .bookTourLeftClock {
+    width: 3%;
+}
+
+.bookTourLeftTitle {
+    width: 100%;
+    height: 20px;
+}
+
+.calendar {
+    width: 90%;
+}
+
+.calendar-container {
+    width: 100%;
+}
+
+.bookTourLeftCont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imageContainer {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.react-tel-input .form-control {
+    width: 80%;
+}
+
+@media screen and (max-width: 1160px) {
+    .imageContainer {
+        display: none;
+    }
+    .bookTourForm {
+        width: 120%;
+    }
+}
