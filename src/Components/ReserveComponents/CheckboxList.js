@@ -3,13 +3,39 @@ import { Link, useParams, Navigate  } from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
 import { useAuthContext } from '../../context/AuthContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
-
+import React, {useState, useEffect} from 'react';
 const CheckboxList = () => {
 
   const {searchKey} = useParams();
-
   const { allSpaces } = useSpaceContext();
   const { isAuthenticated } = useAuthContext();
+  const [localSpaces, setLocalSpaces] = useState(allSpaces)
+  const [sortBy, setSortBy] = useState()
+
+   //const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
+   //console.log("spaces are ",spaces);
+
+   const arrangeByPrice = (value) => {
+    if(value === 'max'){
+      setSortBy(value)
+    } else if(value === 'min'){
+      setSortBy(value)
+    }
+   }
+
+   useEffect(()=>{
+    if(sortBy === 'min'){
+      const sorted = allSpaces.sort((a, b) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
+      console.log(localSpaces)
+      setLocalSpaces(sorted);
+    } else if(sortBy === 'max'){
+      const sorted = allSpaces.sort((b, a) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
+      console.log(localSpaces)
+      setLocalSpaces(sorted);
+    } else (
+      console.log('Original')
+    )
+   }, [sortBy])
 
   const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
   console.log("spaces are ",spaces);

@@ -9,7 +9,6 @@ const Locations = () => {
   const changeArrangement = () => {
     console.log("working")
   }
-
   return (
     <div className="locations-container">
           <ScrollToTopOnMount />
