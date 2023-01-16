@@ -223,6 +223,16 @@ div.fPqLXB {
 
 @media screen and (max-width: 1024px) {
 
+  .card {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 24px;
+    border-bottom: 1px solid #dce3ed;
+    border-top: 1px solid #dce3ed;
+    flex-direction: column;
+}
+
   .locations {
     padding-left: 20px;
   }
@@ -255,7 +265,7 @@ div.fPqLXB {
 
 img.img {
   margin: 10px;
-  width: 50%;
+  width: 92%;
 }
 
 .checkbox {

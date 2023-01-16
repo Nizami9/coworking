@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     margin: 30px 0 0 30px;
     justify-content: space-between;
+    padding-top: 90px;
 }
 
 .leftImageSpace {
@@ -139,7 +140,7 @@ span.info {
 
 @media screen and (max-width: 1160px) {
     .leftImageSpace > img {
-        width: 170%;
+        width: 210%;
     }
 
     .spaceReservations {
