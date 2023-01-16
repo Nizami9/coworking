@@ -56,7 +56,7 @@ const List = () => {
           <button className="budget-wrapper" onClick={()=>{arrangeByPrice("min")}}>Max.Budget</button>
         </div>
       </div>
-     {localSpaces ? <p>Loading</p> :
+     {localSpaces &&
         localSpaces.map((space) => {
           return (   
             <div className="card" key={space.id}>
