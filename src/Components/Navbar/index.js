@@ -104,7 +104,7 @@ const Navbar = () => {
               <NavLink to="/signin">  Sign In</NavLink>
             </li>
             <li>
-              <NavLink to="/signup">Sign Up</NavLink>
+              <NavLink to="/sign-up">Sign Up</NavLink>
             </li>
             </>
  }
