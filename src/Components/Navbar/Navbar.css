@@ -24,7 +24,7 @@
   color:white;
   position: relative;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .logo {

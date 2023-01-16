@@ -17,13 +17,14 @@
  .space-wrape-sp{
   padding-left: 25px;
 }
-.space-wrape-sp h4{
+.space-wrape-sp h2{
   font-family: 'Monument Extended';
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 135%;
   color: #262626;
+  padding-top: unset;
 }
 .p4-title {
  
@@ -58,7 +59,7 @@ padding-bottom: 10px;
 
 .p4-img-and-details {
   display: inline-flex;
-  padding-top: 25px;
+  /* padding-top: 25px; */
 }
 h4 {
   font-family: "Outfit";
@@ -79,7 +80,7 @@ h4 {
 .p4-address-city-country,
 .show-date {
   font-size: small;
-  margin-top: 27%;
+  /* margin-top: 27%; */
 }
 
 .p4-location-icon {
@@ -148,6 +149,10 @@ h4 {
 }
 .form-sub{
   padding-top: 60px;
+}
+
+.form-2 a{
+  text-decoration: none;
 }
 
 @media only screen and  (max-width: 768px)and (max-width: 1160px) {

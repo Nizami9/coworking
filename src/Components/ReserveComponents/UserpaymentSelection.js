@@ -1,7 +1,7 @@
 import React from "react";
-import Space from "../../spaceData.json";
+// import Space from "../../spaceData.json";
 // import "./styleChangePass.css";
-import { useState } from "react";
+// import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
 
 
@@ -16,7 +16,7 @@ function UserpaymentSelection() {
     <div className="p4-space-wrapper-king">
       <div className="space-wrape-sp">
         {" "}
-        <h4>Reserve Space </h4>
+        <h2>Reserve Space </h2>
       </div>
       <div className="space-wrapper-sp">
         {selectedSpace && (

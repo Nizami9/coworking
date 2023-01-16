@@ -36,7 +36,7 @@
   .inline-flex-comp {
     display: inline-flex;
     margin-top: 4%;
-    width: 80%;
+    width: 45%;
     justify-content: space-between;
   }
   .inline-flex-comp {
@@ -94,6 +94,7 @@
   .space-col h1 {
     font-family: "Monument";
     text-align: center;
+    padding-right: 29px;
   }
   
 
@@ -111,7 +112,7 @@
 .p4-img{
     margin:3% 0;
     margin-right: 3%;
-    width:40%;
+    width:80%;
 }
 .p4-title-and-details{
     margin:1% 0;
@@ -121,13 +122,9 @@
 .p4-address-city-country,.show-date{
     font-size: small;
     margin-top: 27%;
-    /* width: 18em; */
+    width: 18em; 
 }
-hr{
-    width:95%;
-    margin:0 0;
-    border-top: 2px solid #DCE3ED;
-}
+
 .p4-location-icon{
     width:5%;
     margin-right:2%;
@@ -151,7 +148,11 @@ hr{
     align-items: center;
     margin-top:3%;
 }
-
+hr{
+  
+  margin:0 0;
+  border-top: 2px solid #DCE3ED;
+}  
 
 @media only screen and  (min-width: 37em) and (max-width: 48em) {
   .cal-page-main-grid {
@@ -191,9 +192,26 @@ hr{
     margin-right:3.5%;
   }
   h2{
-    margin-top: 5%;
+    margin-top: 20%;
     text-align: center;
   }
+  .p4-img-and-details {
+    display: inline-flex;
+    padding-top: 25px;
+    flex-direction: column;
+}
+
+.p4-img {
+  margin: 3% 0;
+  margin-right: 3%;
+  width: 135%;
+}
+
+.p4-address-city-country, .show-date {
+  font-size: small;
+  margin-top: 10%;
+}
+
 } 
 
 
