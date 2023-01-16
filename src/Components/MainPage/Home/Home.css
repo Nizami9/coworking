@@ -154,7 +154,7 @@ button.buttonSearchMain {
     font-size: 30px;
     line-height: 135%;    
     color: #262626;
-    padding: 150px 0 0 80px;
+    padding: 80px 0 20px 80px;
 }
 
 .bottomContainerLeft>p {
@@ -262,6 +262,42 @@ button.buttonSearchMain {
 
 .mobileVersion {
     display: none;
+}
+
+#mainMap {
+    height: 300px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.bottomContainerLeftUL {
+    margin: 5% 0 0 20%;
+}
+
+.bottomContainerLeftUL>li {
+    padding-bottom: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #555D67;
+}
+
+.bottomContainerLeftUL>li:hover {
+    border-bottom: 2px solid orange;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    width: 80px;
+}
+
+.pic1:hover, .pic2:hover, .pic3:hover, .pic4:hover, .pic5:hover, .pic6:hover {
+    pointer: cursor;
+    color: orange;
 }
 
 @media screen and (max-width: 1160px) {

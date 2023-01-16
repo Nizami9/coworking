@@ -16,6 +16,7 @@ const Home = () => {
   const [searchKey,setSearchKey]=useState([]);
   const [availaleSpaces,setAvaialableSpaces]=useState([]);
   const [clickedCity, setClickedCity] = useState();
+  const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
   const navigate = useNavigate();
 
@@ -24,8 +25,8 @@ const Home = () => {
     setUsers(data);
    }
 
-
   useEffect(()=>{
+    getMap();
    // getAllUsers();
     //console.log("users --",users);
 },[]);
@@ -51,6 +52,16 @@ const handleSearch = async(e) => {
    console.log("data from  ",data)
 }
 
+const getMap = () => {
+mapboxgl.accessToken = 'pk.eyJ1Ijoibml6YW1pOSIsImEiOiJjbGN5bGpxNG8yZWFrM3Btc2J2Nzh1dWtkIn0.E5GcEsGSmR-HoYW_nRKACA';
+      const map = new mapboxgl.Map({
+    container: 'mainMap',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [9, 51], // starting position
+    zoom: 4.2 // starting zoom
+  });
+  map.addControl(new mapboxgl.NavigationControl());
+}
   return (  
     <div className="containerMain">
                 <ScrollToTopOnMount />
@@ -109,6 +120,21 @@ const handleSearch = async(e) => {
         <div className="bottomContainerLeft">
         <h1>Book a unique space for your activity</h1>
         <p>From a single desk to a whole building <br/>The choice is yours</p>
+        <div>
+          <ul className="bottomContainerLeftUL">
+            <li onClick={handleChangeCity}>Berlin</li>
+            <li onClick={handleChangeCity}>Hamburg</li>
+            <li onClick={handleChangeCity}>Munich</li>
+            <li onClick={handleChangeCity}>Köln</li>
+            <li onClick={handleChangeCity}>Frankfurt</li>
+            <li onClick={handleChangeCity}>Stuttgart</li>
+            <li onClick={handleChangeCity}>Düsseldorf</li>
+            <li onClick={handleChangeCity}>Leipzig</li>
+            <li onClick={handleChangeCity}>Dortmund</li>
+            <li onClick={handleChangeCity}>Essen</li>
+            <li onClick={handleChangeCity}>Hannover</li>
+          </ul>
+        </div>
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
@@ -134,6 +160,9 @@ const handleSearch = async(e) => {
           </div>
           </div>
         </div>
+      </div>
+      <div id="mainMap">
+
       </div>
     </div>   
    
