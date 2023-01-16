@@ -40,14 +40,14 @@
 }
 
 label {
-    width: 30%;
+    width: 100%;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 130%;
     color: #555D67;
-    display: flex;
+     /* display: flex;   */
     align-items: center;
 }
 
@@ -155,7 +155,7 @@ label.phoneNumber {
 .img-upload-label .profile-img {
     border: none;
     border-radius: 1%;
-    width:80em;
+     /* width:80em;  */
     margin-left: 35%;
 }
 
@@ -173,7 +173,7 @@ label.phoneNumber {
     .img-upload-label .profile-img {
         border: none;
       border-radius: 1%;
-        width:60em;
+         width:60em; 
         padding-left: 5%;
     }
  }

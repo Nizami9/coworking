@@ -115,7 +115,7 @@ padding-top: 100px;
   border-bottom: 2px solid #dce3ed;
 }
 hr {
-  width: 85%;
+  width: 85%; 
   border-top: 0.7px solid #dce3ed; 
 }
 
@@ -144,6 +144,9 @@ hr {
   align-items: center;
   color: #262626;
   padding-left: 25px;
+}
+.form a{
+  text-decoration: none;
 }
 
 @media only screen and  (max-width: 768px)and (max-width: 1160px) {
@@ -214,7 +217,7 @@ hr {
 }
 
 hr {
-  width: 500px;
+  width: 450px;
   border-top: 0.7px solid #dce3ed; 
 }
 
