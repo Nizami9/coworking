@@ -15,6 +15,7 @@
     "express": "^4.18.2",
     "fannypack": "^4.21.38",
     "image-uploader": "^2.0.2",
+    "mapbox-gl": "^2.12.0",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",
