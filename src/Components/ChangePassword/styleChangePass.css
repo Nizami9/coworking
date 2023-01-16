@@ -34,7 +34,7 @@
     font-family: 'Monument';
     font-weight: 130%;
     line-height: 135%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
   h4{
@@ -53,7 +53,9 @@
     font-size: 11px;
  }
   
-  
+  .continue-btn a{
+    text-decoration: none;
+  }
   
   @media only screen and  (min-width: 37em) and (max-width: 57em) {
       .p10-grid{ 
