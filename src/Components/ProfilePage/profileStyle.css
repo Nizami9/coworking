@@ -23,6 +23,7 @@
 }
 .city-flex input{
     width:90%;
+    margin-right: 7.5em;
 }
 .name-flex input,.email-flex input{
     width:20em;
@@ -140,6 +141,7 @@ button{
     }
     .city-flex input{
         width: 26.4em;
+      
     }
     .name-flex input,.email-flex input{
         width: 26.2em;
@@ -179,6 +181,10 @@ button{
         width: 2em;
         margin-top: 0%;
         margin-left: 9%;
+    }
+    
+    .city-flex{
+        margin-right: 0%;
     }
  }
 

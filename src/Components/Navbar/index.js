@@ -95,12 +95,16 @@ const Navbar = () => {
             <li>
               <NavLink to="/add-space"> Add Space</NavLink>
             </li>
+            <li>
+              <NavLink to="/profile"> Account</NavLink>
+            </li>
             <li to="/" onClick={handleLogout} activeStyle={{ color: "black" }}>
                 Log out
              </li>
              </> 
              :
-             <>            <li>
+             <>
+              <li>
               <NavLink to="/signin">  Sign In</NavLink>
             </li>
             <li>

@@ -7,8 +7,6 @@ import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 
-
-
 export default function NameForm() {
  
   const [phone, setPhone] = useState();
@@ -16,6 +14,7 @@ export default function NameForm() {
     fullname: '',
     email: '',
     company: '',
+    phone:'',
     requirements: ''
   });
 
@@ -23,7 +22,7 @@ export default function NameForm() {
  
 
   const handleChange = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setDetails({
       ...details,
       [e.target.name]: e.target.value
@@ -35,13 +34,10 @@ export default function NameForm() {
     try {
       e.preventDefault();
       setFormDetails(details);
-      console.log("entered details are   ",  details );
       return <Navigate to='/Userpayment' />
     } catch (err) {
       console.log(err);
     }
-
-
   }
   return (
     <div className="information">
@@ -59,7 +55,6 @@ export default function NameForm() {
         {" "}
         <h3 className="info">Enter information for your order</h3>
       </div>
-
       <div className="form-1-wrapper">
         <form onSubmit={handleSubmit}>
           <label>
@@ -74,6 +69,7 @@ export default function NameForm() {
               type="name"
               placeholder="Name"
               onChange={handleChange}
+              required
               />
             <h6>Email</h6>
             <input
@@ -86,6 +82,7 @@ export default function NameForm() {
               placeholder="email"
               name='email'
               onChange={handleChange}
+              required
             />
             <h6>Company</h6>
             <input
@@ -102,7 +99,7 @@ export default function NameForm() {
             <h6>Phone Number</h6>
             <PhoneInput
               country={"de"}
-              value={details.phone}
+              value={phone}
               name='phone'
               onChange={(phoneNo) => setPhone(phoneNo)}
             />

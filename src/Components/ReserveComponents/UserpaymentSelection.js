@@ -9,7 +9,7 @@ import { useSpaceContext } from '../../context/SpaceContext';
 
 function UserpaymentSelection() {
   const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
-  console.log('in payment page space is ',selectedSpace )
+
   // let space = Space[0];
  
   let spaceComponent = (

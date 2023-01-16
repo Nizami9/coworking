@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 
 import { FieldSet, InputField } from "fannypack";
 import { usePaymentInputs } from "react-payment-inputs";
+import { useBookContext } from '../../context/BookContext';
+import { useSpaceContext } from '../../context/SpaceContext';
+
+import emailjs from 'emailjs-com';
+import { useEffect } from "react";
 
 const UserPay = () => {
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps } =
@@ -13,6 +18,35 @@ const UserPay = () => {
 
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+
+  const {formDetails}= useBookContext();
+  const {selectedSpace,fromDate,toDate}= useSpaceContext();
+
+
+  const serviceId=process.env.REACT_APP_Mail_Service_Id;
+  const templateId=process.env.REACT_APP_Mail_Template_Id;
+  const mailUser=process.env.REACT_APP_Mail_User;
+
+
+  useEffect(()=>{
+    console.log("details from context is ",formDetails,selectedSpace);
+
+  })
+ 
+  const handleSendEmail = () => {
+     emailjs.send(serviceId, templateId, {
+      to_email:formDetails.email, 
+      to_name:formDetails.fullname,
+      subject: 'Confirmation Mail', 
+     message: ` Your booking has confirmed. \n You have booked ${selectedSpace.title} from ${fromDate} to ${toDate}\n Thanks for booking with CoWo Team.\n\n   `}, 
+     mailUser)
+    .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    }
+
 
   return (
     <div className="paymentSelection-payM">
@@ -79,10 +113,10 @@ const UserPay = () => {
                     maxWidth="750px" background="#FFFFFF"
                   />
 
-        
+
 
                   <div className="expiry-cvc">
-                   
+
                     <InputField
                       {...getExpiryDateProps()}
                       label="Expiry"
@@ -95,7 +129,7 @@ const UserPay = () => {
                       validationText={
                         touchedInputs.expiryDate && erroredInputs.expiryDate
                       }
-                      maxWidth="8rem" 
+                      maxWidth="8rem"
                     />
 
                     <div className="cvv">
@@ -110,24 +144,24 @@ const UserPay = () => {
                             : undefined
                         }
                         validationText={touchedInputs.cvc && erroredInputs.cvc}
-                        maxWidth="5rem" 
+                        maxWidth="5rem"
                       />
                     </div>
                   </div>
                 </FieldSet>
               </div>
-<div className="form-sub">
-              <button
-                className="form-2"
-                style={{
-                  height: "44px",
-                  width: "200px",
-                  background: "#FF7848",
-                }}
-                type="submit"
-              >
-                <Link to="/thank-you">Complete</Link>
-              </button>
+              <div className="form-sub">
+                <button
+                  className="form-2"
+                  style={{
+                    height: "44px",
+                    width: "200px",
+                    background: "#FF7848",
+                  }}
+                  type="submit"
+                >
+                  <Link to="/thank-you" onClick={handleSendEmail}>Complete</Link>
+                </button>
               </div>
             </form>
           </div>
