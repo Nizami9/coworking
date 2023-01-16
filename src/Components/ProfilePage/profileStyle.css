@@ -125,6 +125,14 @@ button{
     top: -12%;
     bottom:1%;
 }
+.city-flex input{
+    width:90%;
+    margin-right: 7.5em;
+}
+    .city-flex{
+        margin-right: 0%;
+    }
+ 
 
 
 @media only screen and  (min-width: 37em) and (max-width: 57em) {

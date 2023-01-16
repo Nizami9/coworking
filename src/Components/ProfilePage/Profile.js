@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
@@ -7,7 +7,7 @@ import ScrollToTopOnMount from '../../ScrollToTopOnMount';
 import ImageUploader from './ImageUploader';
 import axios from 'axios';
 
-
+import { useAuthContext } from '../../context/AuthContext';
 
 
 
@@ -17,6 +17,52 @@ function Profile() {
    
     const [imageUrl, setImageUrl] = useState(null);
     const [image, setImage] = useState(null);
+
+    const[userid,setUserid]=useState();
+    const backEnd_API = process.env.REACT_APP_API_BACKEND;
+
+     
+  const [user,setUser]=useState({
+    firstname:'',
+    lastname:'',
+    email:'',
+    phonenumber:'',
+    address:'',
+    city:'',
+    country:'',
+    zip:''
+  })
+
+
+    const getUserDetails =async (LSUser) =>{
+        try {
+
+           const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
+           //const { data } = await axios.post('http://localhost:3100/user/get-user',{
+               userId:LSUser
+           } );
+          setUser(data)
+         console.log("Success",data);
+         }catch(err){
+           console.log(err);
+         }
+   }
+
+    useEffect(()=>{
+       let LSUser = localStorage.getItem('userId');
+       LSUser && getUserDetails(LSUser);
+       setUserid(LSUser);
+        console.log(LSUser);
+    },[])
+
+  const handleChange = (e) => {
+        setUser({
+          ...user,
+          [e.target.name]: e.target.value
+
+        });
+      }
+
 
     const handleUpload = async () => {
 
@@ -52,10 +98,10 @@ function Profile() {
                 </div>
                 <div className='profile-list'>
                     <ul>
-                        <li>Profile <span> {'>'}</span></li><hr />
-                        <li>Favourite spaces <span> {'>'}</span></li><hr />
-                        <li>Messages <span> {'>'}</span></li><hr />
-                        <li>Billing <span> {'>'}</span></li><hr />
+                        <li><Link to='/change-password'> Profile <span> {'>'}</span></Link></li><hr />
+                        <li><Link>Favourite spaces <span> {'>'}</span></Link></li><hr />
+                        {/* <li>Messages <span> {'>'}</span></li><hr /> */}
+                        <li><Link to='/change-password'>Change password <span> {'>'}</span></Link></li><hr />
                     </ul>
                 </div>
             </div>
@@ -65,24 +111,24 @@ function Profile() {
                 <div className='name-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>First name </label>
-                        <input type='text' placeholder='First name' />
+                        <input type='text' placeholder='First name' value={user.firstname} onChange={handleChange} />
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='lname'>Last name </label>
-                        <input type='text' placeholder='Last name' />
+                        <input type='text' placeholder='Last name' value={user.lastname}/>
                     </div>
                 </div>
                 <div className='email-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Email </label>
-                        <input type='email' placeholder='Email' />
+                        <input type='email' placeholder='Email'  value={user.email}/>
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Phone </label>
                         <ReactPhoneInput
                             className='phone-input'
                             country={'de'}
-                            value={phoneNumber}
+                            value={user.phonenumber}
                             onChange={phone => setPhoneNumber(phone)}
                         />
                         {/* <input type='tel' placeholder='Phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" /> */}
@@ -92,25 +138,25 @@ function Profile() {
                 <div className='address-flex'>
                     <div className='flex-col address-bar'>
                         <label htmlFor='fname'>Address </label>
-                        <input type='text' placeholder='Address' />
+                        <input type='text' placeholder='Address'  value={user.address} />
+                    </div> 
+                    <div className='flex-col'>
+                        <label htmlFor='fname'>City </label>
+                        <input type='text' placeholder='City'  value={user.city}/>
                     </div>
-                    <div className='flex-col number-input'>
+                    {/* <div className='flex-col number-input'>
                         <label htmlFor='fname'>Number </label>
-                        <input type='text' placeholder='Number' />
-                    </div>
+                        <input type='text' placeholder='Number'  value={} />
+                    </div> */}
                 </div>
                 <div className='city-flex'>
                     <div className='flex-col'>
-                        <label htmlFor='fname'>City </label>
-                        <input type='text' placeholder='City' />
-                    </div>
-                    <div className='flex-col'>
                         <label htmlFor='fname'>Country </label>
-                        <input type='text' placeholder='Country' />
+                        <input type='text' placeholder='Country'  value={user.country} />
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>ZIP </label>
-                        <input type='text' placeholder='ZIP' />
+                        <input type='text' placeholder='ZIP'  value={user.zip} />
                     </div>
                 </div>
                 <button>Save All</button>

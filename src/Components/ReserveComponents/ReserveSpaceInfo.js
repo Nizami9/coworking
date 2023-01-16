@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import { Link, Navigate  } from "react-router-dom";
+import { Link, Navigate,useNavigate  } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
@@ -16,12 +16,13 @@ export default function NameForm() {
     fullname: '',
     email: '',
     company: '',
+    phone:'',
     requirements: ''
   });
 
   const {setFormDetails}= useBookContext();
- 
-
+  const navigate = useNavigate();
+  
   const handleChange = (e) => {
     e.preventDefault();
     setDetails({
@@ -47,7 +48,7 @@ export default function NameForm() {
     <div className="information">
         <ScrollToTopOnMount />
       <div>
-        <Link className="back-link" to="/back">
+        <Link className="back-link" onClick={() => navigate(-1)}>
           <img
             alt="back-arrow-icon"
             src={require("../../icons/orange-arrow.png")}
@@ -57,7 +58,7 @@ export default function NameForm() {
       </div>
       <div className="info-title">
         {" "}
-        <h3 className="info">Enter information for your order</h3>
+        <h3 className="info">Enter information </h3>
       </div>
 
       <div className="form-1-wrapper">
@@ -102,7 +103,7 @@ export default function NameForm() {
             <h6>Phone Number</h6>
             <PhoneInput
               country={"de"}
-              value={details.phone}
+              value={phone}
               name='phone'
               onChange={(phoneNo) => setPhone(phoneNo)}
             />
