@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./Checkbox.css";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
-const Checkbox = ({ label }) => {
+// const Checkbox = ({label} CLEAN UP) => {
+const Checkbox = ({onClick})=> {
   const [Checkbox, setCheckbox] = useState("");
+
+
   return (
     <div className="checkbox-container">
                 <ScrollToTopOnMount />
@@ -36,7 +39,7 @@ const Checkbox = ({ label }) => {
               <p>Annually</p>
             </div>
           </div>
-          <span>{label}</span>
+          {/* <span>{label}</span> CLEAN UP*/}
         </label>
       </div>
       <div className="budget">
@@ -45,7 +48,7 @@ const Checkbox = ({ label }) => {
         <p>The average desk price in Germany is 252 € per month</p>
       <div className="budget-button">
         <div >
-          <button className="budget-wrapper" >Mini.Budget</button>
+          <button className="budget-wrapper">Mini.Budget</button>
         </div>
         <div>
           <button className="budget-wrapper">Max.Budget</button>

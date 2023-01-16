@@ -26,6 +26,14 @@ const CheckboxList = () => {
     <div className="locations">
                 <ScrollToTopOnMount />
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
+     <div className="budget-button">
+        <div >
+          <button className="budget-wrapper" onClick={()=>{console.log("min")}}>Mini.Budget</button>
+        </div>
+        <div>
+          <button className="budget-wrapper" onClick={()=>{console.log("max")}}>Max.Budget</button>
+        </div>
+      </div>
       {spaces &&
         spaces.map((space) => {
           return (
