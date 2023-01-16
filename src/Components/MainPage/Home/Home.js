@@ -16,6 +16,7 @@ const Home = () => {
   const [searchKey,setSearchKey]=useState([]);
   const [availaleSpaces,setAvaialableSpaces]=useState([]);
   const [clickedCity, setClickedCity] = useState();
+  const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
   const navigate = useNavigate();
 
@@ -24,8 +25,8 @@ const Home = () => {
     setUsers(data);
    }
 
-
   useEffect(()=>{
+    getMap();
    // getAllUsers();
     //console.log("users --",users);
 },[]);
@@ -51,6 +52,16 @@ const handleSearch = async(e) => {
    console.log("data from  ",data)
 }
 
+const getMap = () => {
+mapboxgl.accessToken = 'pk.eyJ1Ijoibml6YW1pOSIsImEiOiJjbGN5bGpxNG8yZWFrM3Btc2J2Nzh1dWtkIn0.E5GcEsGSmR-HoYW_nRKACA';
+      const map = new mapboxgl.Map({
+    container: 'mainMap',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [9, 51], // starting position
+    zoom: 4 // starting zoom
+  });
+  map.addControl(new mapboxgl.NavigationControl());
+}
   return (  
     <div className="containerMain">
                 <ScrollToTopOnMount />
@@ -134,6 +145,9 @@ const handleSearch = async(e) => {
           </div>
           </div>
         </div>
+      </div>
+      <div id="mainMap">
+
       </div>
     </div>   
    
