@@ -1,6 +1,6 @@
 import React from "react";
 import logoImage from "../Footer/images/CoWo.png";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
 import {
   Nav,
@@ -15,7 +15,7 @@ import {
 
 
 const Navbar = () => {
-  const{ user,setUser,setUserId,setIsAuthenticated,isAuthenticated} = useAuthContext();
+  const { user, setUser, setUserId, setIsAuthenticated, isAuthenticated } = useAuthContext();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -40,23 +40,25 @@ const Navbar = () => {
           <NavLink to="/locations" activeStyle={{ color: "black" }}>
             Locations
           </NavLink>
-          <NavLink to="/community" activeStyle={{ color: "black" }}>
-            Community
+
+          {
+            isAuthenticated ? <>
+            <NavLink to="/add-space" activeStyle={{ color: "black" }}>
+            Add Space
           </NavLink>
-        {      
-          isAuthenticated ? 
-          <NavLink to="/"  onClick={handleLogout} activeStyle={{ color: "black" }}>
-          Log out
-        </NavLink>
-        :
-           <>        
-           <NavLink to="/signin" activeStyle={{ color: "black" }}>
-            Sign In
-          </NavLink>
-          <NavBtn>
-            <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>
-          </NavBtn>
-          </> }
+              <NavLink to="/" onClick={handleLogout} activeStyle={{ color: "black" }}>
+                Log out
+              </NavLink>
+              </>
+              :
+              <>
+                <NavLink to="/signin" activeStyle={{ color: "black" }}>
+                  Sign In
+                </NavLink>
+                <NavBtn>
+                  <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>
+                </NavBtn>
+              </>}
 
         </NavMenu>
       </Nav>

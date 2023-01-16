@@ -49,11 +49,11 @@
 }
 
 
-.upload-icon{
+.upload-icon-profile{
     position: absolute;
     width:2em;
-    margin-top: 4%;
-    margin-left: -2%;
+    margin-top: 0;
+    margin-left: 4%;
     border: 1px solid white;
     border-radius: 5rem; 
     z-index: 1;
@@ -175,17 +175,18 @@ button{
         top: -12%;
         bottom: 1%;
     }
-    .upload-icon{
-        width:2em;
-        margin-top: 8%;
-        margin-left: -4%;
+    .upload-icon-profile{
+        width: 2em;
+        margin-top: 0%;
+        margin-left: 9%;
     }
  }
+
  @media only screen and (min-width: 57em) and (max-width: 87em) {
-    .upload-icon{
+    .upload-icon-profile{
         width:1.8em;
-        margin-top: 7%;
-        margin-left: -3%;;
+        margin-top: 0%;
+        margin-left: 7%;
     }
  }
 
@@ -240,10 +241,10 @@ button{
         top: -16%;
         bottom: 1%;
     }
-    .upload-icon{
+    .upload-icon-profile{
         width:1.8em;
-        margin-top: 12%;
-        margin-left: -5%;
+        margin-top: -5%;
+        margin-left: 10%;
     
     }
    

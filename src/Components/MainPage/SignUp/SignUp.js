@@ -28,7 +28,28 @@ export default function SignUp () {
       [e.target.name]: e.target.value
     });
   }
- // console.log(input.firstName, input.lastName,phone)
+
+  const handleUpload = async () => {
+
+		// Get your Cloudinary configuration
+		const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;                           
+		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
+
+		// Prepare the form data for the request
+		let formData = new FormData();
+		formData.append('file', image);
+		formData.append('upload_preset', cloudinaryPreset);
+
+		// Make the request to Cloudinary
+		try {
+			const response = await axios.post(cloudinaryUrl, formData);
+			setImageUrl(response.data.secure_url);
+			console.log("uploaded.",response.status);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
   const handleSubmitRegistration = async (e)=>{
     try{
         e.preventDefault();
@@ -62,6 +83,7 @@ else
       <div className='signUpRightSide'>
         <h1>My profile</h1>        
         {<ImageUploader image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl}  />}
+        <img src={require('../../../icons/upload-icon.webp')}  onClick={handleUpload} className='upload-icon-signUp'  />
         <h3 className='signUpRightSideH3'>General information</h3>
         <form onSubmit={handleSubmitRegistration}>
           <div className='GIinput'>

@@ -18,6 +18,7 @@ import Thankyou from "./Components/Thankyou/Thankyou";
 import List from "./Components/ReserveComponents/List"
 import BookTour from "./Components/BookTour/BookTour";
 import { Component } from "react";
+import AddSpace from "./Components/AddSpaceTab/AddSpace";
 
 function App() {
   return (
@@ -39,12 +40,11 @@ function App() {
         <Route path="/enter-details" element={<Community />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/space/:id/book-tour" element={<BookTour />} />
-
-        {/* <Route path="/select-date" element={<DateSelect />} /> */}
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/UsersLocations" element={<UsersLocations />} />
         <Route path="/Userpayment" element={<Userpayment />} /> 
         <Route path="/thank-you" element={<Thankyou />} /> 
+        <Route path="/add-space" element={<AddSpace />} />
       </Routes>
     </BrowserRouter>
     <Footer />

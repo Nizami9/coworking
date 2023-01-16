@@ -26,6 +26,7 @@ function Login() {
         email:logEmail,
         password:logPassword
       } );
+ 
       localStorage.setItem('token', data.token);
       localStorage.setItem('userId',data.userId);
       setToken(data.token);

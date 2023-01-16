@@ -5,6 +5,7 @@ import 'react-phone-input-2/lib/style.css';
 import './profileStyle.css'
 import ScrollToTopOnMount from '../../ScrollToTopOnMount';
 import ImageUploader from './ImageUploader';
+import axios from 'axios';
 
 
 
@@ -17,6 +18,27 @@ function Profile() {
     const [imageUrl, setImageUrl] = useState(null);
     const [image, setImage] = useState(null);
 
+    const handleUpload = async () => {
+
+		// Get your Cloudinary configuration
+		const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;                           
+		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
+
+		// Prepare the form data for the request
+		let formData = new FormData();
+		formData.append('file',image);
+		formData.append('upload_preset', cloudinaryPreset);
+
+		// Make the request to Cloudinary
+		try {
+			const response = await axios.post(cloudinaryUrl, formData);
+			setImageUrl(response.data.secure_url);
+			console.log("uploaded.",response.status);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 
 
     const profileComponent = (
@@ -25,6 +47,7 @@ function Profile() {
             <div className='pic-col'>
                 <div className='profile-pic-div'>
                             {<ImageUploader  image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
+                            <img src={require('../../icons/upload-icon.webp')}  onClick={handleUpload} className='upload-icon-profile'  />
                            <h5>hello me</h5>
                 </div>
                 <div className='profile-list'>
