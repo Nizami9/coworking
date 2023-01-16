@@ -88,7 +88,7 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/locations">locations</NavLink>
+              <NavLink to="/locations">Locations</NavLink>
             </li>
         {    isAuthenticated ? 
           <>

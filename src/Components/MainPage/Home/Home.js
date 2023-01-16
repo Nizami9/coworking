@@ -61,83 +61,6 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoibml6YW1pOSIsImEiOiJjbGN5bGpxNG8yZWFrM3Btc2J2N
     zoom: 4.2 // starting zoom
   });
   map.addControl(new mapboxgl.NavigationControl());
-
-  map.on('load', () => {
-    map.addSource('places', {
-// This GeoJSON contains features that include an "icon"
-// property. The value of the "icon" property corresponds
-// to an image in the Mapbox Streets style's sprite.
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-'type': 'Feature',
-'properties': {
-'description':'<strong>Make it Mount Pleasant</strong><p><a href="http://www.mtpleasantdc.com/makeitmtpleasant" target="_blank" title="Opens in a new window">Make it Mount Pleasant</a> is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>',
-'icon': 'theatre'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [9, 52]
-}
-},
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<strong>Mad Men Season Five Finale Watch Party</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href="http://madmens5finale.eventbrite.com/" target="_blank" title="Opens in a new window">Mad Men Season Five Finale Watch Party</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. 8:00-11:00 p.m. $10 general admission, $20 admission and two hour open bar.</p>',
-'icon': 'theatre'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [9.2, 53]
-}
-},
-]
-}
-});
-// Add a layer showing the places.
-map.addLayer({
-'id': 'places',
-'type': 'symbol',
-'source': 'places',
-'layout': {
-'icon-image': ['get', 'icon'],
-'icon-allow-overlap': true
-}
-});
- 
-// When a click event occurs on a feature in the places layer, open a popup at the
-// location of the feature, with description HTML from its properties.
-map.on('click', 'places', (e) => {
-// Copy coordinates array.
-const coordinates = e.features[0].geometry.coordinates.slice();
-const description = e.features[0].properties.description;
- 
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
- 
-new mapboxgl.Popup()
-.setLngLat(coordinates)
-.setHTML(description)
-.addTo(map);
-});
- 
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'places', () => {
-map.getCanvas().style.cursor = 'pointer';
-});
- 
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'places', () => {
-map.getCanvas().style.cursor = '';
-});
-});
 }
   return (  
     <div className="containerMain">
@@ -197,6 +120,21 @@ map.getCanvas().style.cursor = '';
         <div className="bottomContainerLeft">
         <h1>Book a unique space for your activity</h1>
         <p>From a single desk to a whole building <br/>The choice is yours</p>
+        <div>
+          <ul className="bottomContainerLeftUL">
+            <li onClick={handleChangeCity}>Berlin</li>
+            <li onClick={handleChangeCity}>Hamburg</li>
+            <li onClick={handleChangeCity}>Munich</li>
+            <li onClick={handleChangeCity}>Köln</li>
+            <li onClick={handleChangeCity}>Frankfurt</li>
+            <li onClick={handleChangeCity}>Stuttgart</li>
+            <li onClick={handleChangeCity}>Düsseldorf</li>
+            <li onClick={handleChangeCity}>Leipzig</li>
+            <li onClick={handleChangeCity}>Dortmund</li>
+            <li onClick={handleChangeCity}>Essen</li>
+            <li onClick={handleChangeCity}>Hannover</li>
+          </ul>
+        </div>
         </div>
         <div className="bottomContainerRight">
           <div className="citesOptionPictures">
