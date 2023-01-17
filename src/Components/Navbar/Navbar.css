@@ -27,7 +27,8 @@
 
 }
 
-.logo {
+.ham {
+  width: 20%;
 }
 
 .menu-icon {
@@ -78,7 +79,8 @@
 
 @media (max-width: 600px) {
   .menu-icon {
-    display: block;
+    display: flex;
+    justify-content: end;
     cursor: pointer;
   }
 
@@ -88,13 +90,14 @@
     top: 60px;
     background-color: #262626;
     width: 0px;
-    height: calc(50vh - 60px);
+    height: calc(45vh - 50px);
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
 
   .nav-elements.active {
-    width: 270px;
+    width: 30%;
+    border-radius: 0 0 0 5px;
   }
 
   .nav-elements ul {
@@ -104,6 +107,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-left: 30%;
   }
 
   .nav-elements ul li {

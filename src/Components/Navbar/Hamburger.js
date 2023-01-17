@@ -1,11 +1,11 @@
 import React from 'react'
+import ham from "./images.png";
 
 function Hamburger() {
   return (
-    <div>
-
-===
-    </div>
+    <>
+    <img className='ham' src={ham}></img>
+    </>
   )
 }
 
