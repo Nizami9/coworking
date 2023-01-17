@@ -34,11 +34,6 @@ const Navbar = () => {
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar)
   }
-
-  const goMainPage = (e) => {
-    console.log(e);
-  }
-
     //  <NavMenu>
     //       <NavLink to="/" activeStyle={{ color: "black" }}>
     //         Home

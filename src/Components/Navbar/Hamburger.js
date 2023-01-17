@@ -1,5 +1,6 @@
 import React from 'react'
 import ham from "./images.png";
+import "./Navbar.css";
 
 function Hamburger() {
   return (

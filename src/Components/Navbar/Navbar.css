@@ -24,7 +24,6 @@
   color:white;
   position: relative;
   width: 100%;
-
 }
 
 .ham {
@@ -88,13 +87,14 @@
     top: 60px;
     background-color: #262626;
     width: 0px;
-    height: calc(40vh - 80vh);
+    height: calc(60vh - 70vh);
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
 
   .nav-elements.active {
     width: 30%;
+    height: 40vh;
     border-radius: 0 0 0 5px;
   }
 
