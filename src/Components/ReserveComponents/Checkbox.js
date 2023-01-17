@@ -15,45 +15,29 @@ const Checkbox = ({onClick})=> {
       </div>
 <div className="check-wrapper">
       <div className="duration">
-        <h2>Duration</h2>
+        <h2>On our platform, you can easily book a workplace on</h2>
       </div>
       <div className="input-wrapper">
-        <label>
-          <div className="checkbox-input">
-            <input className="check" type="checkbox"  checkbox={Checkbox} />
-            <div className="annually">
-              <p>Daily</p>
-            </div>
-          </div>
-          <br></br>
-          <div className="checkbox-input">
-            <input className="check" type="checkbox" checkbox={Checkbox} />
-            <div className="annually">
-              <p>Monthly</p>
-            </div>
-          </div>
-          <br></br>
-          <div className="checkbox-input">
-            <input className="check" type="checkbox" checkbox={Checkbox} />
-            <div className="annually">
-              <p>Annually</p>
-            </div>
-          </div>
-          {/* <span>{label}</span> CLEAN UP*/}
-        </label>
+        <ul className="input-wrapperUL">
+          <li>Daily</li>
+          <li>Monthly</li>
+          <li>Annually</li>
+        </ul>
       </div>
       <div className="budget">
         <div className="budget-t"><h3>Budget</h3></div>
         <br></br>
-        <p>The average desk price in Germany is 252 € per month</p>
-      <div className="budget-button">
+        <p>The average desk price in Germany is 30 € per day.</p>
+        <br/>
+        <p className="secondPBudget">You can choose a workplace for yourself by simply clicking on the buttons <span className="budgetRange">Mini.Budget</span> or <span className="budgetRange">Max.Budget</span> at the top of the page</p>
+      {/* <div className="budget-button">
         <div >
           <button className="budget-wrapper">Mini.Budget</button>
         </div>
         <div>
           <button className="budget-wrapper">Max.Budget</button>
         </div>
-      </div>
+      </div> */}
       <div className="apply-button">
         <div className="clear-button">
           <button className="apply">Clear</button>

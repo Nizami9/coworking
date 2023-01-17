@@ -3,7 +3,7 @@ import React from "react";
 import logoImage from "../Footer/images/CoWo.png";
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
-
+import Home from "../MainPage/Home/Home";
 // import {
 //   Nav,
 //   NavLogo,
@@ -35,6 +35,9 @@ const Navbar = () => {
     setShowNavbar(!showNavbar)
   }
 
+  const goMainPage = (e) => {
+    console.log(e);
+  }
 
     //  <NavMenu>
     //       <NavLink to="/" activeStyle={{ color: "black" }}>
@@ -77,7 +80,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-        <img src={logoImage}></img>
+          <NavLink to='/'><img src={logoImage}></img></NavLink>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
          <Hamburger />
