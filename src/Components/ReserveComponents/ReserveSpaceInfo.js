@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Button from '@material-ui/core/Button';
-import { Link, Navigate,NavLink,useNavigate, withRouter } from "react-router-dom";
+import { Link, Navigate,NavLink,useNavigate } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
+import Button from '@material-ui/core/Button';
 
 
 
@@ -41,14 +41,13 @@ export default function NameForm() {
       e.preventDefault();
       setFormDetails(details);
       console.log("entered details are   ",  details );
-      <Navigate to='./Userpayment'/>;
-      // if(!details.fullname || !details.email) {
-      //   setValid(true)
-      //   return;
-      // } else {
-      //   setValid(false)
-      //   return <Navigate to='/Userpayment'/>
-      // }
+      if(!details.fullname || !details.email) {
+        setValid(true)
+        return;
+      } else {
+        setValid(false)
+        return <Navigate to='/Userpayment'/>
+      }
     } catch (err) {
       console.log(err);
     }
@@ -134,7 +133,8 @@ export default function NameForm() {
               />
             </div>
           </label>
-          {/* <button
+          <button
+          onSubmit={handleSubmit}
           type='submit'
           className="form"
           style={{
@@ -142,17 +142,8 @@ export default function NameForm() {
           width: "305px",
           background: " #FF7848",
             }}
-          >Submit</button> */}
-          <Button 
-          component={Link} 
-          to="/Userpayment"
-          type='submit'
-          className="form"
-          style={{
-          height: "44px",
-          width: "305px",
-          background: " #FF7848",
-            }}>Click Me</Button>
+          >Submit</button>
+
         </form>
       </div>
     </div>
