@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Link, Navigate,NavLink,useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
-import Button from '@material-ui/core/Button';
-
-
+import Userpayment from "./Userpayment";
 
 
 export default function NameForm() {
  
   const [phone, setPhone] = useState();
+  const [valid, setValid] = useState(false);
   const [details, setDetails] = useState({
     fullname: '',
     email: '',
@@ -19,11 +18,6 @@ export default function NameForm() {
     phone:'',
     requirements: ''
   });
-
-  const [nextPath, setNextPath] = useState();
-
-  const [valid, setValid] = useState(false);
-
   const {setFormDetails}= useBookContext();
   const navigate = useNavigate();
   
@@ -42,11 +36,13 @@ export default function NameForm() {
       setFormDetails(details);
       console.log("entered details are   ",  details );
       if(!details.fullname || !details.email) {
+        console.log("inside if")
         setValid(true)
         return;
       } else {
+        console.log("inside else")
         setValid(false)
-        return <Navigate to='/Userpayment'/>
+        return navigate('/Userpayment');
       }
     } catch (err) {
       console.log(err);
@@ -143,7 +139,6 @@ export default function NameForm() {
           background: " #FF7848",
             }}
           >Submit</button>
-
         </form>
       </div>
     </div>
