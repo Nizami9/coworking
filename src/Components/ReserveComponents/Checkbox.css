@@ -142,8 +142,6 @@ div.fPqLXB {
   font-family: "Outfit";
   font-weight: 500;
   font-size: 20px;
-  /* padding-top: 40px;
-  padding-bottom: 10px; */
   margin: 11px;
 }
 
@@ -152,6 +150,30 @@ div.fPqLXB {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.input-wrapperUL {
+  margin-left: 20px;
+}
+
+.input-wrapperUL>li {
+  padding-bottom: 10px;
+  font-style: italic;
+}
+
+.budgetRange {
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #dce3ed;  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  width: 100px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.secondPBudget {
+  line-height: 30px;
 }
 
 .card .title {
@@ -195,7 +217,7 @@ div.fPqLXB {
   height: 40px;
   font-weight: 600;
   font-size: 16px;
-  width: 100px;
+  width: 120px;
 }
 .apply-wrapper {
   height: 40px;

@@ -3,6 +3,7 @@ import React from "react";
 import logoImage from "../Footer/images/CoWo.png";
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
+
 import { useState } from 'react'
 import { NavLink,Navigate,useNavigate  } from 'react-router-dom'
  import Hamburger from './Hamburger';
@@ -21,8 +22,6 @@ const Navbar = () => {
     setShowNavbar(!showNavbar)
   }
 
-
- 
     const handleLogout =()=>{
       setIsAuthenticated(false);
       setUser(null);
@@ -37,7 +36,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-        <img src={logoImage}></img>
+          <NavLink to='/'><img src={logoImage}></img></NavLink>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
          <Hamburger />
@@ -54,6 +53,9 @@ const Navbar = () => {
           <>
             <li>
               <NavLink to="/add-space"> Add Space</NavLink>
+            </li>
+            <li>
+              <NavLink to="/profile"> Account</NavLink>
             </li>
             <li to="/" onClick={handleLogout} activeStyle={{ color: "black" }}>
                 Log out

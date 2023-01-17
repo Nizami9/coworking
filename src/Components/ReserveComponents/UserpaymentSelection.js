@@ -4,9 +4,6 @@ import React from "react";
 // import { useState } from "react";
 import { useSpaceContext } from '../../context/SpaceContext';
 
-
- // console.log("space ",selectedSpace)
-
 function UserpaymentSelection() {
   const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
   console.log('in payment page space is ',selectedSpace )

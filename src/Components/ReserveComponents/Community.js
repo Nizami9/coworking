@@ -6,8 +6,7 @@ import React from "react";
 
 const Community = () => {
   return (
-      <div className="reserveSpace-container">
-          
+      <div className="reserveSpace-container">   
           <div>
             <ReserveSpaceInfo />
           </div>

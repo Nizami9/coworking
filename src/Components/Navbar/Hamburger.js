@@ -1,7 +1,10 @@
 import React from 'react'
+import ham from "./images.png";
+import "./Navbar.css";
 
 function Hamburger() {
   return (
+
     <div>
  <svg viewBox="0 0 100 80" width="40" height="40">
         <rect width="100" height="20"/>
@@ -10,6 +13,7 @@ function Hamburger() {
     </svg>
 
     </div>
+
   )
 }
 
