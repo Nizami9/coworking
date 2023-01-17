@@ -1,5 +1,5 @@
 import SpaceData from "../../spaceData.json";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSpaceContext } from '../../context/SpaceContext';
 import { useState, useEffect } from "react";
 import "./link.css";
@@ -8,14 +8,9 @@ import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 const List = () => {
    const { allSpaces } = useSpaceContext();
-  //  console.log("allSpace ", allSpaces);
-
    const [localSpaces, setLocalSpaces] = useState(allSpaces)
    const [sortBy, setSortBy] = useState()
-
-   //const spaces = allSpaces.filter(space => space.city.toLowerCase().includes(searchKey)||(space.address.toLowerCase()).includes(searchKey));
-   //console.log("spaces are ",spaces);
-
+ 
    const arrangeByPrice = (value) => {
     if(value === 'max'){
       setSortBy(value)
@@ -47,7 +42,7 @@ const List = () => {
     <div className="locations">
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
      <div className="budget-button">
-        <div >
+        <div>
           <button className="budget-wrapper" onClick={()=>{arrangeByPrice("max")}}>Mini.Budget</button>
         </div>
         <div>
@@ -67,11 +62,7 @@ const List = () => {
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>
-
                     <div><Link className="spacesLink" to={`/space/${space.id}`}>Explore space →</Link></div>
-
-                    {/* <div><Link className="spacesLink" to={`../space/${space.id}`}>Explore space →</Link></div> */}
-
                     <div className="area-maxPeople-costperDay">
                     <div className="area"> {space.area}</div>
                     <div className="maxpeople"> {space.maxPeople} </div>

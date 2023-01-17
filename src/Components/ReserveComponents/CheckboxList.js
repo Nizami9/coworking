@@ -4,8 +4,8 @@ import { useSpaceContext } from '../../context/SpaceContext';
 import { useAuthContext } from '../../context/AuthContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import React, {useState, useEffect} from 'react';
-const CheckboxList = () => {
 
+const CheckboxList = () => {
   const {searchKey} = useParams();
   const { allSpaces } = useSpaceContext();
   const { isAuthenticated } = useAuthContext();
@@ -26,11 +26,9 @@ const CheckboxList = () => {
    useEffect(()=>{
     if(sortBy === 'min'){
       const sorted = allSpaces.sort((a, b) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
-      console.log(localSpaces)
       setLocalSpaces(sorted);
     } else if(sortBy === 'max'){
       const sorted = allSpaces.sort((b, a) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
-      console.log(localSpaces)
       setLocalSpaces(sorted);
     } else (
       console.log('Original')
@@ -50,14 +48,14 @@ const CheckboxList = () => {
 
   return (
     <div className="locations">
-                <ScrollToTopOnMount />
+      <ScrollToTopOnMount />
      <div className="view-list"> <h6>viewing germany space locations</h6></div>
      <div className="budget-button">
-        <div >
-          <button className="budget-wrapper" onClick={()=>{console.log("min")}}>Mini.Budget</button>
+        <div>
+          <button className="budget-wrapper" onClick={()=>{arrangeByPrice("max")}}>Mini.Budget</button>
         </div>
         <div>
-          <button className="budget-wrapper" onClick={()=>{console.log("max")}}>Max.Budget</button>
+          <button className="budget-wrapper" onClick={()=>{arrangeByPrice("min")}}>Max.Budget</button>
         </div>
       </div>
       {spaces &&
