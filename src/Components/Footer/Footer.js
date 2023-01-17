@@ -5,8 +5,47 @@ import facebook from "./images/FacebookIcon.png"
 import instagram from "./images/InstaIcon.png"
 import twitter from "./images/TwitterIcon.png"
 import linkedin from "./images/LinkedinIcon.png"
+import { useState } from 'react';
+import axios from 'axios';
 
 const Footer = () => {
+ 
+  const [contact, setContact] = useState({
+    fullname: '',
+    email: '',
+    phone:'',
+    interestlist: ''
+
+   
+  });
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setContact({
+      ...contact,
+      [e.target.name]: e.target.value
+    });
+    console.log(contact)
+
+  }
+
+  const handleSubmit = async (e) => {
+   alert("Thank you for booking with us")
+    console.log(contact)
+    try {
+      const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/contact-us',{
+        contactInfo:contact
+       
+      } );
+ 
+     
+  
+      console.log("Success",data);
+    }catch(err){
+      console.log(err);
+    }
+  }
+ 
   return (
     <div className='containerFooter'>
         <div className='leftContainerFooter'>
@@ -23,11 +62,11 @@ const Footer = () => {
         </div>
         <div className='rightContainerFooter'>
             <h3>Contact Us</h3>
-            <form className='formFooter'>
-              <input className='footerNameForm' type='text' placeholder='John'/>
-              <input type="tel" id="phone" name="phone" pattern="+[0-9]{2}-[0-9]{11}" placeholder='49-00000000000'/>
-              <input type="email" id="email" name="email" placeholder='Example@gmail.com' />
-              <select id="selectInterest" name="interestlist">
+            <form className='formFooter' onSubmit={handleSubmit}>
+              <input className='footerNameForm'onChange={handleChange} name='fullname' type='text' placeholder='John'/>
+              <input type="tel" id="phone" onChange={handleChange}  name="phone" pattern="+[0-9]{2}-[0-9]{11}" placeholder='49-00000000000'/>
+              <input type="email" id="email" onChange={handleChange}  name="email" placeholder='Example@gmail.com' />
+              <select id="selectInterest" onChange={handleChange}  name="interestlist">
                 <option value="placeholderOption" disabled selected hidden>I am interested in</option>
                 <option value="booking">Booking</option>
                 <option value="rentSpace">Rent Working Space</option>
@@ -44,6 +83,7 @@ const Footer = () => {
         </div>
     </div>
   )
+  
 }
 
 export default Footer
