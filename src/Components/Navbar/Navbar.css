@@ -88,7 +88,7 @@
     top: 60px;
     background-color: #262626;
     width: 0px;
-    height: calc(40vh - 45vh);
+    height: calc(40vh - 80vh);
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
