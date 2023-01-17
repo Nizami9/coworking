@@ -17,11 +17,12 @@ const Home = () => {
   const [availaleSpaces,setAvaialableSpaces]=useState([]);
   const [clickedCity, setClickedCity] = useState();
   const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-
+  const REACT_APP_API_BACKEND=process.env.REACT_APP_API_BACKEND;
+  
   const navigate = useNavigate();
 
    const getAllUsers = async () =>{
-    const { data } = await axios.get('https://real-red-gosling-hose.cyclic.app/spaces');
+    const { data } = await axios.get(`${REACT_APP_API_BACKEND}/spaces`);
     setUsers(data);
    }
 
@@ -45,7 +46,7 @@ const handleChangeCity = (e) =>{
 const handleSearch = async(e) => {
   //e.preventDefault();
    console.log(searchKey);
-   const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces/location`,{
+   const { data } = await axios.post(`${REACT_APP_API_BACKEND}/spaces/location`,{
     searchKey:searchKey.toLowerCase()
   })
   setAvaialableSpaces(data);

@@ -1,7 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
+import axios from "axios";
 
 import { FieldSet, InputField } from "fannypack";
 import { usePaymentInputs } from "react-payment-inputs";
@@ -11,39 +12,63 @@ import { useSpaceContext } from '../../context/SpaceContext';
 import emailjs from 'emailjs-com';
 
 const UserPay = () => {
+  const userId=localStorage.getItem('userId');
   const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps } =
     usePaymentInputs();
   const { erroredInputs, touchedInputs } = meta;
 
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+  const navigate=useNavigate();
 
   const {formDetails}= useBookContext();
-  const {selectedSpace,fromDate,toDate}= useSpaceContext();
+  const {selectedSpace,fromDate,toDate,fromTime,toTime}= useSpaceContext();
 
   const serviceId=process.env.REACT_APP_Mail_Service_Id;
   const templateId=process.env.REACT_APP_Mail_Template_Id;
   const mailUser=process.env.REACT_APP_Mail_User;
+  const REACT_APP_API_BACKEND=process.env.REACT_APP_API_BACKEND;
 
 
-  const handleSendEmail = () => {
-    emailjs.send(serviceId, templateId, {
-     to_email:formDetails.email, 
-     to_name:formDetails.fullname,
-     subject: 'Confirmation Mail', 
-    message: ` Your booking has confirmed. \n You have booked ${selectedSpace.title} from ${fromDate} to ${toDate}\n Thanks for booking with CoWo Team.\n\n   `}, 
-    mailUser)
-   .then((result) => {
-       console.log(result.text);
-     }, (error) => {
-       console.log(error.text);
-     });
-   }
+  // const handleSendEmail = () => {
+  //   emailjs.send(serviceId, templateId, {
+  //    to_email:formDetails.email, 
+  //    to_name:formDetails.fullname,
+  //    subject: 'Confirmation Mail', 
+  //   message: ` Your booking has confirmed. \n You have booked ${selectedSpace.title} from ${fromDate} to ${toDate}\n Thanks for booking with CoWo Team.\n\n   `}, 
+  //   mailUser)
+  //  .then((result) => {
+  //      console.log(result.text);
+  //    }, (error) => {
+  //      console.log(error.text);
+  //    });
+  //  }
+
+  const saveBooking = async() =>{
+    try {
+      const { data } = await axios.post('http://localhost:3100/booking',{
+     spaceId:selectedSpace.id,  // from db it will be selectedSpace.spaceid
+     userId:userId,
+     fromDate:fromDate,
+     toDate:toDate,
+     fromTime:fromTime,
+     toTime:toTime
+      });
+       console.log(data) 
+    }catch(err){
+      console.log(err)
+    }  
+  }
+
+  const handleSendEmail =()=>{
+    console.log("helooooooooooo")
+    saveBooking();   
+  }
 
   return (
     <div className="paymentSelection-payM">
       <div>
-        <Link className="back-link" to="/back">
+        <Link className="back-link" onClick={() => navigate(-1)}>
           <img
             alt="back-arrow-icon"
             src={require("../../icons/orange-arrow.png")}

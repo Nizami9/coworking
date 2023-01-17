@@ -98,7 +98,7 @@ function Profile() {
                 </div>
                 <div className='profile-list'>
                     <ul>
-                        <li><Link to='/change-password'> Profile <span> {'>'}</span></Link></li><hr />
+                        <li><Link to='/profile'> Profile <span> {'>'}</span></Link></li><hr />
                         <li><Link>Favourite spaces <span> {'>'}</span></Link></li><hr />
                         {/* <li>Messages <span> {'>'}</span></li><hr /> */}
                         <li><Link to='/change-password'>Change password <span> {'>'}</span></Link></li><hr />

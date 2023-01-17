@@ -64,7 +64,7 @@ const handleChange = (e) => {
     const handleSubmitAddSpace = async (e) => {
         try {
             e.preventDefault();
-             const { data } = await axios.post(`${backEnd_API}/space`, {
+             const { data } = await axios.post(`${backEnd_API}/spaces`, {
            // const { data } = await axios.post('http://localhost:3100/spaces', {
                 title: input.title,
                 area: input.area,

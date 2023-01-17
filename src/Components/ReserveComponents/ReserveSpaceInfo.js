@@ -75,6 +75,7 @@ export default function NameForm() {
               type="name"
               placeholder="Name"
               onChange={handleChange}
+              required
               />
             <h6>Email</h6>
             <input
@@ -87,6 +88,7 @@ export default function NameForm() {
               placeholder="email"
               name='email'
               onChange={handleChange}
+              required
             />
             <h6>Company</h6>
             <input
@@ -130,7 +132,7 @@ export default function NameForm() {
               background: " #FF7848",
             }}
           >
-            <Link to='/Userpayment'>Submit</Link></button>
+            <Link to='/Userpayment' >Submit</Link></button>
         </form>
       </div>
     </div>
