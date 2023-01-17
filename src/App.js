@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import Locations from "./Components/ReserveComponents/Locations";
 import Signin from "./Components/MainPage/Signin";
 import SignUp from "./Components/MainPage/SignUp/SignUp";
-import Home from "./Components/MainPage/Home/Home";
+ import Home from "./Components/MainPage/Home/Home";
 import MyProfileLeftSide from "./Components/MyProfileLeftSide/MyProfileLeftSide";
 import MyProfile from "./Components/MyProfile/MyProfile";
 import Space from "./Components/MyProfile/Space/Space";
