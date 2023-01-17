@@ -42,6 +42,12 @@ const handleChangeCity = (e) =>{
   console.log(e.target.textContent);
 }
 
+const showCityOptions = (e) => {
+  navigate(`/locations/${e.target.toLowerCase()}`)
+  console.log(e.target);
+
+}
+
 
 const handleSearch = async(e) => {
   //e.preventDefault();
@@ -59,9 +65,63 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoibml6YW1pOSIsImEiOiJjbGN5bGpxNG8yZWFrM3Btc2J2N
     container: 'mainMap',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [9, 51], // starting position
-    zoom: 4.2 // starting zoom
+    zoom: 4.0 // starting zoom
   });
   map.addControl(new mapboxgl.NavigationControl());
+  const MarkerHamburg = new mapboxgl.Marker()
+  .setLngLat([9.993682, 53.551086])
+  .addTo(map);
+ 
+// Create a default Marker, colored black, rotated 45 degrees.
+  const MarkerBerlin = new mapboxgl.Marker()
+  .setLngLat([13.381777, 52.531677])
+  .addTo(map);
+
+  const MarkerFrankfurt = new mapboxgl.Marker()
+  .setLngLat([8.682127, 50.110924])
+  .addTo(map);
+
+  const MarkerMunchen = new mapboxgl.Marker()
+  .setLngLat([11.576124, 48.137154])
+  .addTo(map);
+
+  const MarkerLeipzig = new mapboxgl.Marker()
+  .setLngLat([12.360103, 51.340199])
+  .addTo(map);
+
+  const MarkerStuttgart = new mapboxgl.Marker()
+  .setLngLat([9.190182, 48.755749])
+  .addTo(map);
+
+  const MarkerHannover = new mapboxgl.Marker()
+  .setLngLat([9.735603, 52.373920])
+  .addTo(map);
+
+  const MarkerDusseldorf = new mapboxgl.Marker()
+  .setLngLat([6.783333, 51.233334])
+  .addTo(map);
+
+  const MarkerDortmund = new mapboxgl.Marker()
+  .setLngLat([7.468429, 51.514244])
+  .addTo(map);
+  
+  const marker = new mapboxgl.Marker({
+    color: '#F84C4C' // color it red
+    });
+     
+    // Define the animation.
+    function animateMarker(timeSt) {
+    const radius = 20;
+    marker.setLngLat([
+    Math.cos(timeSt/1000) * radius,
+    Math.sin(timeSt/1000) * radius
+    ]);
+    
+    marker.addTo(map);
+     
+    requestAnimationFrame(animateMarker);
+    }
+    requestAnimationFrame(animateMarker);
 }
   return (  
     <div className="containerMain">
