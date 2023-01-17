@@ -113,8 +113,8 @@
     margin-top: 22px;
   }
 
-  hamburger{
-    fill: rgb(189, 8, 8);
+  .hamgurger-icon{
+    fill: #FFFFFF;
   }
   
 }
