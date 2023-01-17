@@ -90,7 +90,7 @@
     top: 60px;
     background-color: #262626;
     width: 0px;
-    height: calc(45vh - 50px);
+    height: calc(45vh - 35px);
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
