@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState} from "react";
-import { Link,useParams } from 'react-router-dom';
+import { Link,useParams,useNavigate } from 'react-router-dom';
 import './styleDateSelect.css';
 
 
@@ -17,6 +17,7 @@ function DateSelect() {
     const [date, setDate] = useState(new Date());
     const {setFromDate,setToDate,setFromTime,setToTime,fromDate,toDate,fromTime,toTime} =useSpaceContext();
     const [btnClasname, setBtnClassname] = useState('continue-btn');
+    const navigate = useNavigate();
     
     const {id} = useParams();
 
@@ -65,7 +66,7 @@ function DateSelect() {
     return (
         <div>
             <div>
-                <Link className='back-link' to='/back'>
+                <Link className='back-link' onClick={() => navigate(-1)} >
                     <img alt='back-arrow-icon' src={require('../../icons/orange-arrow.png')} />
                     <span >Go back</span>
                 </Link>
