@@ -20,6 +20,8 @@ export default function NameForm() {
     requirements: ''
   });
 
+  const [valid, setValid] = useState(false);
+
   const {setFormDetails}= useBookContext();
   const navigate = useNavigate();
   
@@ -37,7 +39,13 @@ export default function NameForm() {
       e.preventDefault();
       setFormDetails(details);
       console.log("entered details are   ",  details );
-      return <Navigate to='/Userpayment' />
+      if(!details.company || !details.fullname || !details.email || !details.requirements || !details.phone) {
+        setValid(true)
+        return;
+      } else {
+        setValid(false)
+        return <Navigate to='/Userpayment' />
+      }
     } catch (err) {
       console.log(err);
     }
@@ -125,17 +133,15 @@ export default function NameForm() {
           </label>
           <button
           type='submit'
-            className="form"
-            style={{
-              height: "44px",
-              width: "305px",
-              background: " #FF7848",
+          className="form"
+          style={{
+          height: "44px",
+          width: "305px",
+          background: " #FF7848",
             }}
-          >
-            <Link to='/Userpayment' >Submit</Link></button>
+          >Submit</button>
         </form>
       </div>
     </div>
-  );
-
+);
 }

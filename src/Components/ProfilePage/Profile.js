@@ -23,8 +23,8 @@ function Profile() {
 
      
   const [user,setUser]=useState({
-    firstname:'',
-    lastname:'',
+    firstName:'',
+    lastName:'',
     email:'',
     phonenumber:'',
     address:'',
@@ -59,7 +59,6 @@ function Profile() {
         setUser({
           ...user,
           [e.target.name]: e.target.value
-
         });
       }
 
@@ -111,17 +110,17 @@ function Profile() {
                 <div className='name-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>First name </label>
-                        <input type='text' placeholder='First name' value={user.firstname} onChange={handleChange} />
+                        <input type='text' placeholder='First name' name='firstName' value={user.firstName} onChange={handleChange} />
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='lname'>Last name </label>
-                        <input type='text' placeholder='Last name' value={user.lastname}/>
+                        <input type='text' placeholder='Last name' name='lastName' value={user.lastName} onChange={handleChange}/>
                     </div>
                 </div>
                 <div className='email-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Email </label>
-                        <input type='email' placeholder='Email'  value={user.email}/>
+                        <input type='email' placeholder='Email' name='email'  value={user.email} onChange={handleChange}/>
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Phone </label>
@@ -138,11 +137,11 @@ function Profile() {
                 <div className='address-flex'>
                     <div className='flex-col address-bar'>
                         <label htmlFor='fname'>Address </label>
-                        <input type='text' placeholder='Address'  value={user.address} />
+                        <input type='text' placeholder='Address' name='address' value={user.address} onChange={handleChange}/>
                     </div> 
                     <div className='flex-col'>
                         <label htmlFor='fname'>City </label>
-                        <input type='text' placeholder='City'  value={user.city}/>
+                        <input type='text' placeholder='City' name='city' value={user.city} onChange={handleChange}/>
                     </div>
                     {/* <div className='flex-col number-input'>
                         <label htmlFor='fname'>Number </label>
@@ -152,11 +151,11 @@ function Profile() {
                 <div className='city-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Country </label>
-                        <input type='text' placeholder='Country'  value={user.country} />
+                        <input type='text' placeholder='Country' name='country' value={user.country} onChange={handleChange}/>
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>ZIP </label>
-                        <input type='text' placeholder='ZIP'  value={user.zip} />
+                        <input type='text' placeholder='ZIP' name='zip' value={user.zip} onChange={handleChange}/>
                     </div>
                 </div>
                 <button>Save All</button>

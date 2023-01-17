@@ -8,7 +8,11 @@ import user from "./ImagesHome/user.png";
 import adress from "./ImagesHome/pin_drop.png";
 import { useState,useEffect  } from "react";
 import axios from 'axios';
-import ScrollToTopOnMount from "../../../ScrollToTopOnMount";
+import ScrollToTopOnMount from "../../../ScrollToTopOnMount"; 
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 const Home = () => {
 
   const [noResult,setNoResult]=useState(false);
@@ -16,7 +20,7 @@ const Home = () => {
   const [searchKey,setSearchKey]=useState([]);
   const [availaleSpaces,setAvaialableSpaces]=useState([]);
   const [clickedCity, setClickedCity] = useState();
-  const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+  // const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
   const REACT_APP_API_BACKEND=process.env.REACT_APP_API_BACKEND;
   
   const navigate = useNavigate();
