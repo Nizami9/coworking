@@ -99,8 +99,8 @@ function Profile() {
         e.preventDefault();
         setUser(input);
         try {
-            //  const { data } = await axios.post(`${backEnd_API}/user/update`,{
-              const { data } = await axios.post('http://localhost:3100/user/update',{
+             const { data } = await axios.post(`${backEnd_API}/user/update`,{
+            //  const { data } = await axios.post('http://localhost:3100/user/update',{
                   user:input,
                   userId:userid,
                   profilepicurl:profileImgLink
