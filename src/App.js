@@ -34,7 +34,7 @@ function App() {
       // 'http://localhost:3100/spaces');      
       const { data } = await axios.get(`https://real-red-gosling-hose.cyclic.app/spaces`);
       setAllSpaces(data);
-      console.data("data   ", data)
+      //console.log("data   ", data)
     } catch (error) {
       console.error(error);
     }
