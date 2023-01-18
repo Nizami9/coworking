@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",
     "react-css-transition-replace": "^4.0.5",
+    "react-date-picker": "^9.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.3",
     "react-icons": "^4.7.1",
