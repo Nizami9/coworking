@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Link, Navigate  } from "react-router-dom";
+import { Link, Navigate, useNavigate  } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import "./BookTour.css"
@@ -16,7 +16,7 @@ export default function NameForm() {
     requirements: ''
   });
 
-
+  const navigate = useNavigate();
   const {setFormDetails}= useBookContext();
 
   const handleChange = (e) => {
@@ -33,7 +33,7 @@ export default function NameForm() {
       e.preventDefault();
       setFormDetails(details);
       console.log("entered details are   ",  details );
-      return <Navigate to='/Userpayment' />
+      return  navigate('/thank-you')
     } catch (err) {
       console.log(err);
     }
@@ -51,6 +51,7 @@ export default function NameForm() {
           <label>
             <h5>Name</h5>
             <input
+              required
               className="bookTourForm"
               name='fullname'
               type="name"
@@ -59,6 +60,7 @@ export default function NameForm() {
               />
             <h5>Email</h5>
             <input
+              required
               className="bookTourForm"
               type="text"
               placeholder="email"
@@ -76,6 +78,7 @@ export default function NameForm() {
             <h5>Phone Number</h5>
             <PhoneInput
               className="bookTourForm"
+              required
               country={"de"}
               value={details.phone}
               name='phone'
@@ -91,7 +94,7 @@ export default function NameForm() {
             </div>
           </label>
           <button type='submit' className="submitButtonBookTour">
-            <Link to='/Userpayment'>Submit</Link>
+            Submit
           </button>
         </form>
       </div>

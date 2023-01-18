@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-
-import { Link, Navigate,useNavigate  } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useBookContext } from '../../context/BookContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
-
-
+import Userpayment from "./Userpayment";
 
 
 export default function NameForm() {
  
   const [phone, setPhone] = useState();
+  const [valid, setValid] = useState(false);
   const [details, setDetails] = useState({
     fullname: '',
     email: '',
@@ -19,7 +18,6 @@ export default function NameForm() {
     phone:'',
     requirements: ''
   });
-
   const {setFormDetails}= useBookContext();
   const navigate = useNavigate();
   
@@ -37,7 +35,15 @@ export default function NameForm() {
       e.preventDefault();
       setFormDetails(details);
       console.log("entered details are   ",  details );
-      return <Navigate to='/Userpayment' />
+      if(!details.fullname || !details.email) {
+        console.log("inside if")
+        setValid(true)
+        return;
+      } else {
+        console.log("inside else")
+        setValid(false)
+        return navigate('/Userpayment');
+      }
     } catch (err) {
       console.log(err);
     }
@@ -104,6 +110,7 @@ export default function NameForm() {
             />
             <h6>Phone Number</h6>
             <PhoneInput
+              className="reserveSpaceInfoPhone"
               country={"de"}
               value={phone}
               name='phone'
@@ -124,18 +131,17 @@ export default function NameForm() {
             </div>
           </label>
           <button
+          onSubmit={handleSubmit}
           type='submit'
-            className="form"
-            style={{
-              height: "44px",
-              width: "305px",
-              background: " #FF7848",
+          className="form"
+          style={{
+          height: "44px",
+          width: "305px",
+          background: " #FF7848",
             }}
-          >
-            <Link to='/Userpayment' >Submit</Link></button>
+          >Submit</button>
         </form>
       </div>
     </div>
-  );
-
+);
 }

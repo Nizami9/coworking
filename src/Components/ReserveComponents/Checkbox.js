@@ -15,7 +15,7 @@ const Checkbox = ({onClick})=> {
       </div>
 <div className="check-wrapper">
       <div className="duration">
-        <h2>On our platform, you can easily book a workplace on</h2>
+        <h2>On our platform, you can <span className="pEffect">easily book</span> a workplace on</h2>
       </div>
       <div className="input-wrapper">
         <ul className="input-wrapperUL">
@@ -25,7 +25,7 @@ const Checkbox = ({onClick})=> {
         </ul>
       </div>
       <div className="budget">
-        <div className="budget-t"><h3>Budget</h3></div>
+        <div className="budget-t"><h3>Choose the budget that <span className="pEffect">suits</span>you</h3></div>
         <br></br>
         <p>The average desk price in Germany is 30 € per day.</p>
         <br/>
@@ -38,14 +38,14 @@ const Checkbox = ({onClick})=> {
           <button className="budget-wrapper">Max.Budget</button>
         </div>
       </div> */}
-      <div className="apply-button">
+      {/* <div className="apply-button">
         <div className="clear-button">
           <button className="apply">Clear</button>
         </div>
         <div>
           <button className="apply-wrapper">Apply</button>
         </div>
-        </div>
+        </div> */}
       </div>
     </div>
     </div>

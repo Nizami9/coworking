@@ -87,6 +87,7 @@ const UserPay = () => {
             >
               <h6>Payment method</h6>
               <input
+              required
                 className="form-2"
                 style={{
                   height: "44px",
@@ -134,6 +135,7 @@ const UserPay = () => {
                   <div className="expiry-cvc">
                    
                     <InputField
+                    required
                       {...getExpiryDateProps()}
                       label="Expiry"
                       inputRef={getExpiryDateProps().ref}
@@ -151,6 +153,7 @@ const UserPay = () => {
                     <div className="cvv">
                       <InputField
                         {...getCVCProps()}
+                        required
                         placeholder="123"
                         label="CVC"
                         inputRef={getCVCProps().ref}
