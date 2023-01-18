@@ -23,12 +23,12 @@ function ChangePassword() {
     e.preventDefault();
     if(input.newPassword === input.verifyPassword){
         try {
-         //  const { data } = await axios.post(`${backEnd_API}/booking/prev-bookings`,{
-           const { data } = await axios.post('http://localhost:3100/user/change-password',{
+           const { data } = await axios.post(`${backEnd_API}/user/change-password`,{
+         //  const { data } = await axios.post('http://localhost:3100/user/change-password',{
                newPassword:input.newPassword,
                userId:userId
            } );
-         // setPrevBooks(data)
+   
          console.log("Success",data);
          alert("Password changed succesfully !");
          }catch(err){
