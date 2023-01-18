@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom'
 import ImageUploader from '../ProfilePage/ImageUploader';
@@ -6,47 +6,47 @@ import axios from 'axios';
 
 
 function AddSpace() {
-    const {userId,setUser,user } = useAuthContext();
+    const { userId, setUser, user } = useAuthContext();
     const navigate = useNavigate();
 
     //const[phone,setPhone] =useState('');
     const [imageUrl, setImageUrl] = useState(require('../../icons/upload.png'));
     const [image, setImage] = useState(null);
     const [input, setInput] = useState({
-         title: '',
-          area: '',
-           costperDay: '',
-            maxPeople: '',
-             description: '',
-              address: '',
-               city: '',
-                state: '',
-                 country: '',
-                  zip: '', 
-                })
+        title: '',
+        area: '',
+        costperDay: '',
+        maxPeople: '',
+        description: '',
+        address: '',
+        city: '',
+        state: '',
+        country: '',
+        zip: '',
+    })
     const backEnd_API = process.env.REACT_APP_API_BACKEND;
 
-    const getUserDetails =async (userIdfromLS) =>{
-         try {
-            
-           const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
-          //const { data } = await axios.post('http://localhost:3100/user/get-user',{
-                userId:userIdfromLS
-            } );
-           setUser(data)
-          // console.log("Success",data);
-          }catch(err){
+    const getUserDetails = async (userIdfromLS) => {
+        try {
+
+            const { data } = await axios.post(`${backEnd_API}/user/get-user`, {
+                //const { data } = await axios.post('http://localhost:3100/user/get-user',{
+                userId: userIdfromLS
+            });
+            setUser(data)
+            // console.log("Success",data);
+        } catch (err) {
             console.log(err);
-          }
+        }
     }
 
-     useEffect(()=>{
-       // console.log("use context",userId,setUser,user)
-        let userIdfromLS=localStorage.getItem('userId');
-         userIdfromLS && getUserDetails(userIdfromLS);
-     },[])
+    useEffect(() => {
+        // console.log("use context",userId,setUser,user)
+        let userIdfromLS = localStorage.getItem('userId');
+        userIdfromLS && getUserDetails(userIdfromLS);
+    }, [])
 
-const handleChange = (e) => {
+    const handleChange = (e) => {
         e.preventDefault();
         setInput({
             ...input,
@@ -56,37 +56,58 @@ const handleChange = (e) => {
     const handleUpload = async () => {
 
 
-		// Get your Cloudinary configuration
-		const cloudinaryUrl =process.env.REACT_APP_CloudinaryUrl;                           
-		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
+        // Get your Cloudinary configuration
+        const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;
+        const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;
 
-		// Prepare the form data for the request
-		let formData = new FormData();
-		formData.append('file', image);
-		formData.append('upload_preset', cloudinaryPreset);
+        // Prepare the form data for the request
+        let formData = new FormData();
+        formData.append('file', image);
+        formData.append('upload_preset', cloudinaryPreset);
 
-		// Make the request to Cloudinary
-		try {
-			const response = await axios.post(cloudinaryUrl, formData);
-            
-            if(response.data.secure_url.startsWith("blob")){
-                let result = response.data.secure_url.slice(5);
-                setImageUrl(result);
+        // Make the request to Cloudinary
+        try {
+            const response = await axios.post(cloudinaryUrl, formData);
+
+            if (response.data.secure_url.startsWith("blob:")) {
+                let result = response.data.secure_url.slice(0,26);
+                let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
+                setImageUrl(finaleUrl);
             }
             else
-			setImageUrl(response.data.secure_url)
-            
-			console.log("uploaded.",response.status);
-            alert("Image uploaded !")
-		} catch (error) {
-			console.error(error);
-		}
-	};
+                setImageUrl(response.data.secure_url);
+
+
+
+            // const blob = "blob:http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
+
+            // const notBlob = "http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
+
+            // console.log(blob.slice(0, 26));
+
+            // const tester = (input) => {
+            //     input.slice(0, 5) === "blob:" ? console.log(input.slice(5, -1)) : console.log(input)
+            // }
+
+            // tester(blob)
+
+            //  https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics/ot0lv6dcopqihod7qy0f.jpg
+
+            //	blob:http://localhost:3000/2ad3e277-0a37-496e-be2c-1aceaea1f02f
+
+            //https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics
+
+            console.log("uploaded.", response.status);
+            alert("Image uploaded !");
+        } catch (error) {
+            console.error(error);
+        }
+    };
     const handleSubmitAddSpace = async (e) => {
         try {
             e.preventDefault();
-           console.log(input);
-          //  const { data } = await axios.post('http://localhost:3100/spaces', {
+            console.log(input);
+            //  const { data } = await axios.post('http://localhost:3100/spaces', {
             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
                 title: input.title,
                 area: input.area,
@@ -99,9 +120,9 @@ const handleChange = (e) => {
                 country: input.country,
                 zip: input.zip,
                 spacePicUrl: imageUrl,
-                ownerName:user.firstname,
-                ownerEmail:user.email,
-                ownerPhone:user.phonenumber
+                ownerName: user.firstname,
+                ownerEmail: user.email,
+                ownerPhone: user.phonenumber
             });
 
             console.log("space added successfully. ", data);
@@ -138,16 +159,16 @@ const handleChange = (e) => {
                         <input name='country' value={input.country} type='text' placeholder='Germany' className='inputGI' onChange={handleChange}></input>
                         <label>ZIP</label>
                         <input name='zip' value={input.zip} placeholder='256809' className='inputGI' onChange={handleChange}></input>
-                      <label>Description</label>
-                            <input name='description' value={input.description} placeholder='Description ' className='inputGI' style={{height:'12em'}} onChange={handleChange}></input>
+                        <label>Description</label>
+                        <input name='description' value={input.description} placeholder='Description ' className='inputGI' style={{ height: '12em' }} onChange={handleChange}></input>
                         <label  >Upload Image</label>
-                        <label className='img-upload-label' style={{height:'10em', background:'white',border:'none'}} >
+                        <label className='img-upload-label' style={{ height: '10em', background: 'white', border: 'none' }} >
                             {<ImageUploader image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
-                           </label>
-                           <img src={require('../../icons/upload-icon.webp')}  onClick={handleUpload} className='upload-icon-add-space'  />
-      
-                            </div>
-                 
+                        </label>
+                        <img src={require('../../icons/upload-icon.webp')} onClick={handleUpload} className='upload-icon-add-space' />
+
+                    </div>
+
                     <button type='submit' className='signUpButton'>Save All</button>
                 </form>
             </div>
