@@ -29,7 +29,7 @@ function DateSelect() {
     
     const {id} = useParams();
 
-git
+
 {/*  const [date, setDate] = useState(new Date());
   const {
     setFromDate,
