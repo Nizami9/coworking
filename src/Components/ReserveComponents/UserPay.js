@@ -22,7 +22,7 @@ const UserPay = () => {
   const navigate=useNavigate();
 
   const {formDetails}= useBookContext();
-  const {selectedSpace,fromDate,toDate,fromTime,toTime}= useSpaceContext();
+  const {selectedSpace,fromDate,toDate,fromTime,toTime,dateDiff}= useSpaceContext();
 
   const serviceId=process.env.REACT_APP_Mail_Service_Id;
   const templateId=process.env.REACT_APP_Mail_Template_Id;
@@ -53,7 +53,8 @@ const UserPay = () => {
      fromDate:fromDate,
      toDate:toDate,
      fromTime:fromTime,
-     toTime:toTime
+     toTime:toTime,
+     dateDiff:dateDiff
       });
        console.log(data) 
     }catch(err){
