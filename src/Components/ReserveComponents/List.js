@@ -20,7 +20,7 @@ const List = () => {
    }
 
    useEffect(()=>{
-    console.log("all Space!", allSpaces)
+    console.log("all Space! in list", allSpaces)
     if(sortBy === 'min'){
       const sorted = allSpaces.sort((a, b) => (Number(a.costperday.slice(0, -1)) > Number(b.costperday.slice(0, -1))) ? 1 : ((Number(b.costperday.slice(0, -1)) > Number(a.costperday.slice(0, -1))) ? -1 : 0))
       setLocalSpaces(sorted);
