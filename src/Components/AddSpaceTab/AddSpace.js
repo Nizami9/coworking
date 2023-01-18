@@ -28,7 +28,7 @@ function AddSpace() {
     const getUserDetails =async (userIdfromLS) =>{
          try {
             
-           const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
+           const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/user/get-user`,{
           //const { data } = await axios.post('http://localhost:3100/user/get-user',{
                 userId:userIdfromLS
             } );
@@ -75,9 +75,14 @@ const handleChange = (e) => {
     const handleSubmitAddSpace = async (e) => {
         try {
             e.preventDefault();
+<<<<<<< Updated upstream
            console.log(input);
           //  const { data } = await axios.post('http://localhost:3100/spaces', {
             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
+=======
+             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
+           // const { data } = await axios.post('http://localhost:3100/spaces', {
+>>>>>>> Stashed changes
                 title: input.title,
                 area: input.area,
                 costperDay: input.costperDay,
