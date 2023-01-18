@@ -133,6 +133,7 @@ export default function NameForm() {
           <button
           onSubmit={handleSubmit}
           type='submit'
+          font-size='16'
           className="form"
           style={{
           height: "44px",
