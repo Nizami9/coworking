@@ -30,19 +30,20 @@ const UserPay = () => {
   const REACT_APP_API_BACKEND=process.env.REACT_APP_API_BACKEND;
 
 
-  // const handleSendEmail = () => {
-  //   emailjs.send(serviceId, templateId, {
-  //    to_email:formDetails.email, 
-  //    to_name:formDetails.fullname,
-  //    subject: 'Confirmation Mail', 
-  //   message: ` Your booking has confirmed. \n You have booked ${selectedSpace.title} from ${fromDate} to ${toDate}\n Thanks for booking with CoWo Team.\n\n   `}, 
-  //   mailUser)
-  //  .then((result) => {
-  //      console.log(result.text);
-  //    }, (error) => {
-  //      console.log(error.text);
-  //    });
-  //  }
+  const handleSendEmail = () => {
+    saveBooking(); 
+    emailjs.send(serviceId, templateId, {
+     to_email:formDetails.email, 
+     to_name:formDetails.fullname,
+     subject: 'Confirmation Mail', 
+    message: ` Your booking has confirmed. \n You have booked ${selectedSpace.title} from ${fromDate} to ${toDate}\n Thanks for booking with CoWo Team.\n\n   `}, 
+    mailUser)
+   .then((result) => {
+       console.log(result.text);
+     }, (error) => {
+       console.log(error.text);
+     });
+   }
 
   const saveBooking = async() =>{
     try {
@@ -60,9 +61,6 @@ const UserPay = () => {
     }  
   }
 
-  const handleSendEmail =()=>{
-    saveBooking();   
-  }
 
   return (
     <div className="paymentSelection-payM">

@@ -28,7 +28,7 @@ function SpaceProvider({ children }) {
       // 'http://localhost:3100/spaces');       https://real-red-gosling-hose.cyclic.app/
       const { data } = await axios.get(`https://real-red-gosling-hose.cyclic.app/spaces`);
       setAllSpaces(data);
-      console.data("data   ", data)
+    //np  console.data("data   ", data)
     } catch (error) {
       console.error(error);
     }

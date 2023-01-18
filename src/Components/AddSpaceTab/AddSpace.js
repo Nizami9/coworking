@@ -55,7 +55,7 @@ const handleChange = (e) => {
     const handleUpload = async () => {
 
 		// Get your Cloudinary configuration
-		const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;                           
+		const cloudinaryUrl =process.env.REACT_APP_CloudinaryUrl;                           
 		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
 
 		// Prepare the form data for the request
@@ -75,8 +75,9 @@ const handleChange = (e) => {
     const handleSubmitAddSpace = async (e) => {
         try {
             e.preventDefault();
-             const { data } = await axios.post(`${backEnd_API}/spaces`, {
-           // const { data } = await axios.post('http://localhost:3100/spaces', {
+           console.log(input);
+          //  const { data } = await axios.post('http://localhost:3100/spaces', {
+            const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
                 title: input.title,
                 area: input.area,
                 costperDay: input.costperDay,
