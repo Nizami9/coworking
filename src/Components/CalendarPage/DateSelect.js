@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState} from "react";
+import { useState,useEffect} from "react";
 import { Link,useParams,useNavigate } from 'react-router-dom';
 import './styleDateSelect.css';
 
@@ -16,6 +16,9 @@ import { useSpaceContext } from '../../context/SpaceContext';
 function DateSelect() {
     const [date, setDate] = useState(new Date());
     const {setFromDate,setToDate,setFromTime,setToTime,fromDate,toDate,fromTime,toTime} =useSpaceContext();
+    const[fromD,setFromD]=useState();
+    const[toD,setToD]=useState();
+
     const [btnClasname, setBtnClassname] = useState('continue-btn');
     const navigate = useNavigate();
     
@@ -24,10 +27,19 @@ function DateSelect() {
     const handleChangeCalendar =(e)=>{
          setDate(e);
          console.log(e); 
+        //  setFromD(e[0]);
+        //  setToD(e[1]);
          setFromDate(e[0]);
          setToDate(e[1]);
     }
- 
+
+   
+    // useEffect(()=>{
+    //     setFromDate(fromD.toDateString());
+    //     setToDate(toD.toDateString());
+    //     console.log("inside effect ")
+    // },[fromD,toD])
+    
     const CalendarComp =
         (
             <div>

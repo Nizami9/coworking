@@ -66,8 +66,9 @@ export default function SignUp () {
           profilePicUrl:imageUrl
       });
       localStorage.setItem('token',data.token);
+      localStorage.setItem('token',data.userId);
       setToken(data.token);
-      setUserId(data.userid);
+      setUserId(data.userId);
       setIsAuthenticated(true);
       console.log("registration success. ",data);
       return <Navigate to='/' />

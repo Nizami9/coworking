@@ -19,8 +19,8 @@ function UserpaymentSelection() {
         {selectedSpace && (
           <div>
             <hr />
-            <div className="p4-img-and-details-king" key={selectedSpace.id}>
-              <img src={selectedSpace.imgUrl} alt="img" className="p4-img-sp" />
+            <div className="p4-img-and-details-king" key={selectedSpace.spaceid}>
+              <img src={selectedSpace.imgurl} alt="img" className="p4-img-sp" />
               <div className="p4-title-and-details-king">
                 <div className="p4-title">
                   <h3> {selectedSpace.title}</h3>

@@ -21,8 +21,8 @@ function ReserveSpace() {
         {selectedSpace && (<>
           <div>
             <hr />
-            <div className="p4-img-and-details-king" key={selectedSpace.id}>
-              <img src={selectedSpace.imgUrl} alt="img"  className="p4-img-sp"/>
+            <div className="p4-img-and-details-king" key={selectedSpace.spaceid}>
+              <img src={selectedSpace.imgurl} alt="img"  className="p4-img-sp"/>
               <div className="p4-title-and-details-king">
           <div className="p4-title-and-details-king">
 
@@ -71,9 +71,10 @@ function ReserveSpace() {
           {" - "}
           {toTime}
         </div>
-        
+        {/* {  console.log("to date ",fromDate.toDateString(),toDate) } */}
+        {/* //console.log("total  ",Number((selectedSpace.toDate).toDateString-(selectedSpace.fromDate).toDateString)*Number(selectedSpace.costperday) */}
       </div>
-      <div className="total-pay"><h3>Total</h3></div> 
+      <div className="total-pay"><h3>Total { "    "}{(Number(selectedSpace.toDate-selectedSpace.fromDate)*selectedSpace.costperday)}</h3></div> 
     </>
 
       )}

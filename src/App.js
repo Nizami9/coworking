@@ -19,6 +19,7 @@ import List from "./Components/ReserveComponents/List"
 import BookTour from "./Components/BookTour/BookTour";
 import { Component } from "react";
 import AddSpace from "./Components/AddSpaceTab/AddSpace";
+import PreviousBooking from "./Components/ProfilePage/PreviousBooking";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="/Userpayment" element={<Userpayment />} /> 
         <Route path="/thank-you" element={<Thankyou />} /> 
         <Route path="/add-space" element={<AddSpace />} />
+        <Route path="/prev-bookings" element={<PreviousBooking />} />
+
       </Routes>
     </BrowserRouter>
     <Footer />
