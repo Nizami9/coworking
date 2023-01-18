@@ -18,6 +18,12 @@ const List = () => {
       setSortBy(value)
     }
    }
+  // <div>
+    //   {SpaceData && SpaceData
+    //   .filter(space => city ? city === space.city : space)
+    //   .map(space => {
+    // return (
+
 
    useEffect(()=>{
     console.log("all Space! in list", allSpaces)
@@ -31,12 +37,9 @@ const List = () => {
       console.log('Original')
     )
    }, [sortBy])
-  return (
-    // <div>
-    //   {SpaceData && SpaceData
-    //   .filter(space => city ? city === space.city : space)
-    //   .map(space => {
-    // return (
+
+ 
+ return(
       <div className="checkBoxFlexBox">
         <ScrollToTopOnMount />
       <Checkbox />
@@ -76,5 +79,6 @@ const List = () => {
                )})}
             </div>
       </div>
-  )}
+  )
+}
 export default List;

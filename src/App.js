@@ -17,16 +17,41 @@ import Userpayment from "./Components/ReserveComponents/Userpayment";
 import Thankyou from "./Components/Thankyou/Thankyou";
 import List from "./Components/ReserveComponents/List"
 import BookTour from "./Components/BookTour/BookTour";
-import { Component } from "react";
+import { Component, useEffect } from "react";
 import AddSpace from "./Components/AddSpaceTab/AddSpace";
 import PreviousBooking from "./Components/ProfilePage/PreviousBooking";
+import { useSpaceContext } from './context/SpaceContext';
+import axios from 'axios'
+
 
 function App() {
+
+  const { setAllSpaces,allSpaces } = useSpaceContext();
+
+  const getAllSpaces = async () => {
+    try {
+      // const { data } = await axios.get(`${REACT_APP_API_BACKEND}/spaces`);
+      // 'http://localhost:3100/spaces');      
+      const { data } = await axios.get(`https://real-red-gosling-hose.cyclic.app/spaces`);
+      setAllSpaces(data);
+      console.data("data   ", data)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(()=>{
+    getAllSpaces();
+  },[]);
+
+
   return (
     <div>
 <BrowserRouter>
       <Navbar />
-      <Routes>
+      { 
+   allSpaces ?
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations" element={<List />} />
         <Route path="/locations/:searchKey" element={<Locations />} />
@@ -49,6 +74,8 @@ function App() {
         <Route path="/prev-bookings" element={<PreviousBooking />} />
 
       </Routes>
+      : <h3>"Loading ...."</h3>
+      }
     </BrowserRouter>
     <Footer />
     </div>
