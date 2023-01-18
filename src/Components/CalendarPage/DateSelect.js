@@ -29,31 +29,7 @@ function DateSelect() {
     
     const {id} = useParams();
 
-    const handleChangeCalendar =(e)=>{
-         setDate(e);
-         console.log(e); 
-        //  setFromD(e[0]);
-        //  setToD(e[1]);
-         setFromDate(e[0]);
-         setToDate(e[1]);
-    }
-
-   
-    // useEffect(()=>{
-    //     setFromDate(fromD.toDateString());
-    //     setToDate(toD.toDateString());
-    //     console.log("inside effect ")
-    // },[fromD,toD])
-    
-    const CalendarComp =
-        (
-            <div>
-                <div className="calendar-container">
-                    <Calendar onChange={(e)=>handleChangeCalendar(e)} value={date} selectRange={true} />
-                </div>
-            </div>
-        );
-
+git
 {/*  const [date, setDate] = useState(new Date());
   const {
     setFromDate,
