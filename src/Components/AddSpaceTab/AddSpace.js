@@ -55,8 +55,8 @@ const handleChange = (e) => {
     const handleUpload = async () => {
 
 		// Get your Cloudinary configuration
-		const cloudinaryUrl ='https://api.cloudinary.com/v1_1/dc5lux2d9/upload' // process.env.REACT_APP_CloudinaryUrl;                           
-		const cloudinaryPreset = 'kbbluczr'       //process.env.REACT_APP_CloudinaryPresent;          
+		const cloudinaryUrl =process.env.REACT_APP_CloudinaryUrl;                           
+		const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;          
 
 		// Prepare the form data for the request
 		let formData = new FormData();
