@@ -67,37 +67,36 @@ function AddSpace() {
         formData.append('upload_preset', cloudinaryPreset);
 
         // Make the request to Cloudinary
+        // try {
+        //     const response = await axios.post(cloudinaryUrl, formData);
+
+        //     if (response.data.secure_url.startsWith("blob:")) {
+        //         let result = response.data.secure_url.slice(0,27);
+        //         let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
+        //         setImageUrl(finaleUrl);
+        //     }
+        //     else
+        //         setImageUrl(response.data.secure_url);
+        //     console.log("uploaded.", response.status);
+        //     alert("Image uploaded !");
+        // } catch (error) {
+        //     console.error(error);
+        // }
+
         try {
             const response = await axios.post(cloudinaryUrl, formData);
-
+            console.log("before blob check")
             if (response.data.secure_url.startsWith("blob:")) {
+                console.log("inside blob check----------")
                 let result = response.data.secure_url.slice(0,27);
+                console.log(result);
                 let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
+                console.log("removing blobb  ",result,finaleUrl);
                 setImageUrl(finaleUrl);
             }
             else
                 setImageUrl(response.data.secure_url);
-
-
-
-            // const blob = "blob:http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
-
-            // const notBlob = "http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
-
-            // console.log(blob.slice(0, 26));
-
-            // const tester = (input) => {
-            //     input.slice(0, 5) === "blob:" ? console.log(input.slice(5, -1)) : console.log(input)
-            // }
-
-            // tester(blob)
-
-            //  https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics/ot0lv6dcopqihod7qy0f.jpg
-
-            //	blob:http://localhost:3000/2ad3e277-0a37-496e-be2c-1aceaea1f02f
-
-            //https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics
-
+              console.log("url is ",imageUrl)
             console.log("uploaded.", response.status);
             alert("Image uploaded !");
         } catch (error) {
@@ -128,7 +127,7 @@ function AddSpace() {
             });
 
             console.log("space added successfully. ", data);
-            navigate('/profile');
+            // navigate('/profile');
         } catch (err) {
             console.log(err);
         }

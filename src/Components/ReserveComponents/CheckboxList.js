@@ -25,11 +25,11 @@ const CheckboxList = () => {
 
    useEffect(()=>{
     if(sortBy === 'min'){
-      const sorted = allSpaces.sort((a, b) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
+      const sorted = allSpaces.sort((a, b) => (Number(a.costperday.slice(0, -1)) > Number(b.costperday.slice(0, -1))) ? 1 : ((Number(b.costperday.slice(0, -1)) > Number(a.costperday.slice(0, -1))) ? -1 : 0))
       setLocalSpaces(sorted);
       console.log('all sorted are '+ sorted)
     } else if(sortBy === 'max'){
-      const sorted = allSpaces.sort((b, a) => (Number(a.costperDay.slice(0, -1)) > Number(b.costperDay.slice(0, -1))) ? 1 : ((Number(b.costperDay.slice(0, -1)) > Number(a.costperDay.slice(0, -1))) ? -1 : 0))
+      const sorted = allSpaces.sort((b, a) => (Number(a.costperday.slice(0, -1)) > Number(b.costperday.slice(0, -1))) ? 1 : ((Number(b.costperday.slice(0, -1)) > Number(a.costperday.slice(0, -1))) ? -1 : 0))
       setLocalSpaces(sorted);
     } else (
       console.log('Original')
