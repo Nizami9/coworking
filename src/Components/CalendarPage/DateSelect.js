@@ -56,6 +56,7 @@ function DateSelect() {
     const diffTime = Math.abs(e[0] - e[1]);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     setDateDiff(diffDays);
+ 
   };
 
   const CalendarComp = (
