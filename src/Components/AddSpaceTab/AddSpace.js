@@ -64,7 +64,24 @@ function AddSpace() {
         // Prepare the form data for the request
         let formData = new FormData();
         formData.append('file', image);
+
         formData.append('upload_preset', 'kbbluczr');
+
+     //   formData.append('upload_preset', cloudinaryPreset);
+
+        // Make the request to Cloudinary
+        try {
+            const response = await axios.post(cloudinaryUrl, formData);
+
+            if (response.data.secure_url.startsWith("blob:")) {
+                let result = response.data.secure_url.slice(0,27);
+                let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
+                setImageUrl(finaleUrl);
+            }
+            else
+                setImageUrl(response.data.secure_url);
+
+
 
       //  setImageUrl(response.data.secure_url);
 
