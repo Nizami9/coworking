@@ -124,7 +124,7 @@ function Profile() {
                 <div className='profile-list'>
                     <ul>
                         <li><Link to='/profile'> Profile <span> {'>'}</span></Link></li><hr />
-                        <li><Link to='/prev-bookings'>Previous bookings <span> {'>'}</span></Link></li><hr />
+                        {/* <li><Link to='/prev-bookings'>Previous bookings <span> {'>'}</span></Link></li><hr /> */}
                         {/* <li>Messages <span> {'>'}</span></li><hr /> */}
                         <li><Link to='/change-password'>Change password <span> {'>'}</span></Link></li><hr />
                     </ul>

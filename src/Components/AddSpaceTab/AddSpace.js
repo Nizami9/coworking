@@ -58,46 +58,40 @@ function AddSpace() {
 
 
         // Get your Cloudinary configuration
-        const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;
-        const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;
+        // const cloudinaryUrl = process.env.REACT_APP_CloudinaryUrl;
+        // const cloudinaryPreset = process.env.REACT_APP_CloudinaryPresent;
 
         // Prepare the form data for the request
         let formData = new FormData();
         formData.append('file', image);
-        formData.append('upload_preset', cloudinaryPreset);
+        formData.append('upload_preset', 'kbbluczr');
+
+      //  setImageUrl(response.data.secure_url);
+
+
+
+        //  https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics/ot0lv6dcopqihod7qy0f.jpg
+
+        //	blob:http://localhost:3000/2ad3e277-0a37-496e-be2c-1aceaea1f02f
+
+        //https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics
+
 
         // Make the request to Cloudinary
         try {
-            const response = await axios.post(cloudinaryUrl, formData);
-
-            if (response.data.secure_url.startsWith("blob:")) {
-                let result = response.data.secure_url.slice(0,26);
+            const response = await axios.post('https://api.cloudinary.com/v1_1/dc5lux2d9/upload', formData);
+            console.log("before blob check")
+            if ((response.data.secure_url).startsWith("b")) {
+                console.log("inside blob check----------")
+                let result = response.data.secure_url.slice(0,27);
+                console.log(result);
                 let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
+                console.log("removing blobb  ",result,finaleUrl);
                 setImageUrl(finaleUrl);
             }
             else
                 setImageUrl(response.data.secure_url);
-
-
-
-            // const blob = "blob:http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
-
-            // const notBlob = "http://localhost:3000/77bcb854-96a4-4108-9f48-4649b882c161"
-
-            // console.log(blob.slice(0, 26));
-
-            // const tester = (input) => {
-            //     input.slice(0, 5) === "blob:" ? console.log(input.slice(5, -1)) : console.log(input)
-            // }
-
-            // tester(blob)
-
-            //  https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics/ot0lv6dcopqihod7qy0f.jpg
-
-            //	blob:http://localhost:3000/2ad3e277-0a37-496e-be2c-1aceaea1f02f
-
-            //https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics
-
+              console.log("url is ",imageUrl)
             console.log("uploaded.", response.status);
             alert("Image uploaded !");
         } catch (error) {
@@ -108,9 +102,8 @@ function AddSpace() {
         try {
             e.preventDefault();
             console.log(input);
-            //  const { data } = await axios.post('http://localhost:3100/spaces', {
+             // const { data } = await axios.post('http://localhost:3100/spaces', {
             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
-
                 title: input.title,
                 area: input.area,
                 costperDay: input.costperDay,
@@ -128,7 +121,8 @@ function AddSpace() {
             });
 
             console.log("space added successfully. ", data);
-            navigate('/profile');
+         alert(" Added successfully ")
+            //  navigate('/profile');
         } catch (err) {
             console.log(err);
         }
