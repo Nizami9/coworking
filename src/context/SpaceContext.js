@@ -24,16 +24,18 @@ function SpaceProvider({ children }) {
 
     const getAllSpaces = async() => {
         try {
-          const { data } = await axios.get(
-            //'http://localhost:3100/spaces');
-           `{REACT_APP_API_BACKEND}/spaces`);
+          const { data } = await axios.get(`${REACT_APP_API_BACKEND}/spaces`);
+           // 'http://localhost:3100/spaces');
+         // 
             setAllSpaces(data);
+            console.data("data   ",data)
         } catch (error) {
           console.error(error);
         }
       };
 
     useEffect(() => {
+      console.log("insife  space context ")
        getAllSpaces();
       }, []);
 
