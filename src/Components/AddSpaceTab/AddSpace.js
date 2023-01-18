@@ -88,17 +88,18 @@ function AddSpace() {
             console.log("before blob check")
             if (response.data.secure_url.startsWith("blob:")) {
                 console.log("inside blob check----------")
-                let result = response.data.secure_url.slice(0,27);
+                let result = response.data.secure_url.slice(0, 27);
                 console.log(result);
                 let finaleUrl = 'https://res.cloudinary.com/dc5lux2d9/image/upload/v1674060657/co-worker-profile-pics' + result
                 console.log("removing blobb  ",result,finaleUrl);
                 setImageUrl(finaleUrl);
             }
-            else
+            else {
                 setImageUrl(response.data.secure_url);
               console.log("url is ",imageUrl)
             console.log("uploaded.", response.status);
             alert("Image uploaded !");
+            }
         } catch (error) {
             console.error(error);
         }
@@ -166,7 +167,7 @@ function AddSpace() {
                         <label className='img-upload-label' style={{ height: '10em', background: 'white', border: 'none' }} >
                             {<ImageUploader image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
                         </label>
-                        <img src={require('../../icons/upload-icon.webp')} onClick={handleUpload} className='upload-icon-add-space' />
+                        <img src={imageUrl} onClick={handleUpload} className='upload-icon-add-space' />
 
                     </div>
 
