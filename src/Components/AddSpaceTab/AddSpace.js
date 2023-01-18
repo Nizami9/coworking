@@ -26,16 +26,17 @@ function AddSpace() {
     })
     const backEnd_API = process.env.REACT_APP_API_BACKEND;
 
-    const getUserDetails = async (userIdfromLS) => {
-        try {
+    const getUserDetails =async (userIdfromLS) =>{
+         try {
+            
+           const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/user/get-user`,{
+          //const { data } = await axios.post('http://localhost:3100/user/get-user',{
+                userId:userIdfromLS
+            } );
+           setUser(data)
+          // console.log("Success",data);
+          }catch(err){
 
-            const { data } = await axios.post(`${backEnd_API}/user/get-user`, {
-                //const { data } = await axios.post('http://localhost:3100/user/get-user',{
-                userId: userIdfromLS
-            });
-            setUser(data)
-            // console.log("Success",data);
-        } catch (err) {
             console.log(err);
         }
     }
@@ -109,6 +110,7 @@ function AddSpace() {
             console.log(input);
             //  const { data } = await axios.post('http://localhost:3100/spaces', {
             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
+
                 title: input.title,
                 area: input.area,
                 costperDay: input.costperDay,
