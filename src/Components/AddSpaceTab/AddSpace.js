@@ -75,14 +75,10 @@ const handleChange = (e) => {
     const handleSubmitAddSpace = async (e) => {
         try {
             e.preventDefault();
-<<<<<<< Updated upstream
            console.log(input);
           //  const { data } = await axios.post('http://localhost:3100/spaces', {
             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
-=======
-             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/spaces`, {
-           // const { data } = await axios.post('http://localhost:3100/spaces', {
->>>>>>> Stashed changes
+
                 title: input.title,
                 area: input.area,
                 costperDay: input.costperDay,
