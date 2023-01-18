@@ -20,10 +20,13 @@ function SpaceProvider({ children }) {
     //   to:new Date()
     // });
 
+    const REACT_APP_API_BACKEND=process.env.REACT_APP_API_BACKEND;
+
     const getAllSpaces = async() => {
         try {
           const { data } = await axios.get(
-            'https://real-red-gosling-hose.cyclic.app/spaces');
+            'http://localhost:3100/spaces');
+          //  `{REACT_APP_API_BACKEND}/spaces`);
             setAllSpaces(data);
         } catch (error) {
           console.error(error);

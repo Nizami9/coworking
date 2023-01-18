@@ -14,34 +14,41 @@ import { useAuthContext } from '../../context/AuthContext';
 function Profile() {
     <script src="https://unpkg.com/react-phone-input-2@2.x/dist/lib.js"></script>
     const [phoneNumber, setPhoneNumber] = useState();
+    const {user,setUser} =useAuthContext();
+
    
-    const [imageUrl, setImageUrl] = useState(null);
+    const [imageUrl, setImageUrl] = useState();
     const [image, setImage] = useState(null);
+    const[profileImgLink,setProfileImgLink]=useState(user.profilepicurl);
 
     const[userid,setUserid]=useState();
     const backEnd_API = process.env.REACT_APP_API_BACKEND;
 
-     
-  const [user,setUser]=useState({
-    firstName:'',
-    lastName:'',
-    email:'',
-    phonenumber:'',
-    address:'',
-    city:'',
-    country:'',
-    zip:''
-  })
 
+  const [input,setInput]=useState({
+    firstname:user.firstname,
+    lastname:user.lastname,
+    email:user.email,
+    phonenumber:user.phonenumber,
+    address:user.address,
+    city:user.city,
+    country:user.country,
+    zip:user.zip,
+
+  })
+   useEffect(()=>{
+        setProfileImgLink(imageUrl)
+     console.log("inside ueeffect")
+   },[imageUrl])
 
     const getUserDetails =async (LSUser) =>{
         try {
-
            const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
            //const { data } = await axios.post('http://localhost:3100/user/get-user',{
                userId:LSUser
            } );
-          setUser(data)
+          setInput(data);
+         setImageUrl(`${data.profilepicurl}`)
          console.log("Success",data);
          }catch(err){
            console.log(err);
@@ -50,17 +57,21 @@ function Profile() {
 
     useEffect(()=>{
        let LSUser = localStorage.getItem('userId');
-       LSUser && getUserDetails(LSUser);
-       setUserid(LSUser);
-        console.log(LSUser);
+      LSUser && getUserDetails(LSUser);
+      setUserid(LSUser);
+        console.log("link ", `${input.profilepicurl}`);
     },[])
 
+
   const handleChange = (e) => {
-        setUser({
-          ...user,
+    e.preventDefault();
+        setInput({
+          ...input,
           [e.target.name]: e.target.value
         });
+        console.log(input);
       }
+     
 
 
     const handleUpload = async () => {
@@ -78,27 +89,42 @@ function Profile() {
 		try {
 			const response = await axios.post(cloudinaryUrl, formData);
 			setImageUrl(response.data.secure_url);
-			console.log("uploaded.",response.status);
+			console.log("uploaded. ",response.status);
 		} catch (error) {
 			console.error(error);
 		}
 	};
 
-
-
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        setUser(input);
+        try {
+            //  const { data } = await axios.post(`${backEnd_API}/user/update`,{
+              const { data } = await axios.post('http://localhost:3100/user/update',{
+                  user:input,
+                  userId:userid,
+                  profilepicurl:profileImgLink
+              } );
+              alert("Updated succesfully !")
+            console.log("Success",data);
+            }catch(err){
+              console.log(err);
+            }
+    }
+// ||require('../../icons/upload-icon.webp')        src={`${user.profilepicurl}`} 
     const profileComponent = (
         <div className='main-grid'>
                       <ScrollToTopOnMount />
             <div className='pic-col'>
                 <div className='profile-pic-div'>
                             {<ImageUploader  image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
-                            <img src={require('../../icons/upload-icon.webp')}  onClick={handleUpload} className='upload-icon-profile'  />
-                           <h5>hello me</h5>
+                            <img src={image}  onClick={handleUpload} className='upload-icon-profile'  />
+                           <h5>{user.firstname}{" "}{user.lastname}</h5>
                 </div>
                 <div className='profile-list'>
                     <ul>
                         <li><Link to='/profile'> Profile <span> {'>'}</span></Link></li><hr />
-                        <li><Link>Favourite spaces <span> {'>'}</span></Link></li><hr />
+                        <li><Link to='/prev-bookings'>Previous bookings <span> {'>'}</span></Link></li><hr />
                         {/* <li>Messages <span> {'>'}</span></li><hr /> */}
                         <li><Link to='/change-password'>Change password <span> {'>'}</span></Link></li><hr />
                     </ul>
@@ -107,27 +133,33 @@ function Profile() {
             <div className='my-profile-col'>
                 <h2>My Profile</h2>
                 <h5>General information</h5>
-                <div className='name-flex'>
+                <form onSubmit={handleSubmit}>               
+                     <div className='name-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>First name </label>
-                        <input type='text' placeholder='First name' name='firstName' value={user.firstName} onChange={handleChange} />
+
+                        <input type='text' placeholder='First name' value={input.firstname} name='firstname' onChange={handleChange} />
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='lname'>Last name </label>
-                        <input type='text' placeholder='Last name' name='lastName' value={user.lastName} onChange={handleChange}/>
+                        <input type='text' placeholder='Last name' value={input.lastname} name='lastname'  onChange={handleChange} />
+
                     </div>
                 </div>
                 <div className='email-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Email </label>
-                        <input type='email' placeholder='Email' name='email'  value={user.email} onChange={handleChange}/>
+
+                        <input type='email' placeholder='Email'  value={input.email}  onChange={handleChange} />
+
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Phone </label>
                         <ReactPhoneInput
                             className='phone-input'
+                            name='phone'
                             country={'de'}
-                            value={user.phonenumber}
+                            value={input.phonenumber}
                             onChange={phone => setPhoneNumber(phone)}
                         />
                         {/* <input type='tel' placeholder='Phone' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" /> */}
@@ -137,11 +169,14 @@ function Profile() {
                 <div className='address-flex'>
                     <div className='flex-col address-bar'>
                         <label htmlFor='fname'>Address </label>
-                        <input type='text' placeholder='Address' name='address' value={user.address} onChange={handleChange}/>
+
+                        <input type='text' placeholder='Address'  value={input.address} name='address' onChange={handleChange}/>
                     </div> 
                     <div className='flex-col'>
                         <label htmlFor='fname'>City </label>
-                        <input type='text' placeholder='City' name='city' value={user.city} onChange={handleChange}/>
+                        <input type='text' placeholder='City'  value={input.city} name='city' onChange={handleChange} />
+                     <input type='text' placeholder='City' name='city' value={user.city} onChange={handleChange}/>
+
                     </div>
                     {/* <div className='flex-col number-input'>
                         <label htmlFor='fname'>Number </label>
@@ -151,14 +186,18 @@ function Profile() {
                 <div className='city-flex'>
                     <div className='flex-col'>
                         <label htmlFor='fname'>Country </label>
-                        <input type='text' placeholder='Country' name='country' value={user.country} onChange={handleChange}/>
+
+                        <input type='text' placeholder='Country'  value={input.country} name='country' onChange={handleChange} />
                     </div>
                     <div className='flex-col'>
                         <label htmlFor='fname'>ZIP </label>
-                        <input type='text' placeholder='ZIP' name='zip' value={user.zip} onChange={handleChange}/>
+                        <input type='text' placeholder='ZIP'  value={input.zip} name='zip' onChange={handleChange} />
+
                     </div>
                 </div>
                 <button>Save All</button>
+                </form>
+
             </div>
         </div>
     )

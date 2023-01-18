@@ -61,9 +61,9 @@ const CheckboxList = () => {
       {spaces &&
         spaces.map((space) => {
           return (
-            <div className="card" key={space.id}>
+            <div className="card" key={space.spaceid}>
                 {" "}
-                <img src={space.imgUrl} alt="img" className="img" />
+                <img src={space.imgurl} alt="img" className="img" />
               <div className="list-wrapper">
                 <div className="title">
                   <div className='checkBoxTitle'>{space.title}</div>
@@ -71,11 +71,11 @@ const CheckboxList = () => {
                     <div className="address"> {space.address}</div>
                     <div className="city"> {space.city} </div>
                     <div className="country"> {space.counrty} </div>    
-                    <div><Link className="spacesLink" to={ isAuthenticated ? `../space/${space.id}` : '/signin'}>Explore space→</Link></div>
+                    <div><Link className="spacesLink" to={ isAuthenticated ? `../space/${space.spaceid}` : '/signin'}>Explore space→</Link></div>
                     <div className="area-maxPeople-costperDay">
-                    <div className="area"> {space.area}</div>
-                    <div className="maxpeople"> {space.maxPeople} </div>
-                    <div className="costperDay"> {space.costperDay}</div>
+                    <div className="area"> {space.area + ' m²'}</div>
+                    <div className="maxpeople"> {space.maxpeople} </div>
+                    <div className="costperDay"> {space.costperday +' €'}</div>
                   </div>
                   </div>
                 </div>

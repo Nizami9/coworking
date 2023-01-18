@@ -11,14 +11,25 @@ function AddSpace() {
     //const[phone,setPhone] =useState('');
     const [imageUrl, setImageUrl] = useState(require('../../icons/upload.png'));
     const [image, setImage] = useState(null);
-    const [input, setInput] = useState({ title: '', area: '', costperDay: '', maxPeople: '', description: '', address: '', city: '', state: '', country: '', zip: '', })
+    const [input, setInput] = useState({
+         title: '',
+          area: '',
+           costperDay: '',
+            maxPeople: '',
+             description: '',
+              address: '',
+               city: '',
+                state: '',
+                 country: '',
+                  zip: '', 
+                })
     const backEnd_API = process.env.REACT_APP_API_BACKEND;
 
     const getUserDetails =async (userIdfromLS) =>{
          try {
             
-            const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
-          //  const { data } = await axios.post('http://localhost:3100/user/get-user',{
+           const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
+          //const { data } = await axios.post('http://localhost:3100/user/get-user',{
                 userId:userIdfromLS
             } );
            setUser(data)
@@ -77,7 +88,7 @@ const handleChange = (e) => {
                 country: input.country,
                 zip: input.zip,
                 spacePicUrl: imageUrl,
-                ownerName:user.firstName,
+                ownerName:user.firstname,
                 ownerEmail:user.email,
                 ownerPhone:user.phonenumber
             });

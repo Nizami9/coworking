@@ -8,7 +8,7 @@ import { useAuthContext } from '../../context/AuthContext';
 
 function Login() {
 
-  const { isAuthenticated, setToken ,setUserId,setIsAuthenticated} = useAuthContext();
+  const { isAuthenticated, setToken ,setUserId,setIsAuthenticated,setUser} = useAuthContext();
   
   const [errorMessages, setErrorMessages] = useState({});
   const [logEmail,setLogEmail]=useState();
@@ -22,15 +22,17 @@ function Login() {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/login',{
+      //const { data } = await axios.post('https://real-red-gosling-hose.cyclic.app/user/login',{
+      const { data } = await axios.post('http://localhost:3100/user/login',{
         email:logEmail,
         password:logPassword
       } );
  
       localStorage.setItem('token', data.token);
-      localStorage.setItem('userId',data.userId);
+      localStorage.setItem('userId',data.userid);
       setToken(data.token);
-      setUserId(data.userId)
+      setUserId(data.userid);
+      setUser(data.user);
       setIsAuthenticated(true);
   
       console.log("Success",data);

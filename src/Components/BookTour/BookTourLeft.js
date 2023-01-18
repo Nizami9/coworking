@@ -63,7 +63,7 @@ function BookTourLeft() {
         {selectedSpace && 
         (
         <>
-            <div className="bookTourLeftDetails" key={selectedSpace.id}>
+            <div className="bookTourLeftDetails" key={selectedSpace.spaceid}>
             <div className='calendar'>
             {CalendarComp}
           </div>
@@ -84,11 +84,11 @@ function BookTourLeft() {
           </div>
       </div> 
       <div className="imageContainer">
-        <img src={selectedSpace.imgUrl} alt="img"  className="bookTourLeftImg"/>
+        <img src={selectedSpace.imgurl} alt="img"  className="bookTourLeftImg"/>
         <h3>Space Name: {selectedSpace.title}</h3>
-        <p>Owner Name: {selectedSpace.OwnerName}</p>
-        <p>Owner Phone: {selectedSpace.ownerPhone}</p>
-        <p>Max People: {selectedSpace.maxPeople}</p>
+        <p>Owner Name: {selectedSpace.ownername}</p>
+        <p>Owner Email: {selectedSpace.owneremail}</p>
+        <p>Max People: {selectedSpace.maxpeople}</p>
 
       </div>
     </>

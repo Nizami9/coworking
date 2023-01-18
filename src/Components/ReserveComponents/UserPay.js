@@ -47,7 +47,7 @@ const UserPay = () => {
   const saveBooking = async() =>{
     try {
       const { data } = await axios.post('http://localhost:3100/booking',{
-     spaceId:selectedSpace.id,  // from db it will be selectedSpace.spaceid
+     spaceId:selectedSpace.spaceid,  
      userId:userId,
      fromDate:fromDate,
      toDate:toDate,
@@ -61,7 +61,6 @@ const UserPay = () => {
   }
 
   const handleSendEmail =()=>{
-    console.log("helooooooooooo")
     saveBooking();   
   }
 
