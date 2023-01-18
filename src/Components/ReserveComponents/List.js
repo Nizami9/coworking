@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 import "./link.css";
 import Checkbox from "./Checkbox";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
+import axios from 'axios';
 
 const List = () => {
-   const { allSpaces } = useSpaceContext();
+   const { allSpaces,setAllSpaces } = useSpaceContext();
    const [localSpaces, setLocalSpaces] = useState(allSpaces)
    const [sortBy, setSortBy] = useState()
  
@@ -18,14 +19,32 @@ const List = () => {
       setSortBy(value)
     }
    }
+   
   // <div>
     //   {SpaceData && SpaceData
     //   .filter(space => city ? city === space.city : space)
     //   .map(space => {
     // return (
 
+   
+
+    
+  const getAllSpaces = async () => {
+    try {
+      // const { data } = await axios.get(`${REACT_APP_API_BACKEND}/spaces`);
+      // 'http://localhost:3100/spaces');       https://real-red-gosling-hose.cyclic.app/
+      const { data } = await axios.get(`https://real-red-gosling-hose.cyclic.app/spaces`);
+      setAllSpaces(data);
+    //np  console.data("data   ", data)
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
    useEffect(()=>{
+
+  getAllSpaces();
+
     console.log("all Space! in list", allSpaces)
     if(sortBy === 'min'){
       const sorted = allSpaces.sort((a, b) => (Number(a.costperday.slice(0, -1)) > Number(b.costperday.slice(0, -1))) ? 1 : ((Number(b.costperday.slice(0, -1)) > Number(a.costperday.slice(0, -1))) ? -1 : 0))

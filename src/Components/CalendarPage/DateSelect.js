@@ -20,9 +20,9 @@ import { useSpaceContext } from "../../context/SpaceContext";
 function DateSelect() {
 
     const [date, setDate] = useState(new Date());
-    const {setFromDate,setToDate,setFromTime,setToTime,fromDate,toDate,fromTime,toTime} =useSpaceContext();
-    const[fromD,setFromD]=useState();
-    const[toD,setToD]=useState();
+    const {setFromDate,setToDate,setFromTime,setToTime,fromDate,toDate,fromTime,toTime,setDateDiff} =useSpaceContext();
+    const[fromD,setFromD]=useState(new Date());
+    const[toD,setToD]=useState(new Date());
 
     const [btnClasname, setBtnClassname] = useState('continue-btn');
     const navigate = useNavigate();
@@ -49,9 +49,13 @@ function DateSelect() {
 
   const handleChangeCalendar = (e) => {
     setDate(e);
-    console.log(e);
+    console.log("shafia   ",e[0].toDateString(),typeof e[0]);
     setFromDate(e[0]);
     setToDate(e[1]);
+
+    const diffTime = Math.abs(e[0] - e[1]);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    setDateDiff(diffDays);
   };
 
   const CalendarComp = (
