@@ -3,6 +3,7 @@ import './styleChangePass.css';
 import axios from 'axios';
 
 function ChangePassword() {
+  const backEnd_API = process.env.REACT_APP_API_BACKEND;
  
   const userId = localStorage.getItem('userId');
   const[input,setInput]=useState({
@@ -10,6 +11,7 @@ function ChangePassword() {
     newPassword:'',
     verifyPassword:''
   });
+  
 
   const handleChange = (e) => {
     e.preventDefault();
