@@ -110,6 +110,7 @@ export default function NameForm() {
             />
             <h6>Phone Number</h6>
             <PhoneInput
+              className="reserveSpaceInfoPhone"
               country={"de"}
               value={phone}
               name='phone'

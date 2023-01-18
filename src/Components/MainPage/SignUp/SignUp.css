@@ -83,10 +83,10 @@ label {
 
 .phoneNumberField {
     display: flex;
-    width: 70.3%;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-
+    flex-wrap: wrap;
 }
 
 label.phoneNumber {
@@ -96,7 +96,7 @@ label.phoneNumber {
 
 
 .phoneNumberField>div.PhoneInput>input.form-control {
-    width:100%;
+    width:40.4%;
     height: 44px;
     border: 1px solid #DCE3ED;
     border-radius: 4px;
@@ -123,6 +123,9 @@ label.phoneNumber {
     .inputGI {
         width: 60%;
     }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:80%;
+    }
  }
 
  @media only screen and  (min-width: 37em) and (max-width: 57em) {
@@ -133,6 +136,9 @@ label.phoneNumber {
     }
     .inputGI {
         width: 80%;
+    }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:80%;
     }
  }
 
@@ -145,6 +151,9 @@ label.phoneNumber {
     }
     .inputGI {
         width: 80%;
+    }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:80%;
     }
  }
 /* ------------------------------------- */
@@ -188,6 +197,9 @@ label.phoneNumber {
     .inputGI {
         width: 80%;
     }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:80.5%;
+    }
  }
 
  @media only screen and  (min-width: 37em) and (max-width: 57em) {
@@ -204,6 +216,9 @@ label.phoneNumber {
         border-radius: 1%;
         margin-left: 60%;
     }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:80.5%;
+    }
  }
  
  @media only screen and (max-width: 37em) {
@@ -218,5 +233,8 @@ label.phoneNumber {
     .img-upload-label .profile-img {
         border: none;
         border-radius: 1%;
+    }
+    .phoneNumberField>div.PhoneInput>input.form-control {
+        width:81%;
     }
  }
