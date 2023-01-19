@@ -16,6 +16,8 @@ function SpaceProvider({ children }) {
   const [fromTime, setFromTime] = useState("00:00");
   const [toTime, setToTime] = useState("23:00");
   const [dateDiff, setDateDiff] = useState(1);
+  const [total, setTotal] = useState(1);
+
   // const [selectedDate,setSelectedDate]=useState({
   //   from:new Date(),
   //   to:new Date()
@@ -54,7 +56,9 @@ function SpaceProvider({ children }) {
     fromTime,
     setFromTime,
     dateDiff,
-    setDateDiff
+    setDateDiff,
+    total,
+    setTotal
   };
   return <SpaceContext.Provider value={value}>{children}</SpaceContext.Provider>;
 

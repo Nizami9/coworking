@@ -38,6 +38,7 @@
     margin-top: 4%;
     width: 45%;
     justify-content: space-between;
+
   }
   .inline-flex-comp {
     margin-top: 1%;
@@ -79,7 +80,7 @@
     padding-right: .5%;
   }
   .back-link span,
-  .show-time {
+  .cal-page-show-time{
     font-size: smaller;
   }
   .back-link span {
@@ -96,8 +97,21 @@
     text-align: center;
     padding-right: 29px;
   }
-  
+  .cal-page-p4-img-and-details{
+    display: inline-flex;
+  }
 
+  @media only screen and  (min-width: 37em) and (max-width: 48em) {
+  .cal-page-show-time p{
+    display:none;
+  }
+  }
+
+
+  
+@media only screen and (max-width: 37em) {
+
+}
   
 /* -------- Single Space Page Stylings ----------- */
 
@@ -109,7 +123,7 @@
     display: inline-flex;
     
 }
-.p4-img{
+.cal-p4-img{
     margin:3% 0;
     margin-right: 3%;
     width:80%;
@@ -119,9 +133,9 @@
     width:100%
 }
 
-.p4-address-city-country,.show-date{
+.cal-page-address-city-country,.show-date{
     font-size: small;
-    margin-top: 27%;
+    margin-top: 5%;
     width: 18em; 
 }
 
@@ -147,13 +161,21 @@
     justify-content: space-between;
     align-items: center;
     margin-top:3%;
+
 }
-hr{
-  
+.cal-page-hr{
+  width:130%;
   margin:0 0;
   border-top: 2px solid #DCE3ED;
 }  
-
+@media only screen and (min-width: 48em)  and (max-width: 80em){
+    .cal-page-address-city-country{
+    margin-top: 63%;
+  }
+  .cal-p4-img{
+    width:60%;
+}
+}
 @media only screen and  (min-width: 37em) and (max-width: 48em) {
   .cal-page-main-grid {
     display: flex;
@@ -170,6 +192,19 @@ hr{
     margin-top: 5%;
     text-align: center;
   }
+  .cal-p4-img{
+    margin:3% 0;
+    margin-left: 12%;
+    width: 20em;
+}
+.cal-page-p4-img-and-details{
+  display: flex;
+  flex-direction: column;
+}
+.cal-page-address-city-country{
+  margin-top: 8%;
+}
+
 }
 
 
@@ -184,7 +219,7 @@ hr{
    .show-times{
    font-size:smaller; 
    }
-   .p4-address-city-country{
+   .cal-page-address-city-country{
     font-size:smaller;
    }
    .clock-icon{
@@ -195,16 +230,17 @@ hr{
     margin-top: 20%;
     text-align: center;
   }
-  .p4-img-and-details {
-    display: inline-flex;
-    padding-top: 25px;
+  .cal-page-p4-img-and-details{
+    display: flex;
     flex-direction: column;
+    padding-top: 25px;
+    
 }
 
-.p4-img {
+.cal-p4-img {
   margin: 3% 0;
-  margin-right: 3%;
-  width: 135%;
+  margin-left: 5%;
+  width: 95%;
 }
 
 .p4-address-city-country, .show-date {

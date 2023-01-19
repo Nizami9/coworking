@@ -57,6 +57,7 @@
     border: 1px solid white;
     border-radius: 5rem; 
     z-index: 1;
+    background:#FF7848
 }
 .profile-pic-div{
     display: flex;
@@ -133,6 +134,14 @@ button{
         margin-right: 0%;
     }
  
+    .profile-page-btn{
+    width:12.5em;
+    background-color:#FF7848;
+    margin-top: 8%;
+    border: none;
+    height:2.5em;
+
+    }
 
 
 @media only screen and  (min-width: 37em) and (max-width: 57em) {
@@ -184,17 +193,21 @@ button{
         bottom: 1%;
     }
     .upload-icon-profile{
-        width: 2em;
+        height: 2em;
         margin-top: 0%;
         margin-left: 9%;
+        z-index: 1;
+        background:#FF7848
     }
  }
 
  @media only screen and (min-width: 57em) and (max-width: 87em) {
     .upload-icon-profile{
-        width:1.8em;
+        height:1.8em;
         margin-top: 0%;
         margin-left: 7%;
+        z-index: 1;
+        background:#FF7848
     }
  }
 
@@ -250,10 +263,11 @@ button{
         bottom: 1%;
     }
     .upload-icon-profile{
-        width:1.8em;
+        height:1.8em;
         margin-top: -5%;
         margin-left: 10%;
-    
+        z-index: 1;
+        background:#FF7848 
     }
    
   }

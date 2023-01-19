@@ -1,17 +1,48 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './styleChangePass.css';
 import axios from 'axios';
+
+import { useAuthContext } from '../../context/AuthContext';
 
 function ChangePassword() {
   const backEnd_API = process.env.REACT_APP_API_BACKEND;
  
-  const userId = localStorage.getItem('userId');
+ 
+  const {user,setUser,setUserid} =useAuthContext();
+  
+  //const userId = localStorage.getItem('userId');
+  let userId;
+  const[firstName,setFirstName]=useState();
+  const[img,setImg]=useState();
+
   const[input,setInput]=useState({
     currentPassword:'',
     newPassword:'',
     verifyPassword:''
   });
   
+  const getUserDetails =async (userid) =>{
+    try {
+       const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
+       //const { data } = await axios.post('http://localhost:3100/user/get-user',{
+           userId:userid
+       } );
+       setFirstName(data.firstname);
+       setImg(data.profilepicurl)
+       
+       console.log("data",data)
+     }catch(err){
+       console.log(err);
+     }
+}
+
+
+useEffect(()=>{
+  console.log("user ",{user})
+  userId = localStorage.getItem('userId');
+ userId && getUserDetails(userId);
+},[])
+
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -43,8 +74,8 @@ function ChangePassword() {
   return (
     <div className='p10-grid'>
         <div className='p10-pic-col'>
-            <img  src={require('../../icons/profile-icon.png')}/>
-            <h3>name</h3>
+            <img style={{width:'50%'}} src={img} />     
+            <h3 style={{margin:'5% 0'}}>{firstName}</h3>
         </div>
         <div className='p10-profile-col'>
             <h2>My profile</h2>

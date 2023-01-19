@@ -59,7 +59,6 @@ function Profile() {
        let LSUser = localStorage.getItem('userId');
       LSUser && getUserDetails(LSUser);
       setUserid(LSUser);
-        console.log("link ", `${input.profilepicurl}`);
     },[])
 
 
@@ -119,7 +118,7 @@ function Profile() {
                 <div className='profile-pic-div'>
                             {<ImageUploader  image={image} setImage={setImage} imageUrl={imageUrl} setImageUrl={setImageUrl} />}
                             <img src={image}  onClick={handleUpload} className='upload-icon-profile'  />
-                           <h5>{user.firstname}{" "}{user.lastname}</h5>
+                           <h5>{input.firstname}{" "}{input.lastname}</h5>
                 </div>
                 <div className='profile-list'>
                     <ul>
@@ -175,7 +174,7 @@ function Profile() {
                     <div className='flex-col'>
                         <label htmlFor='fname'>City </label>
                         <input type='text' placeholder='City'  value={input.city} name='city' onChange={handleChange} />
-                     <input type='text' placeholder='City' name='city' value={user.city} onChange={handleChange}/>
+                   
 
                     </div>
                     {/* <div className='flex-col number-input'>
@@ -195,7 +194,9 @@ function Profile() {
 
                     </div>
                 </div>
-                <button>Save All</button>
+                <div>
+                <button className='profile-page-btn'>Save All</button>
+                </div>
                 </form>
 
             </div>

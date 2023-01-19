@@ -16,14 +16,14 @@ function SingleSpace() {
       <h2>Reserve Space </h2>
       {selectedSpace &&
         <div>
-            <hr />
-        <div className="p4-img-and-details" key={selectedSpace.spaceid}>
-          <img src={selectedSpace.imgurl} alt="img" className="p4-img" />
+            <hr className='cal-page-hr'/>
+        <div className="cal-page-p4-img-and-details" key={selectedSpace.spaceid}>
+          <img src={selectedSpace.imgurl} alt="img" className="cal-p4-img" />
           <div className="p4-title-and-details">
             <div className="p4-title">
               <h4> {selectedSpace.title}</h4>
               </div>
-              <div className="p4-address-city-country">
+              <div className="cal-page-address-city-country">
                 <img src={require('../../icons/location-icon.png')} alt="location-icon" className="p4-location-icon" />
                 {selectedSpace.address}{", "}
                 {selectedSpace.city}{", "}
@@ -31,7 +31,7 @@ function SingleSpace() {
               </div>
             </div>
         </div>
-           <hr />
+           <hr className='cal-page-hr'/>
            </div>
       }
     </div>
