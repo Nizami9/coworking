@@ -3,7 +3,10 @@
     grid-template-columns: 1fr 1fr;
     margin: 0 5%;
   }
-  
+  .btnClasname Link a{
+    color:#DCE3ED;
+    text-decoration: none;
+  }
   /*  react calendar styles   */
   .calendar {
     margin: 4% 0;

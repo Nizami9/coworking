@@ -6,7 +6,7 @@ import { useSpaceContext } from '../../context/SpaceContext';
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 function ReserveSpace() {
 
-  const {toDate,fromDate,fromTime,toTime,selectedSpace}= useSpaceContext();
+  const {toDate,fromDate,fromTime,toTime,selectedSpace,total}= useSpaceContext();
   
 
   let spaceComponent = (
@@ -74,7 +74,9 @@ function ReserveSpace() {
         {/* {  console.log("to date ",fromDate.toDateString(),toDate) } */}
         {/* //console.log("total  ",Number((selectedSpace.toDate).toDateString-(selectedSpace.fromDate).toDateString)*Number(selectedSpace.costperday) */}
       </div>
-      <div className="total-pay"><h3>Total { "    "}{(Number(selectedSpace.toDate-selectedSpace.fromDate)*selectedSpace.costperday)}</h3></div> 
+      <div className="total-pay"><h2>Total{"  "}</h2>
+      <h2>{total}</h2>
+      </div> 
     </>
 
       )}

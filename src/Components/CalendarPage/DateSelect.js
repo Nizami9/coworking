@@ -32,17 +32,7 @@ function DateSelect() {
       console.log("selected  ",selectedSpace)
 
      },[])
-{/*  const [date, setDate] = useState(new Date());
-  const {
-    setFromDate,
-    setToDate,
-    setFromTime,
-    setToTime,
-    fromDate,
-    toDate,
-    fromTime,
-    toTime,
-  } = useSpaceContext();
+{/*  
   const [btnClasname, setBtnClassname] = useState("");
   const navigate = useNavigate();
 
@@ -58,8 +48,9 @@ function DateSelect() {
     const diffTime = Math.abs(e[0] - e[1]);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     setDateDiff(diffDays);
-    //let totalAmount=diffDays*
- 
+    let totalAmount=diffDays*(selectedSpace.costperday);
+    console.log(totalAmount);
+    setTotal(totalAmount);
   };
 
   const CalendarComp = (

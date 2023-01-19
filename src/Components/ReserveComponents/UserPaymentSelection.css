@@ -129,6 +129,12 @@ h4 {
   align-items: center;
   color: #262626;
 }
+.total-pay h2{
+  display: flex;
+  justify-content: space-evenly;
+  /* margin-right: 267%; */
+  margin-right: 12em;
+}
 
 .visa-card{
  
