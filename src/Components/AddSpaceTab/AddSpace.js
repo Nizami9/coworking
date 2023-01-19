@@ -64,10 +64,7 @@ function AddSpace() {
         // Prepare the form data for the request
         let formData = new FormData();
         formData.append('file', image);
-
-        formData.append('upload_preset', 'kbbluczr');
-
-     //   formData.append('upload_preset', cloudinaryPreset);
+        formData.append('upload_preset', cloudinaryPreset);
 
         // Make the request to Cloudinary
         // try {
