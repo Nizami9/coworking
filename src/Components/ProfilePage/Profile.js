@@ -24,18 +24,28 @@ function Profile() {
     const[userid,setUserid]=useState();
     const backEnd_API = process.env.REACT_APP_API_BACKEND;
 
+    const [input,setInput]=useState({
+        firstname:'',
+        lastname:'',
+        email:'',
+        phonenumber:'',
+        address:'',
+        city:'',
+        country:'',
+        zip:''
+})
 
-  const [input,setInput]=useState({
-    firstname:user.firstname,
-    lastname:user.lastname,
-    email:user.email,
-    phonenumber:user.phonenumber,
-    address:user.address,
-    city:user.city,
-    country:user.country,
-    zip:user.zip,
+//   const [input,setInput]=useState({
+//     firstname:input.firstname,
+//     lastname:input.lastname,
+//     email:input.email,
+//     phonenumber:input.phonenumber,
+//     address:input.address,
+//     city:input.city,
+//     country:input.country,
+//     zip:input.zip,
 
-  })
+//   })
    useEffect(()=>{
         setProfileImgLink(imageUrl)
      console.log("inside ueeffect")
@@ -104,6 +114,7 @@ function Profile() {
                   userId:userid,
                   profilepicurl:profileImgLink
               } );
+              
               alert("Updated succesfully !")
             console.log("Success",data);
             }catch(err){
