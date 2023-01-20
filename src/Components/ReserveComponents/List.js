@@ -6,10 +6,14 @@ import "./link.css";
 import Checkbox from "./Checkbox";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import axios from 'axios';
+import { RotatingTriangles } from 'react-loader-spinner';
+
 
 const List = () => {
    const { allSpaces,setAllSpaces } = useSpaceContext();
-   const [localSpaces, setLocalSpaces] = useState(allSpaces)
+   const [localSpaces, setLocalSpaces] = useState(allSpaces);
+   const [isLoading, setIsLoading] = useState(true);
+
    const [sortBy, setSortBy] = useState()
  
    const arrangeByPrice = (value) => {
@@ -31,11 +35,14 @@ const List = () => {
     
   const getAllSpaces = async () => {
     try {
+      setIsLoading(true);
       // const { data } = await axios.get(`${REACT_APP_API_BACKEND}/spaces`);
       // 'http://localhost:3100/spaces');       https://real-red-gosling-hose.cyclic.app/
       const { data } = await axios.get(`https://real-red-gosling-hose.cyclic.app/spaces`);
       setAllSpaces(data);
-    //np  console.data("data   ", data)
+      setLocalSpaces(data);
+      setIsLoading(false);
+      console.data("data   ", data)
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +50,10 @@ const List = () => {
 
   
   useEffect(()=>{
+   // setIsLoading(true);
     getAllSpaces();
+  
+   
   },[])
 
 
@@ -62,6 +72,7 @@ const List = () => {
 
  
  return(
+  (!isLoading) ? <>
       <div className="checkBoxFlexBox">
         <ScrollToTopOnMount />
       <Checkbox />
@@ -100,6 +111,18 @@ const List = () => {
             </div>
                )})}
             </div>
+      </div>
+      </>
+      :   <div style={{height:'30em',display:'flex','justifyContent':'center','alignItems':'center'}} className="spinner">
+              <RotatingTriangles
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="rotating-triangels-loading"
+                wrapperStyle={{}}
+                wrapperClass="rotating-triangels-wrapper"
+                colors={['#eccfb4', '#eb9b55', '#f67504']}
+            />
       </div>
   )
 }

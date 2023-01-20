@@ -27,6 +27,7 @@
     "react-hook-form": "^7.41.3",
     "react-icons": "^4.7.1",
     "react-images-uploading": "^3.1.7",
+    "react-loader-spinner": "^5.3.4",
     "react-payment-inputs": "^1.1.9",
     "react-phone-input-2": "^2.15.1",
     "react-phone-number-input": "^3.2.13",
