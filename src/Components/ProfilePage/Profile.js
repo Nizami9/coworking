@@ -52,9 +52,8 @@ function Profile() {
    },[imageUrl])
 
     const getUserDetails =async (LSUser) =>{
-        try {
+        try { //const { data } = await axios.post('http://localhost:3100/user/get-user',{
            const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/user/get-user`,{
-           //const { data } = await axios.post('http://localhost:3100/user/get-user',{
                userId:LSUser
            } );
           setInput(data);
@@ -108,14 +107,13 @@ function Profile() {
         e.preventDefault();
         setUser(input);
         try {
-             const { data } = await axios.post(`${backEnd_API}/user/update`,{
+             const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/user/update`,{
             //  const { data } = await axios.post('http://localhost:3100/user/update',{
                   user:input,
                   userId:userid,
                   profilepicurl:profileImgLink
               } );
-              
-              alert("Updated succesfully !")
+               alert("Updated succesfully !")
             console.log("Success",data);
             }catch(err){
               console.log(err);
