@@ -53,7 +53,7 @@ function Profile() {
 
     const getUserDetails =async (LSUser) =>{
         try {
-           const { data } = await axios.post(`${backEnd_API}/user/get-user`,{
+           const { data } = await axios.post(`https://real-red-gosling-hose.cyclic.app/user/get-user`,{
            //const { data } = await axios.post('http://localhost:3100/user/get-user',{
                userId:LSUser
            } );
