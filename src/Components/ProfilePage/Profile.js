@@ -13,7 +13,7 @@ import { useAuthContext } from '../../context/AuthContext';
 
 function Profile() {
     <script src="https://unpkg.com/react-phone-input-2@2.x/dist/lib.js"></script>
-    const [phoneNumber, setPhoneNumber] = useState();
+    const [phonenumber, setPhoneNumber] = useState();
     const {user,setUser} =useAuthContext();
 
    
@@ -28,11 +28,11 @@ function Profile() {
         firstname:'',
         lastname:'',
         email:'',
-        phonenumber:'',
         address:'',
         city:'',
         country:'',
-        zip:''
+        zip:'',
+        phonenumber:''
 })
 
 //   const [input,setInput]=useState({
@@ -48,7 +48,7 @@ function Profile() {
 //   })
    useEffect(()=>{
         setProfileImgLink(imageUrl)
-     console.log("inside ueeffect")
+     console.log("inside useffect")
    },[imageUrl])
 
     const getUserDetails =async (LSUser) =>{
@@ -58,7 +58,7 @@ function Profile() {
            } );
           setInput(data);
          setImageUrl(`${data.profilepicurl}`)
-         console.log("Success",data);
+         console.log(data);
          }catch(err){
            console.log(err);
          }
@@ -111,7 +111,7 @@ function Profile() {
             //  const { data } = await axios.post('http://localhost:3100/user/update',{
                   user:input,
                   userId:userid,
-                  profilepicurl:profileImgLink
+                  profilepicurl:profileImgLink,
               } );
                alert("Updated succesfully !")
             console.log("Success",data);
@@ -165,7 +165,7 @@ function Profile() {
                         <label htmlFor='fname'>Phone </label>
                         <ReactPhoneInput
                             className='phone-input'
-                            name='phone'
+                            name='phonenumber'
                             country={'de'}
                             value={input.phonenumber}
                             onChange={phone => setPhoneNumber(phone)}
