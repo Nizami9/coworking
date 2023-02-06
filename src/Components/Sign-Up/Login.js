@@ -10,15 +10,19 @@ function Login() {
 
   const { isAuthenticated, setToken ,setUserId,setIsAuthenticated,setUser} = useAuthContext();
   
-  const [errorMessages, setErrorMessages] = useState({});
+  const [errorMessages, setErrorMessages] = useState(false);
   const [logEmail,setLogEmail]=useState();
   const [logPassword,setLogPassword]=useState();
   const [loggedUser,setLoggedUser]=useState();
 
+   const showErrorMessages =(message) =>{
+    return (<div className="error"><h5>{message}</h5></div>);
+   
+    // alert(message.message)
+   }
 
   //handle submit
   const handleSubmit = async(e) => {
-
     e.preventDefault();
 
     try {
@@ -37,6 +41,10 @@ function Login() {
   
       console.log("Success",data);
     }catch(err){
+      console.log("inside err message ",err.response)
+      if(err.response.status === 400){
+        setErrorMessages(true);
+          }
       console.log(err);
     }
    
@@ -56,12 +64,8 @@ function Login() {
     //   setErrorMessages({ name: "uname", message: errors.uname });
     // }
   };
-  
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
+
+
     
     // JSX code for login form
     const renderForm = (
@@ -70,12 +74,12 @@ function Login() {
             <div className="input-container">
               <label htmlFor='uname'>Email </label>
               <input type="text" id='uname' name="uname" onChange={(e)=>{setLogEmail(e.target.value)}} required />
-              {renderErrorMessage("uname")}
+              {/* {renderErrorMessage("error")} */}
             </div>
             <div className="input-container">
               <label htmlFor='password'>Password </label>
               <input id='password' type="password" name="pass" onChange={(e)=>{setLogPassword(e.target.value)}} required />
-              {renderErrorMessage("pass")}
+              {errorMessages && showErrorMessages("Invalid Username or Password !")}
             </div>
             <div className="button-container">
               <input type="submit" />
